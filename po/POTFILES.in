@@ -1,0 +1,15 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+
+# data/*
+data/io.github.josephmawa.Gauge.desktop.in
+data/io.github.josephmawa.Gauge.gschema.xml
+data/io.github.josephmawa.Gauge.metainfo.xml.in
+
+# src/*.js 
+src/about.js
+src/app.js
+src/main.js
+src/prefs.js
+src/util.js
+src/win.js

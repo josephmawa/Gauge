@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Gauge
+Exec=io.github.josephmawa.Gauge
+Icon=io.github.josephmawa.Gauge
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

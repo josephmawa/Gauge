@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.10" />
+  <requires lib="Adw" version="1.5" />
+  <template class="GaugePrefsDialog" parent="AdwPreferencesDialog">
+    <property name="content_width">300</property>
+    <property name="title" translatable="yes">Preferences</property>
+    <property name="search-enabled">true</property>
+    <property name="presentation-mode">floating</property>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="name">preferences</property>
+        <property name="title" translatable="yes">Preferences</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Color Theme</property>
+            <property name="description" translatable="yes">Set color theme</property>
+            <child>
+              <object class="AdwPreferencesRow">
+                <style>
+                  <class name="color-scheme-row" />
+                </style>
+                <property name="title" translatable="yes">Color theme</property>
+                <property name="title_selectable">true</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="valign">center</property>
+                    <property name="halign">fill</property>
+                    <property name="hexpand">true</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="valign">center</property>
+                        <property name="halign">start</property>
+                        <property name="hexpand">true</property>
+                        <child>
+                          <object class="GtkCheckButton" id="system">
+                            <property name="label" translatable="yes" context="System color theme">System</property>
+                            <property name="active">true</property>
+                            <property name="action-name">app.color-scheme</property>
+                            <!-- Adw.ColorScheme.DEFAULT -->
+                            <property name="action-target">0</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="valign">center</property>
+                        <property name="halign">center</property>
+                        <property name="hexpand">true</property>
+                        <child>
+                          <object class="GtkCheckButton" id="light">
+                            <property name="label" translatable="yes" context="Light color theme">Light</property>
+                            <property name="group">system</property>
+                            <property name="action-name">app.color-scheme</property>
+                            <!-- Adw.ColorScheme.FORCE_LIGHT -->
+                            <property name="action-target">1</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">horizontal</property>
+                        <property name="valign">center</property>
+                        <property name="halign">end</property>
+                        <property name="hexpand">true</property>
+                        <child>
+                          <object class="GtkCheckButton" id="dark">
+                            <property name="label" translatable="yes" context="Dark color theme">Dark</property>
+                            <property name="group">system</property>
+                            <property name="action-name">app.color-scheme</property>
+                            <!-- Adw.ColorScheme.FORCE_DARK -->
+                            <property name="action-target">4</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Number Precision</property>
+            <property name="description" translatable="yes">Set number precision</property>
+            <child>
+              <object class="AdwSpinRow" id="precision_spin_row">
+                <property name="title" translatable="yes">Conversion precision</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">100</property>
+                    <property name="value">5</property>
+                    <property name="step-increment">1</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

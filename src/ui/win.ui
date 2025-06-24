@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="Adw" version="1.0" />
+  <template class="GaugeWindow" parent="AdwApplicationWindow">
+    <property name="title" translatable="yes">Gauge</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 400sp</condition>
+        <setter object="split_view" property="collapsed">True</setter>
+        <setter object="content_box" property="orientation">vertical</setter>
+        <setter object="close_sidebar" property="visible">True</setter>
+      </object>
+    </child>
+    <property name="content">
+      <object class="AdwOverlaySplitView" id="split_view">
+        <property name="max-sidebar-width">330</property>
+        <property name="sidebar-width-fraction">0.4</property>
+        <property name="sidebar">
+          <object class="AdwToolbarView">
+            <child type="top">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="AdwHeaderBar">
+                    <child type="start">
+                      <object class="GtkToggleButton">
+                        <property name="icon-name">gauge-system-search-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Search units</property>
+                        <property name="action-name">win.search</property>
+                        <binding name="active">
+                          <lookup name="search-mode-enabled">search_bar</lookup>
+                        </binding>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="accessibility">Search units</property>
+                        </accessibility>
+                      </object>
+                    </child>
+                    <property name="title-widget">
+                      <object class="AdwWindowTitle">
+                        <property name="title" translatable="yes">Units</property>
+                      </object>
+                    </property>
+                    <child type="end">
+                      <object class="GtkToggleButton" id="close_sidebar">
+                        <property name="icon-name">gauge-go-previous-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Close sidebar</property>
+                        <property name="action-name">win.toggle-sidebar</property>
+                        <property name="visible">False</property>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="a11y">Close sidebar</property>
+                        </accessibility>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="top">
+              <object class="GtkSearchBar" id="search_bar">
+                <property name="child">
+                  <object class="GtkSearchEntry">
+                    <property name="placeholder-text" translatable="yes" context="Search units">Search</property>
+                    <property name="hexpand">true</property>
+                    <signal
+                      name="search-changed"
+                      handler="handleSearch"
+                      object="GaugeWindow"
+                      swapped="no" />
+                    <accessibility>
+                      <property name="label" translatable="yes" context="a11y">Search</property>
+                      <property name="description" translatable="yes" context="a11y">Type to search units</property>
+                    </accessibility>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <property name="content">
+              <object class="GtkScrolledWindow">
+                <property name="hscrollbar-policy">never</property>
+                <property name="vscrollbar-policy">automatic</property>
+                <property name="propagate-natural-height">True</property>
+                <property name="vexpand">true</property>
+                <property name="child">
+                  <object class="GtkListView" id="list_view">
+                    <property name="single-click-activate">True</property>
+                    <property name="vexpand">True</property>
+                    <style>
+                      <class name="navigation-sidebar" />
+                    </style>
+                    <signal name="activate" handler="activateUnit" object="GaugeWindow" swapped="no" />
+                  </object>
+                </property>
+              </object>
+            </property>
+          </object>
+        </property>
+        <property name="content">
+          <object class="AdwToolbarView">
+            <child type="top">
+              <object class="AdwHeaderBar">
+                <child type="start">
+                  <object class="GtkToggleButton" id="toggle_sidebar">
+                    <property name="icon-name">gauge-sidebar-show-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Toggle Sidebar</property>
+                    <property name="action-name">win.toggle-sidebar</property>
+                    <property name="active" bind-source="split_view" bind-property="show-sidebar" bind-flags="sync-create" />
+                    <accessibility>
+                      <property name="label" translatable="yes" context="a11y">Toggle Sidebar</property>
+                    </accessibility>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkMenuButton">
+                    <property name="primary">True</property>
+                    <property name="icon-name">gauge-open-menu-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Main Menu</property>
+                    <property name="menu-model">primary_menu</property>
+                    <accessibility>
+                      <property name="label" translatable="yes" context="a11y">Main Menu</property>
+                    </accessibility>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <property name="content">
+              <object class="GtkBox" id="content_box">
+                <property name="orientation">horizontal</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="spacing">18</property>
+                <property name="margin-start">18</property>
+                <property name="margin-end">18</property>
+                <property name="margin-top">18</property>
+                <property name="margin-bottom">18</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="placeholder-text" translatable="yes">Enter value</property>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="a11y">Enter value</property>
+                        </accessibility>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="icon-name">gauge-vertical-arrows-symbolic</property>
+                        <property name="tooltip-text" translatable="yes">Switch conversion</property>
+                        <style>
+                          <class name="flat" />
+                          <class name="circular" />
+                        </style>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="a11y">Switch conversion</property>
+                        </accessibility>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="placeholder-text" translatable="yes">Enter value</property>
+                        <accessibility>
+                          <property name="label" translatable="yes" context="a11y">Enter value</property>
+                        </accessibility>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Gauge</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

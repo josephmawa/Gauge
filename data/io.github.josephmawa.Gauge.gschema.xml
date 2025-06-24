@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="Gauge">
+  <schema id="io.github.josephmawa.Gauge" path="/io/github/josephmawa/Gauge/">
+    <key name="window-width" type="i">
+      <default>800</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>600</default>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+    </key>
+    <key name="color-scheme" type="i">
+      <range min="0" max="4" />
+      <default>0</default>
+    </key>
+    <key name="show-sidebar" type="b">
+      <default>true</default>
+    </key>
+    <key name="precision" type="i">
+      <default>5</default>
+    </key>
+  </schema>
+</schemalist>

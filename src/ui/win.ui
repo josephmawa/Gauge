@@ -10,14 +10,12 @@
       <object class="AdwBreakpoint">
         <condition>max-width: 400sp</condition>
         <setter object="split_view" property="collapsed">True</setter>
-        <setter object="content_box" property="orientation">vertical</setter>
         <setter object="close_sidebar" property="visible">True</setter>
       </object>
     </child>
     <property name="content">
       <object class="AdwOverlaySplitView" id="split_view">
         <property name="max-sidebar-width">330</property>
-        <property name="sidebar-width-fraction">0.4</property>
         <property name="sidebar">
           <object class="AdwToolbarView">
             <child type="top">
@@ -126,60 +124,107 @@
               </object>
             </child>
             <property name="content">
-              <object class="GtkBox" id="content_box">
-                <property name="orientation">horizontal</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="spacing">18</property>
-                <property name="margin-start">18</property>
-                <property name="margin-end">18</property>
-                <property name="margin-top">18</property>
-                <property name="margin-bottom">18</property>
-                <child>
-                  <object class="GtkBox">
+              <object class="AdwClamp">
+                <property name="maximum-size">400</property>
+                <property name="child">
+                  <object class="GtkBox" id="content_box">
                     <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GtkEntry">
-                        <property name="placeholder-text" translatable="yes">Enter value</property>
-                        <accessibility>
-                          <property name="label" translatable="yes" context="a11y">Enter value</property>
-                        </accessibility>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkBox">
-                    <property name="halign">center</property>
                     <property name="valign">center</property>
+                    <property name="spacing">18</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
                     <child>
-                      <object class="GtkButton">
-                        <property name="icon-name">gauge-vertical-arrows-symbolic</property>
-                        <property name="tooltip-text" translatable="yes">Switch conversion</property>
-                        <style>
-                          <class name="flat" />
-                          <class name="circular" />
-                        </style>
-                        <accessibility>
-                          <property name="label" translatable="yes" context="a11y">Switch conversion</property>
-                        </accessibility>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">6</property>
+                        <child>
+                          <object class="GtkCenterBox">
+                            <child type="start">
+                              <object class="GtkDropDown">
+                                <style>
+                                  <class name="dropdown" />
+                                </style>
+                                <!-- This model is a placeholder -->
+                                <property name="model">
+                                  <object class="GtkStringList">
+                                    <items>
+                                      <item translatable="yes">Factory</item>
+                                      <item translatable="yes">Home</item>
+                                      <item translatable="yes">Subway</item>
+                                    </items>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="placeholder-text" translatable="yes">Enter value</property>
+                            <property name="hexpand">True</property>
+                            <accessibility>
+                              <property name="label" translatable="yes" context="a11y">Enter value</property>
+                            </accessibility>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="icon-name">gauge-vertical-arrows-symbolic</property>
+                            <property name="tooltip-text" translatable="yes">Switch conversion</property>
+                            <style>
+                              <class name="flat" />
+                            </style>
+                            <accessibility>
+                              <property name="label" translatable="yes" context="a11y">Switch conversion</property>
+                            </accessibility>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">6</property>
+                        <child>
+                          <object class="GtkCenterBox">
+                            <child type="start">
+                              <object class="GtkDropDown">
+                                <style>
+                                  <class name="dropdown" />
+                                </style>
+                                <!-- This model is a placeholder -->
+                                <property name="model">
+                                  <object class="GtkStringList">
+                                    <items>
+                                      <item translatable="yes">Factory</item>
+                                      <item translatable="yes">Home</item>
+                                      <item translatable="yes">Subway</item>
+                                    </items>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="placeholder-text" translatable="yes">Enter value</property>
+                            <property name="hexpand">True</property>
+                            <accessibility>
+                              <property name="label" translatable="yes" context="a11y">Enter value</property>
+                            </accessibility>
+                          </object>
+                        </child>
                       </object>
                     </child>
                   </object>
-                </child>
-                <child>
-                  <object class="GtkBox">
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GtkEntry">
-                        <property name="placeholder-text" translatable="yes">Enter value</property>
-                        <accessibility>
-                          <property name="label" translatable="yes" context="a11y">Enter value</property>
-                        </accessibility>
-                      </object>
-                    </child>
-                  </object>
-                </child>
+                </property>
               </object>
             </property>
           </object>

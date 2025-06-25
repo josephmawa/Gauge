@@ -1,3 +1,8 @@
 .color-scheme-row {
   padding: 10px;
 }
+
+.dropdown button:not(:checked):not(:hover) {
+  background: transparent;
+  box-shadow: none;
+}

@@ -4,18 +4,13 @@ import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 import GObject from "gi://GObject";
 
-import { settings, regexes } from "./util.js";
+import { settings, regexes, CursorState } from "./util.js";
 
 export const GaugeWindow = GObject.registerClass(
   {
     GTypeName: "GaugeWindow",
     Template: getResourceURI("win.ui"),
-    InternalChildren: [
-      "split_view",
-      "search_bar",
-      "input_entry",
-      "output_entry",
-    ],
+    InternalChildren: ["split_view", "search_bar", "entryA", "entryB"],
   },
   class GaugeWindow extends Adw.ApplicationWindow {
     constructor(application) {
@@ -25,22 +20,8 @@ export const GaugeWindow = GObject.registerClass(
       this.bindSettings();
       this.createActions();
       this.setColorScheme();
+      this.connectHandlers();
       this.createColorSchemeAction();
-
-      /**
-       * NOTE
-       * You can't connect insert-text event to Gtk.Entry directly.
-       * Read more about it in the following reference docs:
-       * • https://gitlab.gnome.org/GNOME/gtk/-/issues/4315
-       * • https://docs.gtk.org/gtk4/iface.Editable.html#implementing-gtkeditable
-       */
-      this._input_entry
-        .get_delegate()
-        .connect("insert-text", this.insertTextHandler);
-
-      this._output_entry
-        .get_delegate()
-        .connect("insert-text", this.insertTextHandler);
     }
 
     handleSearch() {
@@ -50,6 +31,49 @@ export const GaugeWindow = GObject.registerClass(
     activateUnit() {
       console.log("Ativating unit...");
     }
+
+    connectHandlers = () => {
+      const initialCursorState = { position: -1, update: false };
+      const entryAcursorState = new CursorState(initialCursorState);
+      const entryBcursorstate = new CursorState(initialCursorState);
+      /**
+       * NOTE
+       * You can't connect insert-text event to Gtk.Entry directly.
+       * Read more about it in the following reference docs:
+       * • https://gitlab.gnome.org/GNOME/gtk/-/issues/4315
+       * • https://docs.gtk.org/gtk4/iface.Editable.html#implementing-gtkeditable
+       */
+      this._entryA.get_delegate().connect("insert-text", (...args) => {
+        this.insertText(...args, entryAcursorState);
+      });
+      this._entryB.get_delegate().connect("insert-text", (...args) => {
+        this.insertText(...args, entryBcursorstate);
+      });
+
+      this._entryA.buffer.bind_property_full(
+        "text",
+        this._entryB.buffer,
+        "text",
+        GObject.BindingFlags.BIDIRECTIONAL | GObject.BindingFlags.SYNC_CREATE,
+        (binding, text) => {
+          if (!text) return [true, text];
+          const convertedText = text.length.toString();
+          return [true, convertedText];
+        },
+        (binding, text) => {
+          if (!text) return [true, text];
+          const convertedText = text.length.toString();
+          return [true, convertedText];
+        }
+      );
+
+      this._entryA.connect("changed", (entry) => {
+        this.setCursorPosition(entry, entryAcursorState);
+      });
+      this._entryB.connect("changed", (entry) => {
+        this.setCursorPosition(entry, entryBcursorstate);
+      });
+    };
 
     createActions = () => {
       const search = Gio.SimpleAction.new("search", null);
@@ -114,12 +138,14 @@ export const GaugeWindow = GObject.registerClass(
       );
     };
 
-    wordChanged(entry) {
-      console.log(entry instanceof Gtk.Entry);
-      entry.set_position(-1);
-    }
+    setCursorPosition = (entry, entryCursorState) => {
+      if (entryCursorState.update) {
+        entry.set_position(entryCursorState.position);
+        entryCursorState.update = false;
+      }
+    };
 
-    insertTextHandler = (editable, text, length, position) => {
+    insertText = (editable, text, length, position, entryCursorState) => {
       const signalId = GObject.signal_lookup("insert-text", editable);
       const handlerId = GObject.signal_handler_find(
         editable,
@@ -142,10 +168,11 @@ export const GaugeWindow = GObject.registerClass(
         const characters = [...editable.text];
         const cursorPosition = editable.get_position();
         characters.splice(cursorPosition, 0, text);
-        const bufferText = characters.join("");
 
-        if (regexes.validEntry.test(bufferText)) {
-          editable.insert_text(text, text.length, cursorPosition);
+        if (regexes.validEntry.test(characters.join(""))) {
+          editable.insert_text(text, length, cursorPosition);
+          entryCursorState.position = cursorPosition + length;
+          entryCursorState.update = true;
         }
       }
 

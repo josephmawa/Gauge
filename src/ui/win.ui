@@ -159,10 +159,9 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="input_entry">
+                          <object class="GtkEntry" id="entryA">
                             <property name="placeholder-text" translatable="yes">Enter value</property>
                             <property name="hexpand">True</property>
-                             <signal name="changed" handler="wordChanged" object="GaugeWindow" swapped="no" />
                             <accessibility>
                               <property name="label" translatable="yes" context="a11y">Enter value</property>
                             </accessibility>
@@ -214,7 +213,7 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="output_entry">
+                          <object class="GtkEntry" id="entryB">
                             <property name="placeholder-text" translatable="yes">Enter value</property>
                             <property name="hexpand">True</property>
                             <accessibility>

@@ -4,6 +4,7 @@
   "description": "Unit converter",
   "main": "index.js",
   "scripts": {
+    "proc-units": "node _data_/index.js",
     "build": "flatpak run org.flatpak.Builder --force-clean --sandbox --user --install --install-deps-from=flathub --ccache --mirror-screenshots-url=https://dl.flathub.org/media/ --repo=repo builddir io.github.josephmawa.Gauge.json",
     "lint": "npm run build && flatpak run --command=flatpak-builder-lint org.flatpak.Builder io.github.josephmawa.Gauge.json && flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo",
     "init:build-dir": "flatpak run --command=meson --filesystem=host org.gnome.Sdk build-dir",

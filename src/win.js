@@ -5,6 +5,7 @@ import GLib from "gi://GLib";
 import GObject from "gi://GObject";
 
 import { settings, regexes, CursorState } from "./util.js";
+import { units } from "./units.js";
 
 export const GaugeWindow = GObject.registerClass(
   {

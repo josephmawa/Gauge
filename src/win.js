@@ -4,14 +4,21 @@ import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 import GObject from "gi://GObject";
 
-import { settings, regexes, CursorState } from "./util.js";
+import { settings, regexes, CursorState, processUnits } from "./util.js";
 import { units } from "./units.js";
+import { Unit } from "./gobjects.js";
 
 export const GaugeWindow = GObject.registerClass(
   {
     GTypeName: "GaugeWindow",
     Template: getResourceURI("win.ui"),
-    InternalChildren: ["split_view", "search_bar", "entryA", "entryB"],
+    InternalChildren: [
+      "split_view",
+      "list_view",
+      "search_bar",
+      "entryA",
+      "entryB",
+    ],
   },
   class GaugeWindow extends Adw.ApplicationWindow {
     constructor(application) {
@@ -19,6 +26,7 @@ export const GaugeWindow = GObject.registerClass(
 
       this.loadStyles();
       this.bindSettings();
+      this.createSidebar();
       this.createActions();
       this.setColorScheme();
       this.connectHandlers();
@@ -29,9 +37,104 @@ export const GaugeWindow = GObject.registerClass(
       console.log("Searching...");
     }
 
-    activateUnit() {
-      console.log("Ativating unit...");
+    activateUnit(listView, position) {
+      const item = listView.model.selected_item.item;
+      if (item.children.length) {
+        console.log("Top level unit");
+      }
+
+      if (!item.children.length) {
+        console.log("Inner level unit");
+      }
     }
+
+    createSidebar = () => {
+      const processedUnits = processUnits(units);
+      const store = Gio.ListStore.new(Unit);
+
+      for (const unit of processedUnits) {
+        store.append(new Unit(unit));
+      }
+
+      const customFilter = Gtk.CustomFilter.new(null);
+      const filter = Gtk.FilterListModel.new(store, customFilter);
+
+      const tree = Gtk.TreeListModel.new(filter, false, false, (item) => {
+        if (!item.children.length) return null;
+
+        const nestedStore = Gio.ListStore.new(Unit);
+        const nestedModel = Gtk.FilterListModel.new(nestedStore, customFilter);
+
+        for (const unit of item.children) {
+          nestedModel.model.append(new Unit(unit));
+        }
+        return nestedModel;
+      });
+
+      const selection = Gtk.SingleSelection.new(tree);
+      const factory = new Gtk.SignalListItemFactory();
+
+      factory.connect("setup", (factory, listItem) => {
+        const hBox = new Gtk.Box({
+          orientation: Gtk.Orientation.HORIZONTAL,
+          halign: Gtk.Align.FILL,
+        });
+
+        const hBoxInner1 = new Gtk.Box({
+          orientation: Gtk.Orientation.HORIZONTAL,
+          halign: Gtk.Align.START,
+          hexpand: true,
+        });
+        const hBoxInner2 = new Gtk.Box({
+          orientation: Gtk.Orientation.HORIZONTAL,
+          halign: Gtk.Align.END,
+          hexpand: true,
+        });
+
+        const label = new Gtk.Label();
+        // const icon = new Gtk.Image({
+        //   icon_name: "egghead-object-select-symbolic",
+        //   visible: false,
+        //   pixel_size: 12,
+        // });
+
+        hBoxInner1.append(label);
+        // hBoxInner2.append(icon);
+
+        hBox.append(hBoxInner1);
+        // hBox.append(hBoxInner2);
+
+        listItem.child = new Gtk.TreeExpander({ child: hBox });
+      });
+
+      factory.connect("bind", (_, listItem) => {
+        const listRow = listItem.item;
+        const expander = listItem.child;
+
+        expander.list_row = listRow;
+
+        const hBox = expander.child;
+        const label = hBox?.get_first_child()?.get_first_child();
+        // const image = hBox?.get_last_child()?.get_first_child();
+        const object = listRow.item;
+
+        // this.bind_property_full(
+        //   "category_id",
+        //   image,
+        //   "visible",
+        //   GObject.BindingFlags.DEFAULT || GObject.BindingFlags.SYNC_CREATE,
+        //   (_, categoryId) => {
+        //     return [true, object.id === categoryId];
+        //   },
+        //   null
+        // );
+
+        label.label = object.name;
+      });
+
+      this._list_view.model = selection;
+      this._list_view.factory = factory;
+    };
 
     connectHandlers = () => {
       const initialCursorState = { position: -1, update: false };

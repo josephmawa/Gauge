@@ -31,3 +31,23 @@ export class CursorState {
     return this.#update;
   }
 }
+
+export function processUnits(units) {
+  const processedUnits = [];
+  for (const unit of units) {
+    const object = {
+      id: unit.idBaseUnit,
+      name: unit.name,
+      children: [],
+    };
+    for (const { id, label } of unit.units) {
+      object.children.push({
+        id,
+        name:label,
+        children: [],
+      });
+    }
+    processedUnits.push(object);
+  }
+  return processedUnits;
+}

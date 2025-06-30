@@ -3,6 +3,7 @@
   <gresource prefix="/io/github/josephmawa/Gauge/js">
     <file compressed="yes">about.js</file>
     <file compressed="yes">app.js</file>
+    <file compressed="yes">gobjects.js</file>
     <file compressed="yes">main.js</file>
     <file compressed="yes">prefs.js</file>
     <file compressed="yes">util.js</file>

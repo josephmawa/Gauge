@@ -4,7 +4,13 @@ import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 import GObject from "gi://GObject";
 
-import { settings, regexes, CursorState, processUnits } from "./util.js";
+import {
+  regexes,
+  settings,
+  CursorState,
+  processUnits,
+  getCustomFilter,
+} from "./util.js";
 import { units } from "./units.js";
 import { Unit } from "./gobjects.js";
 
@@ -13,11 +19,11 @@ export const GaugeWindow = GObject.registerClass(
     GTypeName: "GaugeWindow",
     Template: getResourceURI("win.ui"),
     InternalChildren: [
-      "split_view",
-      "list_view",
-      "search_bar",
       "entryA",
       "entryB",
+      "list_view",
+      "split_view",
+      "search_bar",
     ],
   },
   class GaugeWindow extends Adw.ApplicationWindow {
@@ -33,8 +39,17 @@ export const GaugeWindow = GObject.registerClass(
       this.createColorSchemeAction();
     }
 
-    handleSearch() {
-      console.log("Searching...");
+    handleSearch(searchEntry) {
+      const tree = this._list_view.model.model;
+      const searchText = searchEntry.text.trim().toLocaleLowerCase();
+
+      if (!searchText) {
+        tree.autoexpand = false;
+      } else {
+        tree.autoexpand = true;
+      }
+
+      this.customFilter.set_filter_func(getCustomFilter(searchText));
     }
 
     activateUnit(listView, position) {
@@ -56,14 +71,17 @@ export const GaugeWindow = GObject.registerClass(
         store.append(new Unit(unit));
       }
 
-      const customFilter = Gtk.CustomFilter.new(null);
-      const filter = Gtk.FilterListModel.new(store, customFilter);
+      this.customFilter = Gtk.CustomFilter.new(null);
+      const filter = Gtk.FilterListModel.new(store, this.customFilter);
 
       const tree = Gtk.TreeListModel.new(filter, false, false, (item) => {
         if (!item.children.length) return null;
 
         const nestedStore = Gio.ListStore.new(Unit);
-        const nestedModel = Gtk.FilterListModel.new(nestedStore, customFilter);
+        const nestedModel = Gtk.FilterListModel.new(
+          nestedStore,
+          this.customFilter
+        );
 
         for (const unit of item.children) {
           nestedModel.model.append(new Unit(unit));

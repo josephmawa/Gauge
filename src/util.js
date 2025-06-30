@@ -51,3 +51,10 @@ export function processUnits(units) {
   }
   return processedUnits;
 }
+
+export function getCustomFilter(string) {
+  return (item) => {
+    if (item.children.length) return true;
+    return item.name.toLocaleLowerCase().includes(string);
+  };
+}

@@ -11,6 +11,7 @@
   <gresource prefix="/io/github/josephmawa/Gauge/icons">
     <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-edit-copy-symbolic.svg">icons/edit-copy-symbolic.svg</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-go-previous-symbolic.svg">icons/go-previous-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-object-select-symbolic.svg">icons/object-select-symbolic.svg</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-open-menu-symbolic.svg">icons/open-menu-symbolic.svg</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-sidebar-show-symbolic.svg">icons/sidebar-show-symbolic.svg</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="scalable/actions/gauge-system-search-symbolic.svg">icons/system-search-symbolic.svg</file>

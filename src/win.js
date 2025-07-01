@@ -18,6 +18,15 @@ export const GaugeWindow = GObject.registerClass(
   {
     GTypeName: "GaugeWindow",
     Template: getResourceURI("win.ui"),
+    Properties: {
+      unit_id: GObject.ParamSpec.string(
+        "unit_id",
+        "unitId",
+        "Selected Unit ID",
+        GObject.ParamFlags.READWRITE,
+        "meter"
+      ),
+    },
     InternalChildren: [
       "entryA",
       "entryB",
@@ -40,26 +49,19 @@ export const GaugeWindow = GObject.registerClass(
     }
 
     handleSearch(searchEntry) {
-      const tree = this._list_view.model.model;
+      /**
+       * FIXME:
+       * Searching on every keypress is inefficient. There is need
+       * to debounde this method.
+       */
       const searchText = searchEntry.text.trim().toLocaleLowerCase();
-
-      if (!searchText) {
-        tree.autoexpand = false;
-      } else {
-        tree.autoexpand = true;
-      }
-
       this.customFilter.set_filter_func(getCustomFilter(searchText));
     }
 
     activateUnit(listView, position) {
       const item = listView.model.selected_item.item;
-      if (item.children.length) {
-        console.log("Top level unit");
-      }
-
       if (!item.children.length) {
-        console.log("Inner level unit");
+        this.unit_id = item.id;
       }
     }
 
@@ -98,29 +100,29 @@ export const GaugeWindow = GObject.registerClass(
           halign: Gtk.Align.FILL,
         });
 
-        const hBoxInner1 = new Gtk.Box({
+        const hBoxInnerOne = new Gtk.Box({
           orientation: Gtk.Orientation.HORIZONTAL,
           halign: Gtk.Align.START,
           hexpand: true,
         });
-        const hBoxInner2 = new Gtk.Box({
+        const hBoxInnerTwo = new Gtk.Box({
           orientation: Gtk.Orientation.HORIZONTAL,
           halign: Gtk.Align.END,
           hexpand: true,
         });
 
         const label = new Gtk.Label();
-        // const icon = new Gtk.Image({
-        //   icon_name: "egghead-object-select-symbolic",
-        //   visible: false,
-        //   pixel_size: 12,
-        // });
+        const icon = new Gtk.Image({
+          icon_name: "gauge-object-select-symbolic",
+          visible: false,
+          pixel_size: 12,
+        });
 
-        hBoxInner1.append(label);
-        // hBoxInner2.append(icon);
+        hBoxInnerOne.append(label);
+        hBoxInnerTwo.append(icon);
 
-        hBox.append(hBoxInner1);
-        // hBox.append(hBoxInner2);
+        hBox.append(hBoxInnerOne);
+        hBox.append(hBoxInnerTwo);
 
         listItem.child = new Gtk.TreeExpander({ child: hBox });
       });
@@ -133,19 +135,22 @@ export const GaugeWindow = GObject.registerClass(
 
         const hBox = expander.child;
         const label = hBox?.get_first_child()?.get_first_child();
-        // const image = hBox?.get_last_child()?.get_first_child();
+        const image = hBox?.get_last_child()?.get_first_child();
         const object = listRow.item;
 
-        // this.bind_property_full(
-        //   "category_id",
-        //   image,
-        //   "visible",
-        //   GObject.BindingFlags.DEFAULT || GObject.BindingFlags.SYNC_CREATE,
-        //   (_, categoryId) => {
-        //     return [true, object.id === categoryId];
-        //   },
-        //   null
-        // );
+        /** Make images on the non-root elements visible if selected */
+        if (!object.children.length) {
+          this.bind_property_full(
+            "unit_id",
+            image,
+            "visible",
+            GObject.BindingFlags.DEFAULT || GObject.BindingFlags.SYNC_CREATE,
+            (_, unitId) => {
+              return [true, object.id === unitId];
+            },
+            null
+          );
+        }
 
         label.label = object.name;
       });
@@ -202,6 +207,33 @@ export const GaugeWindow = GObject.registerClass(
       search.connect("activate", () => {
         this._search_bar.search_mode_enabled =
           !this._search_bar.search_mode_enabled;
+
+        const searchModeEnabled = this._search_bar.search_mode_enabled;
+        const tree = this._list_view.model.model;
+        const rootModel = tree.model;
+
+        /**
+         * This will expand all the root-level widgets when search
+         * mode is enabled and closes them when search mode is disabled.
+         *
+         * There are two methdos for retrieving rows; tree.get_child_row
+         * and tree.get_row. I'm not sure I understand the difference
+         * between the two. However, in this case tree.get_child_row retrieves
+         * the expandable rows.
+         *
+         * To loop over the topmost row widgets, retrieve the number of
+         * items from the root model, the model passed to the Gtk.TreeListModel
+         */
+        for (let i = 0; i < rootModel.n_items; i++) {
+          const listRow = tree.get_child_row(i);
+          if (!listRow?.expandable) continue;
+
+          if (searchModeEnabled) {
+            listRow.expanded = true;
+          } else {
+            listRow.expanded = false;
+          }
+        }
       });
       this.add_action(search);
 

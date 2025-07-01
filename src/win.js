@@ -14,6 +14,12 @@ import {
 import { units } from "./units.js";
 import { Unit } from "./gobjects.js";
 
+/**
+ * Big number library for large number manipulation and
+ * formatting.
+ */
+import "./big-number.js";
+
 export const GaugeWindow = GObject.registerClass(
   {
     GTypeName: "GaugeWindow",

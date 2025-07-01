@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/josephmawa/Gauge/js">
+    <!-- src/lib/*.js -->
+    <file compressed="yes" alias="big-number.js">lib/big-number.js</file>
+    <!-- src/*.js -->
     <file compressed="yes">about.js</file>
     <file compressed="yes">app.js</file>
     <file compressed="yes">gobjects.js</file>

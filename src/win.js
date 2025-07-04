@@ -34,11 +34,13 @@ export const GaugeWindow = GObject.registerClass(
       ),
     },
     InternalChildren: [
-      "entryA",
-      "entryB",
       "list_view",
-      "split_view",
       "search_bar",
+      "split_view",
+      "input_entry",
+      "output_entry",
+      "input_dropdown",
+      "output_dropdown",
     ],
   },
   class GaugeWindow extends Adw.ApplicationWindow {
@@ -51,6 +53,7 @@ export const GaugeWindow = GObject.registerClass(
       this.createActions();
       this.setColorScheme();
       this.connectHandlers();
+      this.updatePrecision();
       this.createColorSchemeAction();
     }
 
@@ -58,7 +61,7 @@ export const GaugeWindow = GObject.registerClass(
       /**
        * FIXME:
        * Searching on every keypress is inefficient. There is need
-       * to debounde this method.
+       * to debounce this method.
        */
       const searchText = searchEntry.text.trim().toLocaleLowerCase();
       this.customFilter.set_filter_func(getCustomFilter(searchText));
@@ -165,47 +168,48 @@ export const GaugeWindow = GObject.registerClass(
       this._list_view.factory = factory;
     };
 
+    createDropdownModels = () => {
+     const inputDropdownModel = ""
+     const outputDropdownModel = ""
+    }
+
     connectHandlers = () => {
       const initialCursorState = { position: -1, update: false };
-      const entryAcursorState = new CursorState(initialCursorState);
-      const entryBcursorstate = new CursorState(initialCursorState);
+      const inputEntrycursorState = new CursorState(initialCursorState);
       /**
-       * NOTE
+       * NOTE:
        * You can't connect insert-text event to Gtk.Entry directly.
        * Read more about it in the following reference docs:
        * • https://gitlab.gnome.org/GNOME/gtk/-/issues/4315
        * • https://docs.gtk.org/gtk4/iface.Editable.html#implementing-gtkeditable
        */
-      this._entryA.get_delegate().connect("insert-text", (...args) => {
-        this.insertText(...args, entryAcursorState);
-      });
-      this._entryB.get_delegate().connect("insert-text", (...args) => {
-        this.insertText(...args, entryBcursorstate);
+      this._input_entry.get_delegate().connect("insert-text", (...args) => {
+        this.insertText(...args, inputEntrycursorState);
       });
 
-      this._entryA.buffer.bind_property_full(
-        "text",
-        this._entryB.buffer,
-        "text",
-        GObject.BindingFlags.BIDIRECTIONAL | GObject.BindingFlags.SYNC_CREATE,
-        (binding, text) => {
-          if (!text) return [true, text];
-          const convertedText = text.length.toString();
-          return [true, convertedText];
-        },
-        (binding, text) => {
-          if (!text) return [true, text];
-          const convertedText = text.length.toString();
-          return [true, convertedText];
-        }
-      );
+      this._input_entry.connect("changed", (entry) => {
+        this.setCursorPosition(entry, inputEntrycursorState);
+        this.convertUnit();
+      });
+    };
 
-      this._entryA.connect("changed", (entry) => {
-        this.setCursorPosition(entry, entryAcursorState);
-      });
-      this._entryB.connect("changed", (entry) => {
-        this.setCursorPosition(entry, entryBcursorstate);
-      });
+    convertUnit = () => {
+      const input = this._input_entry.text;
+      if (!input.trim()) {
+        this._output_entry.text = "";
+        return;
+      }
+
+      if (!regexes.validNumber.test(input)) {
+        return;
+      }
+
+      const a = new BigNumber(input);
+      const b = new BigNumber("1000");
+      const c = new BigNumber("0.01");
+      const conversion = a.times(b).div(c).toString();
+
+      this._output_entry.text = conversion;
     };
 
     createActions = () => {
@@ -275,6 +279,12 @@ export const GaugeWindow = GObject.registerClass(
         "show-sidebar",
         Gio.SettingsBindFlags.DEFAULT
       );
+
+      settings.connect("changed::precision", this.updatePrecision);
+    };
+
+    updatePrecision = () => {
+      BigNumber.config({ DECIMAL_PLACES: settings.get_int("precision") });
     };
 
     createColorSchemeAction = () => {

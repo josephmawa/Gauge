@@ -140,7 +140,8 @@
                         <child>
                           <object class="GtkCenterBox">
                             <child type="start">
-                              <object class="GtkDropDown">
+                              <object class="GtkDropDown" id="input_dropdown">
+                                <property name="enable-search">True</property>
                                 <style>
                                   <class name="dropdown" />
                                 </style>
@@ -159,11 +160,11 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="entryA">
-                            <property name="placeholder-text" translatable="yes">Enter value</property>
+                          <object class="GtkEntry" id="input_entry">
+                            <property name="placeholder-text" translatable="yes">Input</property>
                             <property name="hexpand">True</property>
                             <accessibility>
-                              <property name="label" translatable="yes" context="a11y">Enter value</property>
+                              <property name="label" translatable="yes" context="a11y">Input</property>
                             </accessibility>
                           </object>
                         </child>
@@ -194,7 +195,8 @@
                         <child>
                           <object class="GtkCenterBox">
                             <child type="start">
-                              <object class="GtkDropDown">
+                              <object class="GtkDropDown" id="output_dropdown">
+                                <property name="enable-search">True</property>
                                 <style>
                                   <class name="dropdown" />
                                 </style>
@@ -213,11 +215,12 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="entryB">
-                            <property name="placeholder-text" translatable="yes">Enter value</property>
+                          <object class="GtkEntry" id="output_entry">
+                            <property name="placeholder-text" translatable="yes">Output</property>
                             <property name="hexpand">True</property>
+                            <property name="editable">False</property>
                             <accessibility>
-                              <property name="label" translatable="yes" context="a11y">Enter value</property>
+                              <property name="label" translatable="yes" context="a11y">Output</property>
                             </accessibility>
                           </object>
                         </child>

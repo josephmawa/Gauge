@@ -8,11 +8,11 @@ import {
   regexes,
   settings,
   CursorState,
-  processUnits,
   getCustomFilter,
+  processUnitGroups,
 } from "./util.js";
 import { units } from "./units.js";
-import { Unit } from "./gobjects.js";
+import { Unit, Group } from "./gobjects.js";
 
 /**
  * Big number library for large number manipulation and
@@ -70,26 +70,26 @@ export const GaugeWindow = GObject.registerClass(
 
     activateUnit(listView, position) {
       const item = listView.model.selected_item.item;
-      if (!item.children.length) {
+      if (!item.units) {
         this.unit_id = item.id;
       }
     }
 
     createSidebar = () => {
-      if (!this.processedUnits) {
-        this.processedUnits = processUnits(units);
+      if (!this.processedUnitGroups) {
+        this.processedUnitGroups = processUnitGroups(units);
       }
-      const store = Gio.ListStore.new(Unit);
+      const store = Gio.ListStore.new(Group);
 
-      for (const unit of this.processedUnits) {
-        store.append(new Unit(unit));
+      for (const group of this.processedUnitGroups) {
+        store.append(new Group(group));
       }
 
       this.customFilter = Gtk.CustomFilter.new(null);
       const filter = Gtk.FilterListModel.new(store, this.customFilter);
 
       const tree = Gtk.TreeListModel.new(filter, false, false, (item) => {
-        if (!item.children.length) return null;
+        if (item instanceof Unit) return null;
 
         const nestedStore = Gio.ListStore.new(Unit);
         const nestedModel = Gtk.FilterListModel.new(
@@ -97,7 +97,7 @@ export const GaugeWindow = GObject.registerClass(
           this.customFilter
         );
 
-        for (const unit of item.children) {
+        for (const unit of item.units) {
           nestedModel.model.append(new Unit(unit));
         }
         return nestedModel;
@@ -139,7 +139,7 @@ export const GaugeWindow = GObject.registerClass(
         listItem.child = new Gtk.TreeExpander({ child: hBox });
       });
 
-      factory.connect("bind", (_, listItem) => {
+      factory.connect("bind", (factory, listItem) => {
         const listRow = listItem.item;
         const expander = listItem.child;
 
@@ -148,23 +148,23 @@ export const GaugeWindow = GObject.registerClass(
         const hBox = expander.child;
         const label = hBox?.get_first_child()?.get_first_child();
         const image = hBox?.get_last_child()?.get_first_child();
-        const object = listRow.item;
+        const item = listRow.item;
 
         /** Make images on the non-root elements visible if selected */
-        if (!object.children.length) {
+        if (item instanceof Unit) {
           this.bind_property_full(
             "unit_id",
             image,
             "visible",
             GObject.BindingFlags.DEFAULT || GObject.BindingFlags.SYNC_CREATE,
             (_, unitId) => {
-              return [true, object.id === unitId];
+              return [true, item.id === unitId];
             },
             null
           );
         }
 
-        label.label = object.name;
+        label.label = item.label;
       });
 
       this._list_view.model = selection;
@@ -172,23 +172,23 @@ export const GaugeWindow = GObject.registerClass(
     };
 
     createDropdownModels = () => {
-      if (!this.processedUnits) {
-        this.processedUnits = processUnits(units);
+      if (!this.processedUnitGroups) {
+        this.processedUnitGroups = processUnitGroups(units);
       }
       const inputModel = Gio.ListStore.new(Unit);
       const outputModel = Gio.ListStore.new(Unit);
 
-      const defaultUnit = this.processedUnits.find((unit) => {
-        return unit.id === "meter";
+      const defaultUnitGroup = this.processedUnitGroups.find((group) => {
+        return group.idBaseUnit === "meter";
       });
 
-      for (const unit of defaultUnit.children) {
+      for (const unit of defaultUnitGroup.units) {
         inputModel.append(new Unit(unit));
         outputModel.append(new Unit(unit));
       }
 
-      const inputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
-      const outputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
+      const inputExpression = Gtk.PropertyExpression.new(Unit, null, "label");
+      const outputExpression = Gtk.PropertyExpression.new(Unit, null, "label");
 
       this._input_dropdown.expression = inputExpression;
       this._output_dropdown.expression = outputExpression;

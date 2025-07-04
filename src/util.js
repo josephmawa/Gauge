@@ -32,29 +32,24 @@ export class CursorState {
   }
 }
 
-export function processUnits(units) {
-  const processedUnits = [];
-  for (const unit of units) {
-    const object = {
-      id: unit.idBaseUnit,
-      name: unit.name,
-      children: [],
+export function processUnitGroups(unitGroups) {
+  return unitGroups.map((group) => {
+    return {
+      ...group,
+      units: group.units.map((unit) => {
+        return {
+          ...unit,
+          symbols: { ...unit.symbols },
+          idBaseUnit: group.idBaseUnit,
+        };
+      }),
     };
-    for (const { id, label } of unit.units) {
-      object.children.push({
-        id,
-        name:label,
-        children: [],
-      });
-    }
-    processedUnits.push(object);
-  }
-  return processedUnits;
+  });
 }
 
 export function getCustomFilter(string) {
   return (item) => {
-    if (item.children.length) return true;
-    return item.name.toLocaleLowerCase().includes(string);
+    if (item.units) return true;
+    return item.label.toLocaleLowerCase().includes(string);
   };
 }

@@ -7,14 +7,14 @@
 
 module.exports = [
   {
-    name: "Length",
+    label: "Length",
     idBaseUnit: "meter",
     units: [
       {
         id: "meter",
         label: "Meters",
         toBaseFactor: "1",
-        symbol: {
+        symbols: {
           full: "meter",
           short: "m",
           plural: "meters",
@@ -24,7 +24,7 @@ module.exports = [
         id: "kilometer",
         label: "Kilometers",
         toBaseFactor: "1000",
-        symbol: {
+        symbols: {
           full: "kilometer",
           short: "km",
           plural: "kilometers",
@@ -34,7 +34,7 @@ module.exports = [
         id: "centimeter",
         label: "Centimeters",
         toBaseFactor: "0.01",
-        symbol: {
+        symbols: {
           full: "centimeter",
           short: "cm",
           plural: "centimeters",
@@ -44,7 +44,7 @@ module.exports = [
         id: "mile",
         label: "Miles",
         toBaseFactor: "1609.344",
-        symbol: {
+        symbols: {
           full: "mile",
           short: "mi",
           plural: "miles",
@@ -53,14 +53,14 @@ module.exports = [
     ],
   },
   {
-    name: "Volume",
+    label: "Volume",
     idBaseUnit: "liter",
     units: [
       {
         id: "liter",
         label: "Liters",
         toBaseFactor: "1",
-        symbol: {
+        symbols: {
           full: "liter",
           short: "L",
           plural: "liters",
@@ -70,7 +70,7 @@ module.exports = [
         id: "milliliter",
         label: "Milliliters",
         toBaseFactor: "0.001",
-        symbol: {
+        symbols: {
           full: "milliliter",
           short: "mL",
           plural: "milliliters",
@@ -80,7 +80,7 @@ module.exports = [
         id: "gallon",
         label: "Gallons",
         toBaseFactor: "3.785411784",
-        symbol: {
+        symbols: {
           full: "gallon",
           short: "gal",
           plural: "gallons",
@@ -89,14 +89,14 @@ module.exports = [
     ],
   },
   {
-    name: "Speed",
+    label: "Speed",
     idBaseUnit: "meters_per_second",
     units: [
       {
         id: "meters_per_second",
         label: "Meters per Second",
         toBaseFactor: "1",
-        symbol: {
+        symbols: {
           full: "meter per second",
           short: "m/s",
           plural: "meters per second",
@@ -106,7 +106,7 @@ module.exports = [
         id: "kilometers_per_hour",
         label: "Kilometers per Hour",
         toBaseFactor: "0.277777778",
-        symbol: {
+        symbols: {
           full: "kilometer per hour",
           short: "km/h",
           plural: "kilometers per hour",
@@ -116,7 +116,7 @@ module.exports = [
         id: "mile_per_hour",
         label: "Miles per Hour",
         toBaseFactor: "0.44704",
-        symbol: {
+        symbols: {
           full: "mile per hour",
           short: "mph",
           plural: "miles per hour",

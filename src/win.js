@@ -8,11 +8,11 @@ import {
   regexes,
   settings,
   CursorState,
-  processUnits,
   getCustomFilter,
+  processUnitGroups,
 } from "./util.js";
 import { units } from "./units.js";
-import { Unit } from "./gobjects.js";
+import { Unit, Group } from "./gobjects.js";
 
 /**
  * Big number library for large number manipulation and
@@ -61,7 +61,7 @@ export const GaugeWindow = GObject.registerClass(
     handleSearch(searchEntry) {
       /**
        * FIXME:
-       * Searching on every keypress is inefficient. There is need
+       * Searching on every keypress is inefficient. Need
        * to debounce this method.
        */
       const searchText = searchEntry.text.trim().toLocaleLowerCase();
@@ -70,26 +70,85 @@ export const GaugeWindow = GObject.registerClass(
 
     activateUnit(listView, position) {
       const item = listView.model.selected_item.item;
-      if (!item.children.length) {
+      if (item instanceof Unit) {
+        this.updateSelectedItem(item);
         this.unit_id = item.id;
+        return;
       }
+      this.updateDropdowns(item);
+      this.unit_id = item.units[0]?.id;
     }
 
-    createSidebar = () => {
-      if (!this.processedUnits) {
-        this.processedUnits = processUnits(units);
+    updateSelectedItem = (item) => {
+      const inputModel = this._input_dropdown.model;
+      const outputModel = this._output_dropdown.model;
+      if (item.idBaseUnit !== inputModel.get_item(0)?.idBaseUnit) {
+        /**
+         * User has clicked unit in a different group. Retrieve that
+         * group and update dropdowns.
+         */
+        const model = this._list_view.model.model.model.model;
+        for (let i = 0; i < model.n_items; i++) {
+          const groupItem = model.get_item(i);
+          if (item.idBaseUnit === groupItem.idBaseUnit) {
+            this.updateDropdowns(groupItem);
+            break;
+          }
+        }
       }
-      const store = Gio.ListStore.new(Unit);
 
-      for (const unit of this.processedUnits) {
-        store.append(new Unit(unit));
+      if (inputModel.n_items !== outputModel.n_items) {
+        throw new Error("Dropdowns must've same items");
+      }
+
+      for (let i = 0; i < inputModel.n_items; i++) {
+        const inputItem = inputModel.get_item(i);
+        const outputItem = outputModel.get_item(i);
+
+        if (inputItem.id === item.id && outputItem.id === item.id) {
+          this._input_dropdown.selected = i;
+          this._output_dropdown.selected = i;
+          break;
+        }
+      }
+    };
+
+    updateDropdowns = (item) => {
+      const inputModel = this._input_dropdown.model;
+      const outputModel = this._output_dropdown.model;
+
+      /**
+       * User clicked a unit group while the selected unit is
+       * in the same group.
+       */
+      if (item.idBaseUnit === inputModel.get_item(0)?.idBaseUnit) {
+        return;
+      }
+
+      inputModel.remove_all();
+      outputModel.remove_all();
+
+      for (const unit of item.units) {
+        inputModel.append(new Unit(unit));
+        outputModel.append(new Unit(unit));
+      }
+    };
+
+    createSidebar = () => {
+      if (!this.processedUnitGroups) {
+        this.processedUnitGroups = processUnitGroups(units);
+      }
+      const store = Gio.ListStore.new(Group);
+
+      for (const group of this.processedUnitGroups) {
+        store.append(new Group(group));
       }
 
       this.customFilter = Gtk.CustomFilter.new(null);
       const filter = Gtk.FilterListModel.new(store, this.customFilter);
 
       const tree = Gtk.TreeListModel.new(filter, false, false, (item) => {
-        if (!item.children.length) return null;
+        if (item instanceof Unit) return null;
 
         const nestedStore = Gio.ListStore.new(Unit);
         const nestedModel = Gtk.FilterListModel.new(
@@ -97,7 +156,7 @@ export const GaugeWindow = GObject.registerClass(
           this.customFilter
         );
 
-        for (const unit of item.children) {
+        for (const unit of item.units) {
           nestedModel.model.append(new Unit(unit));
         }
         return nestedModel;
@@ -139,7 +198,7 @@ export const GaugeWindow = GObject.registerClass(
         listItem.child = new Gtk.TreeExpander({ child: hBox });
       });
 
-      factory.connect("bind", (_, listItem) => {
+      factory.connect("bind", (factory, listItem) => {
         const listRow = listItem.item;
         const expander = listItem.child;
 
@@ -148,23 +207,23 @@ export const GaugeWindow = GObject.registerClass(
         const hBox = expander.child;
         const label = hBox?.get_first_child()?.get_first_child();
         const image = hBox?.get_last_child()?.get_first_child();
-        const object = listRow.item;
+        const item = listRow.item;
 
         /** Make images on the non-root elements visible if selected */
-        if (!object.children.length) {
+        if (item instanceof Unit) {
           this.bind_property_full(
             "unit_id",
             image,
             "visible",
             GObject.BindingFlags.DEFAULT || GObject.BindingFlags.SYNC_CREATE,
             (_, unitId) => {
-              return [true, object.id === unitId];
+              return [true, item.id === unitId];
             },
             null
           );
         }
 
-        label.label = object.name;
+        label.label = item.label;
       });
 
       this._list_view.model = selection;
@@ -172,29 +231,51 @@ export const GaugeWindow = GObject.registerClass(
     };
 
     createDropdownModels = () => {
-      if (!this.processedUnits) {
-        this.processedUnits = processUnits(units);
+      if (!this.processedUnitGroups) {
+        this.processedUnitGroups = processUnitGroups(units);
       }
       const inputModel = Gio.ListStore.new(Unit);
       const outputModel = Gio.ListStore.new(Unit);
 
-      const defaultUnit = this.processedUnits.find((unit) => {
-        return unit.id === "meter";
+      const defaultUnitGroup = this.processedUnitGroups.find((group) => {
+        return group.idBaseUnit === "meter";
       });
 
-      for (const unit of defaultUnit.children) {
+      for (const unit of defaultUnitGroup.units) {
         inputModel.append(new Unit(unit));
         outputModel.append(new Unit(unit));
       }
 
-      const inputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
-      const outputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
+      const inputExpression = Gtk.PropertyExpression.new(Unit, null, "label");
+      const outputExpression = Gtk.PropertyExpression.new(Unit, null, "label");
 
       this._input_dropdown.expression = inputExpression;
       this._output_dropdown.expression = outputExpression;
 
       this._input_dropdown.model = inputModel;
       this._output_dropdown.model = outputModel;
+
+      this._input_dropdown.connect(
+        "notify::selected",
+        this.unitSelectedHandler
+      );
+      this._output_dropdown.connect(
+        "notify::selected",
+        this.unitSelectedHandler
+      );
+      this.unitSelectedHandler();
+    };
+
+    /**
+     * FIXME:
+     * This event handler is invoked as many times as there
+     * are items in the dropdown when switching unit groups.
+     */
+    unitSelectedHandler = () => {
+      if (!this.convertUnitDebounced) {
+        this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
+      }
+      this.convertUnitDebounced();
     };
 
     connectHandlers = () => {
@@ -228,12 +309,16 @@ export const GaugeWindow = GObject.registerClass(
       }
 
       if (!regexes.validNumber.test(input)) {
+        /** Set an appropriate css class before returning */
         return;
       }
 
+      const inputItem = this._input_dropdown.selected_item;
+      const outputItem = this._output_dropdown.selected_item;
+
       const a = new BigNumber(input);
-      const b = new BigNumber("1000");
-      const c = new BigNumber("0.01");
+      const b = new BigNumber(inputItem.toBaseFactor);
+      const c = new BigNumber(outputItem.toBaseFactor);
       const conversion = a.times(b).div(c).toString();
 
       this._output_entry.text = conversion;

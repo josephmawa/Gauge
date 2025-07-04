@@ -200,6 +200,9 @@ export const GaugeWindow = GObject.registerClass(
     connectHandlers = () => {
       const initialCursorState = { position: -1, update: false };
       const inputEntrycursorState = new CursorState(initialCursorState);
+      if (!this.convertUnitDebounced) {
+        this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
+      }
       /**
        * NOTE:
        * You can't connect insert-text event to Gtk.Entry directly.
@@ -213,7 +216,7 @@ export const GaugeWindow = GObject.registerClass(
 
       this._input_entry.connect("changed", (entry) => {
         this.setCursorPosition(entry, inputEntrycursorState);
-        this.convertUnit();
+        this.convertUnitDebounced();
       });
     };
 

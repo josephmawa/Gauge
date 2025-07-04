@@ -145,16 +145,6 @@
                                 <style>
                                   <class name="dropdown" />
                                 </style>
-                                <!-- This model is a placeholder -->
-                                <property name="model">
-                                  <object class="GtkStringList">
-                                    <items>
-                                      <item translatable="yes">Factory</item>
-                                      <item translatable="yes">Home</item>
-                                      <item translatable="yes">Subway</item>
-                                    </items>
-                                  </object>
-                                </property>
                               </object>
                             </child>
                           </object>
@@ -200,16 +190,6 @@
                                 <style>
                                   <class name="dropdown" />
                                 </style>
-                                <!-- This model is a placeholder -->
-                                <property name="model">
-                                  <object class="GtkStringList">
-                                    <items>
-                                      <item translatable="yes">Factory</item>
-                                      <item translatable="yes">Home</item>
-                                      <item translatable="yes">Subway</item>
-                                    </items>
-                                  </object>
-                                </property>
                               </object>
                             </child>
                           </object>

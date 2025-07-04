@@ -54,6 +54,7 @@ export const GaugeWindow = GObject.registerClass(
       this.setColorScheme();
       this.connectHandlers();
       this.updatePrecision();
+      this.createDropdownModels();
       this.createColorSchemeAction();
     }
 
@@ -75,10 +76,12 @@ export const GaugeWindow = GObject.registerClass(
     }
 
     createSidebar = () => {
-      const processedUnits = processUnits(units);
+      if (!this.processedUnits) {
+        this.processedUnits = processUnits(units);
+      }
       const store = Gio.ListStore.new(Unit);
 
-      for (const unit of processedUnits) {
+      for (const unit of this.processedUnits) {
         store.append(new Unit(unit));
       }
 
@@ -169,9 +172,30 @@ export const GaugeWindow = GObject.registerClass(
     };
 
     createDropdownModels = () => {
-     const inputDropdownModel = ""
-     const outputDropdownModel = ""
-    }
+      if (!this.processedUnits) {
+        this.processedUnits = processUnits(units);
+      }
+      const inputModel = Gio.ListStore.new(Unit);
+      const outputModel = Gio.ListStore.new(Unit);
+
+      const defaultUnit = this.processedUnits.find((unit) => {
+        return unit.id === "meter";
+      });
+
+      for (const unit of defaultUnit.children) {
+        inputModel.append(new Unit(unit));
+        outputModel.append(new Unit(unit));
+      }
+
+      const inputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
+      const outputExpression = Gtk.PropertyExpression.new(Unit, null, "name");
+
+      this._input_dropdown.expression = inputExpression;
+      this._output_dropdown.expression = outputExpression;
+
+      this._input_dropdown.model = inputModel;
+      this._output_dropdown.model = outputModel;
+    };
 
     connectHandlers = () => {
       const initialCursorState = { position: -1, update: false };

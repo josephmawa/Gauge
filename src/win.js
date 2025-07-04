@@ -61,7 +61,7 @@ export const GaugeWindow = GObject.registerClass(
     handleSearch(searchEntry) {
       /**
        * FIXME:
-       * Searching on every keypress is inefficient. There is need
+       * Searching on every keypress is inefficient. Need
        * to debounce this method.
        */
       const searchText = searchEntry.text.trim().toLocaleLowerCase();
@@ -70,10 +70,69 @@ export const GaugeWindow = GObject.registerClass(
 
     activateUnit(listView, position) {
       const item = listView.model.selected_item.item;
-      if (!item.units) {
+      if (item instanceof Unit) {
+        this.updateSelectedItem(item);
         this.unit_id = item.id;
+        return;
       }
+      this.updateDropdowns(item);
+      this.unit_id = item.units[0]?.id;
     }
+
+    updateSelectedItem = (item) => {
+      const inputModel = this._input_dropdown.model;
+      const outputModel = this._output_dropdown.model;
+      if (item.idBaseUnit !== inputModel.get_item(0)?.idBaseUnit) {
+        /**
+         * User has clicked unit in a different group. Retrieve that
+         * group and update dropdowns.
+         */
+        const model = this._list_view.model.model.model.model;
+        for (let i = 0; i < model.n_items; i++) {
+          const groupItem = model.get_item(i);
+          if (item.idBaseUnit === groupItem.idBaseUnit) {
+            this.updateDropdowns(groupItem);
+            break;
+          }
+        }
+      }
+
+      if (inputModel.n_items !== outputModel.n_items) {
+        throw new Error("Dropdowns must've same items");
+      }
+
+      for (let i = 0; i < inputModel.n_items; i++) {
+        const inputItem = inputModel.get_item(i);
+        const outputItem = outputModel.get_item(i);
+
+        if (inputItem.id === item.id && outputItem.id === item.id) {
+          this._input_dropdown.selected = i;
+          this._output_dropdown.selected = i;
+          break;
+        }
+      }
+    };
+
+    updateDropdowns = (item) => {
+      const inputModel = this._input_dropdown.model;
+      const outputModel = this._output_dropdown.model;
+
+      /**
+       * User clicked a unit group while the selected unit is
+       * in the same group.
+       */
+      if (item.idBaseUnit === inputModel.get_item(0)?.idBaseUnit) {
+        return;
+      }
+
+      inputModel.remove_all();
+      outputModel.remove_all();
+
+      for (const unit of item.units) {
+        inputModel.append(new Unit(unit));
+        outputModel.append(new Unit(unit));
+      }
+    };
 
     createSidebar = () => {
       if (!this.processedUnitGroups) {
@@ -195,6 +254,28 @@ export const GaugeWindow = GObject.registerClass(
 
       this._input_dropdown.model = inputModel;
       this._output_dropdown.model = outputModel;
+
+      this._input_dropdown.connect(
+        "notify::selected",
+        this.unitSelectedHandler
+      );
+      this._output_dropdown.connect(
+        "notify::selected",
+        this.unitSelectedHandler
+      );
+      this.unitSelectedHandler();
+    };
+
+    /**
+     * FIXME:
+     * This event handler is invoked as many times as there
+     * are items in the dropdown when switching unit groups.
+     */
+    unitSelectedHandler = () => {
+      if (!this.convertUnitDebounced) {
+        this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
+      }
+      this.convertUnitDebounced();
     };
 
     connectHandlers = () => {
@@ -228,12 +309,16 @@ export const GaugeWindow = GObject.registerClass(
       }
 
       if (!regexes.validNumber.test(input)) {
+        /** Set an appropriate css class before returning */
         return;
       }
 
+      const inputItem = this._input_dropdown.selected_item;
+      const outputItem = this._output_dropdown.selected_item;
+
       const a = new BigNumber(input);
-      const b = new BigNumber("1000");
-      const c = new BigNumber("0.01");
+      const b = new BigNumber(inputItem.toBaseFactor);
+      const c = new BigNumber(outputItem.toBaseFactor);
       const conversion = a.times(b).div(c).toString();
 
       this._output_entry.text = conversion;

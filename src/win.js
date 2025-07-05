@@ -169,6 +169,7 @@ export const GaugeWindow = GObject.registerClass(
         const hBox = new Gtk.Box({
           orientation: Gtk.Orientation.HORIZONTAL,
           halign: Gtk.Align.FILL,
+          spacing: 10,
         });
 
         const hBoxInnerOne = new Gtk.Box({

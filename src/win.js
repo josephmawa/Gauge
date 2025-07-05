@@ -398,7 +398,12 @@ export const GaugeWindow = GObject.registerClass(
     };
 
     updatePrecision = () => {
+      if (!this.convertUnitDebounced) {
+        this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
+      }
+      
       BigNumber.config({ DECIMAL_PLACES: settings.get_int("precision") });
+      this.convertUnitDebounced();
     };
 
     createColorSchemeAction = () => {

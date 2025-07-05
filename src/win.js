@@ -2,6 +2,7 @@ import Adw from "gi://Adw";
 import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
+import Pango from "gi://Pango";
 import GObject from "gi://GObject";
 
 import {
@@ -183,7 +184,7 @@ export const GaugeWindow = GObject.registerClass(
           hexpand: true,
         });
 
-        const label = new Gtk.Label();
+        const label = new Gtk.Label({ ellipsize: Pango.EllipsizeMode.END });
         const icon = new Gtk.Image({
           icon_name: "gauge-object-select-symbolic",
           visible: false,

@@ -9,8 +9,10 @@
   <description>
    <p>Gauge is a high precision unit conversion tool. Below are the main features:</p>
     <ul>
-      <li>Supports most of the common units</li>
-      <li>Provides user-friendly interface</li>
+      <li>Instant conversion</li>
+      <li>Precision control</li>
+      <li>Provides extensive unit categories</li>
+      <li>It has intuitive and user-friendly interface</li>
       <li>Switch to light, dark, or system mode</li>
     </ul>
   </description>

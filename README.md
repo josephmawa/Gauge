@@ -23,9 +23,12 @@ Gauge is a simple unit coversion app for the Gnome desktop environment.
 
  ## Main features
 
-- Convert from one unit to another
-- Add custom units
-- Switch to dark, light or system mode
+- ✅ Instant conversion
+- ✅ Precision control
+- ❌ Add custom units
+- ✅ Provides extensive unit categories
+- ✅ It has intuitive and user-friendly interface
+- ✅ Switch to light, dark, or system mode
 
 ## Contributing
 
@@ -59,11 +62,16 @@ will always be free. It is released under the terms of the
 ## Acknowledgment
 
 The app uses [bignumber.js](https://mikemcl.github.io/bignumber.js/) for handling
-large numbers. Thank you Michael M and the other maintainers of bignumber.js.
+large numbers. Thank you, Michael M, and the other maintainers of `bignumber.js`.
+
+The design is inspired by [Amberol](https://flathub.org/apps/io.bassi.Amberol) and
+[Binary](https://flathub.org/apps/io.github.fizzyizzy05.binary). A big thank you
+to Emmanuel Basi and Isabella Jackson, the maintainers of Amberol and Binary,
+respectively.
 
 ## License
 
-This project is [GPL-3.0 Licensed](./COPYING) and bignumber.js is MIT-Licensed.
+This project is [GPL-3.0 Licensed](./COPYING) and `bignumber.js` is MIT-Licensed.
 
 ## Copyright
 

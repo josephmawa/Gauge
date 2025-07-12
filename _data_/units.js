@@ -124,4 +124,50 @@ module.exports = [
       },
     ],
   },
+  {
+    label: "Time",
+    idBaseUnit: "seconds",
+    units: [
+      {
+        id: "seconds",
+        label: "Seconds",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Second",
+          short: "s",
+          plural: "Seconds",
+        },
+      },
+      {
+        id: "minutes",
+        label: "Minutes",
+        toBaseFactor: "60",
+        symbols: {
+          full: "Minute",
+          short: "m",
+          plural: "Minutes",
+        },
+      },
+      {
+        id: "hours",
+        label: "Hours",
+        toBaseFactor: "3600",
+        symbols: {
+          full: "Hour",
+          short: "h",
+          plural: "Hours",
+        },
+      },
+      {
+        id: "days",
+        label: "Days",
+        toBaseFactor: "86400",
+        symbols: {
+          full: "Day",
+          short: "d",
+          plural: "Days",
+        },
+      },
+    ],
+  },
 ];

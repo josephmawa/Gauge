@@ -41,6 +41,16 @@ module.exports = [
         },
       },
       {
+        id: "millimeter",
+        label: "Millimeters",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "millimeter",
+          short: "mm",
+          plural: "millimeters",
+        },
+      },
+      {
         id: "mile",
         label: "Miles",
         toBaseFactor: "1609.344",
@@ -48,6 +58,36 @@ module.exports = [
           full: "mile",
           short: "mi",
           plural: "miles",
+        },
+      },
+      {
+        id: "yard",
+        label: "Yards",
+        toBaseFactor: "0.9144",
+        symbols: {
+          full: "yard",
+          short: "yd",
+          plural: "yards",
+        },
+      },
+      {
+        id: "feet",
+        label: "Feet",
+        toBaseFactor: "0.3048",
+        symbols: {
+          full: "foot",
+          short: "ft",
+          plural: "feet",
+        },
+      },
+      {
+        id: "inch",
+        label: "Inches",
+        toBaseFactor: "0.0254",
+        symbols: {
+          full: "inch",
+          short: "in",
+          plural: "inches",
         },
       },
     ],

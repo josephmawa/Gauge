@@ -1,4 +1,5 @@
 import Adw from "gi://Adw";
+import Gdk from "gi://Gdk";
 import Gtk from "gi://Gtk";
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
@@ -40,6 +41,7 @@ export const GaugeWindow = GObject.registerClass(
       "split_view",
       "input_entry",
       "output_entry",
+      "toast_overlay",
       "input_dropdown",
       "output_dropdown",
     ],
@@ -49,6 +51,7 @@ export const GaugeWindow = GObject.registerClass(
       super({ application });
 
       this.loadStyles();
+      this.createToast();
       this.bindSettings();
       this.createSidebar();
       this.createActions();
@@ -401,7 +404,7 @@ export const GaugeWindow = GObject.registerClass(
       if (!this.convertUnitDebounced) {
         this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
       }
-      
+
       BigNumber.config({ DECIMAL_PLACES: settings.get_int("precision") });
       this.convertUnitDebounced();
     };
@@ -473,10 +476,26 @@ export const GaugeWindow = GObject.registerClass(
       this.toast = new Adw.Toast({ timeout });
     };
 
+    entryIconPressHandler(entry, iconPos) {
+      if (Gtk.EntryIconPosition.SECONDARY === iconPos) {
+        const text = entry.get_text();
+        if (!text) return;
+
+        this.copyToClipboard(text);
+        this.displayToast(_("Copied value"));
+      }
+    }
+
     displayToast = (message) => {
       this.toast.dismiss();
       this.toast.title = message;
       this._toast_overlay.add_toast(this.toast);
+    };
+
+    copyToClipboard = (text) => {
+      const clipboard = this.display.get_clipboard();
+      const contentProvider = Gdk.ContentProvider.new_for_value(text);
+      clipboard.set_content(contentProvider);
     };
 
     debounce = (callback, wait = 300) => {

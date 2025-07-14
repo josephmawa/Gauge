@@ -93,6 +93,92 @@ module.exports = [
     ],
   },
   {
+    label: "Area",
+    idBaseUnit: "square_meter",
+    units: [
+      {
+        id: "square_meter",
+        label: "Square Meters",
+        toBaseFactor: "1",
+        symbols: {
+          full: "square meter",
+          short: "m&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square meters",
+        },
+      },
+      {
+        id: "square_kilometer",
+        label: "Square Kilometers",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "kilometer",
+          short: "km&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "kilometers",
+        },
+      },
+      {
+        id: "square_centimeter",
+        label: "Square Centimeters",
+        toBaseFactor: "0.0001",
+        symbols: {
+          full: "square centimeter",
+          short: "cm&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square centimeters",
+        },
+      },
+      {
+        id: "square_millimeter",
+        label: "Square Millimeters",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "square millimeter",
+          short: "mm&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square millimeters",
+        },
+      },
+      {
+        id: "square_mile",
+        label: "Square Miles",
+        toBaseFactor: "2589988.110336",
+        symbols: {
+          full: "square mile",
+          short: "mi&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square miles",
+        },
+      },
+      {
+        id: "square yard",
+        label: "Square Yards",
+        toBaseFactor: "0.83612736",
+        symbols: {
+          full: "square yard",
+          short: "yd&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square yards",
+        },
+      },
+      {
+        id: "square_feet",
+        label: "Square Feet",
+        toBaseFactor: "0.09290304",
+        symbols: {
+          full: "square foot",
+          short: "ft&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square feet",
+        },
+      },
+      {
+        id: "square_inch",
+        label: "Square Inches",
+        toBaseFactor: "0.00064516",
+        symbols: {
+          full: "square inch",
+          short: "in&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "square inches",
+        },
+      },
+    ],
+  },
+  {
     label: "Volume",
     idBaseUnit: "liter",
     units: [

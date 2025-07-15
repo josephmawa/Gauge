@@ -296,4 +296,126 @@ module.exports = [
       },
     ],
   },
+  {
+    label: "Mass",
+    idBaseUnit: "grams",
+    units: [
+      {
+        id: "grams",
+        label: "Grams",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Gram",
+          short: "g",
+          plural: "Grams",
+        },
+      },
+      {
+        id: "kilograms",
+        label: "Kilograms",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilogram",
+          short: "kg",
+          plural: "Kilograms",
+        },
+      },
+      {
+        id: "pounds",
+        label: "Pounds",
+        toBaseFactor: "453.6",
+        symbols: {
+          full: "Pound",
+          short: "lb",
+          plural: "Pounds",
+        },
+      },
+      {
+        id: "ounces",
+        label: "Ounces",
+        toBaseFactor: "28",
+        symbols: {
+          full: "Ounce",
+          short: "oz",
+          plural: "Ounces",
+        },
+      },
+      {
+        id: "metric_ton",
+        label: "Metric Tonnes",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Metric Tonne",
+          short: "tonne",
+          plural: "Metric Tonnes",
+        },
+      },
+      {
+        id: "short_ton",
+        label: "Short Tons",
+        toBaseFactor: "907200",
+        symbols: {
+          full: "Short Ton",
+          short: "sh. tn",
+          plural: "Short Tons",
+        },
+      },
+      {
+        id: "long_ton",
+        label: "Long Tons",
+        toBaseFactor: "1016000",
+        symbols: {
+          full: "Long Ton",
+          short: "l. ton",
+          plural: "Long Tons",
+        },
+      },
+    ],
+  },
+  {
+    label: "Numeral Systems",
+    idBaseUnit: "decimal",
+    units: [
+      {
+        id: "decimal",
+        label: "Decimal",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Decimal",
+          short: "10",
+          plural: "Decimal",
+        },
+      },
+      {
+        id: "binary",
+        label: "Binary",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Binary",
+          short: "2",
+          plural: "Binary",
+        },
+      },
+      {
+        id: "octal",
+        label: "Octal",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Octal",
+          short: "8",
+          plural: "Octal",
+        },
+      },
+      {
+        id: "hexadecimal",
+        label: "Hexadecimal",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Hexadecimal",
+          short: "16",
+          plural: "Hexadecimal",
+        },
+      },
+    ],
+  },
 ];

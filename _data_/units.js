@@ -418,4 +418,60 @@ module.exports = [
       },
     ],
   },
+  {
+    label: "Angles",
+    idBaseUnit: "degrees",
+    units: [
+      {
+        id: "degrees",
+        label: "Degrees",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Degree",
+          short: "°",
+          plural: "Degrees",
+        },
+      },
+      {
+        id: "radians",
+        label: "Radians",
+        toBaseFactor: "57.29577951",
+        symbols: {
+          full: "Radian",
+          short: "rad",
+          plural: "Radians",
+        },
+      },
+      {
+        id: "gradians",
+        label: "Gradians",
+        toBaseFactor: "0.9",
+        symbols: {
+          full: "Gradian",
+          short: "grad",
+          plural: "Gradians",
+        },
+      },
+      {
+        id: "minutes",
+        label: "Minutes",
+        toBaseFactor: "0.01666666667",
+        symbols: {
+          full: "Minute",
+          short: "'",
+          plural: "Minutes",
+        },
+      },
+      {
+        id: "seconds",
+        label: "Seconds",
+        toBaseFactor: "0.0002777777778",
+        symbols: {
+          full: "Second",
+          short: "\"",
+          plural: "Seconds",
+        },
+      },
+    ],
+  },
 ];

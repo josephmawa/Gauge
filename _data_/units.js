@@ -297,6 +297,62 @@ module.exports = [
     ],
   },
   {
+    label: "Frequency",
+    idBaseUnit: "hertz",
+    units: [
+      {
+        id: "hertz",
+        label: "Hertz",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Hertz",
+          short: "Hz",
+          plural: "Hertz",
+        },
+      },
+      {
+        id: "kilohertz",
+        label: "Kilohertz",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilohertz",
+          short: "kHz",
+          plural: "Kilohertz",
+        },
+      },
+      {
+        id: "megahertz",
+        label: "Megahertz",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megahertz",
+          short: "MHz",
+          plural: "Megahertz",
+        },
+      },
+      {
+        id: "gigahertz",
+        label: "Gigahertz",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigahertz",
+          short: "GHz",
+          plural: "Gigahertz",
+        },
+      },
+      {
+        id: "terahertz",
+        label: "Terahertz",
+        toBaseFactor: "1000000000000",
+        symbols: {
+          full: "Terahertz",
+          short: "THz",
+          plural: "Terahertz",
+        },
+      },
+    ],
+  },
+  {
     label: "Mass",
     idBaseUnit: "grams",
     units: [

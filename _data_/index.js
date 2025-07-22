@@ -17,7 +17,7 @@ const comments = /\/\*\*[\s\S]*\*\//gm;
  */
 const replace = /(name|label): ".+"/gm;
 const remove = /(full|plural): ".+",/gm;
-const whiteSpaces = /\s+(?=(?:(?:[^"]*"){2})*[^"]*$)|\n/gm;
+const whiteSpaces = /(?<!\w)\s+(?!\w)(?=(?:(?:[^"]*"){2})*[^"]*$)|\n/gm;
 
 const [arg, ...rest] = process.argv.slice(2);
 if (rest.length) {

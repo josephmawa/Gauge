@@ -107,6 +107,26 @@ module.exports = [
         },
       },
       {
+        id: "acre",
+        label: "Acre",
+        toBaseFactor: "4046.8564224",
+        symbols: {
+          full: "acre",
+          short: "ac",
+          plural: "acres",
+        },
+      },
+      {
+        id: "hectare",
+        label: "Hectare",
+        toBaseFactor: "10000",
+        symbols: {
+          full: "hectare",
+          short: "ha",
+          plural: "hectares",
+        },
+      },
+      {
         id: "square_kilometer",
         label: "Square Kilometers",
         toBaseFactor: "1000000",
@@ -215,6 +235,42 @@ module.exports = [
     ],
   },
   {
+    label: "Temperature",
+    idBaseUnit: "celsius",
+    units: [
+      {
+        id: "celsius",
+        label: "Celsius",
+        toBaseFactor: "1",
+        symbols: {
+          full: "degree Celsius",
+          short: "°C",
+          plural: "degrees Celsius",
+        },
+      },
+      {
+        id: "fahrenheit",
+        label: "Fahrenheit",
+        toBaseFactor: "1",
+        symbols: {
+          full: "degree Fahrenheit",
+          short: "°F",
+          plural: "degrees Fahrenheit",
+        },
+      },
+      {
+        id: "kelvin",
+        label: "Kelvin",
+        toBaseFactor: "1",
+        symbols: {
+          full: "kelvin",
+          short: "K",
+          plural: "kelvins",
+        },
+      },
+    ],
+  },
+  {
     label: "Speed",
     idBaseUnit: "meters_per_second",
     units: [
@@ -251,7 +307,7 @@ module.exports = [
     ],
   },
   {
-    label: "Time",
+    label: "Duration",
     idBaseUnit: "seconds",
     units: [
       {
@@ -292,6 +348,92 @@ module.exports = [
           full: "Day",
           short: "d",
           plural: "Days",
+        },
+      },
+      {
+        id: "weeks",
+        label: "Weeks",
+        toBaseFactor: "604800",
+        symbols: {
+          full: "Week",
+          short: "wk",
+          plural: "Weeks",
+        },
+      },
+      {
+        id: "milliseconds",
+        label: "Milliseconds",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Millisecond",
+          short: "ms",
+          plural: "Milliseconds",
+        },
+      },
+      {
+        id: "microseconds",
+        label: "Microseconds",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "Microsecond",
+          short: "µs",
+          plural: "Microseconds",
+        },
+      },
+    ],
+  },
+  {
+    label: "Frequency",
+    idBaseUnit: "hertz",
+    units: [
+      {
+        id: "hertz",
+        label: "Hertz",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Hertz",
+          short: "Hz",
+          plural: "Hertz",
+        },
+      },
+      {
+        id: "kilohertz",
+        label: "Kilohertz",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilohertz",
+          short: "kHz",
+          plural: "Kilohertz",
+        },
+      },
+      {
+        id: "megahertz",
+        label: "Megahertz",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megahertz",
+          short: "MHz",
+          plural: "Megahertz",
+        },
+      },
+      {
+        id: "gigahertz",
+        label: "Gigahertz",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigahertz",
+          short: "GHz",
+          plural: "Gigahertz",
+        },
+      },
+      {
+        id: "terahertz",
+        label: "Terahertz",
+        toBaseFactor: "1000000000000",
+        symbols: {
+          full: "Terahertz",
+          short: "THz",
+          plural: "Terahertz",
         },
       },
     ],
@@ -468,8 +610,580 @@ module.exports = [
         toBaseFactor: "0.0002777777778",
         symbols: {
           full: "Second",
-          short: "\"",
+          short: '"',
           plural: "Seconds",
+        },
+      },
+    ],
+  },
+  {
+    label: "SI Prefixes",
+    idBaseUnit: "base",
+    units: [
+      {
+        id: "base",
+        label: "Base",
+        toBaseFactor: "1",
+        symbols: {
+          full: "",
+          short: "",
+          plural: "",
+        },
+      },
+      {
+        id: "deca",
+        label: "Deca",
+        toBaseFactor: "10",
+        symbols: {
+          full: "Deca",
+          short: "da",
+          plural: "Deca",
+        },
+      },
+      {
+        id: "hecto",
+        label: "Hecto",
+        toBaseFactor: "100",
+        symbols: {
+          full: "Hecto",
+          short: "h",
+          plural: "Hecto",
+        },
+      },
+      {
+        id: "kilo",
+        label: "Kilo",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilo",
+          short: "k",
+          plural: "Kilo",
+        },
+      },
+      {
+        id: "mega",
+        label: "Mega",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Mega",
+          short: "M",
+          plural: "Mega",
+        },
+      },
+      {
+        id: "giga",
+        label: "Giga",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Giga",
+          short: "G",
+          plural: "Giga",
+        },
+      },
+      {
+        id: "tera",
+        label: "Tera",
+        toBaseFactor: "1000000000000",
+        symbols: {
+          full: "Tera",
+          short: "T",
+          plural: "Tera",
+        },
+      },
+      {
+        id: "peta",
+        label: "Peta",
+        toBaseFactor: "1000000000000000",
+        symbols: {
+          full: "Peta",
+          short: "P",
+          plural: "Peta",
+        },
+      },
+      {
+        id: "exa",
+        label: "Exa",
+        toBaseFactor: "1000000000000000000",
+        symbols: {
+          full: "Exa",
+          short: "E",
+          plural: "Exa",
+        },
+      },
+      {
+        id: "zetta",
+        label: "Zetta",
+        toBaseFactor: "1000000000000000000000",
+        symbols: {
+          full: "Zetta",
+          short: "Z",
+          plural: "Zetta",
+        },
+      },
+      {
+        id: "yotta",
+        label: "Yotta",
+        toBaseFactor: "1000000000000000000000000",
+        symbols: {
+          full: "Yotta",
+          short: "Y",
+          plural: "Yotta",
+        },
+      },
+      {
+        id: "deci",
+        label: "Deci",
+        toBaseFactor: "0.1",
+        symbols: {
+          full: "Deci",
+          short: "d",
+          plural: "Deci",
+        },
+      },
+      {
+        id: "centi",
+        label: "Centi",
+        toBaseFactor: "0.01",
+        symbols: {
+          full: "Centi",
+          short: "c",
+          plural: "Centi",
+        },
+      },
+      {
+        id: "milli",
+        label: "Milli",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Milli",
+          short: "milli",
+          plural: "Milli",
+        },
+      },
+      {
+        id: "micro",
+        label: "Micro",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "Micro",
+          short: "µ",
+          plural: "Micro",
+        },
+      },
+      {
+        id: "nano",
+        label: "Nano",
+        toBaseFactor: "0.000000001",
+        symbols: {
+          full: "Nano",
+          short: "n",
+          plural: "Nano",
+        },
+      },
+      {
+        id: "pico",
+        label: "Pico",
+        toBaseFactor: "0.000000000001",
+        symbols: {
+          full: "Pico",
+          short: "p",
+          plural: "Pico",
+        },
+      },
+      {
+        id: "femto",
+        label: "Femto",
+        toBaseFactor: "0.000000000000001",
+        symbols: {
+          full: "Femto",
+          short: "f",
+          plural: "Femto",
+        },
+      },
+      {
+        id: "atto",
+        label: "Atto",
+        toBaseFactor: "0.000000000000000001",
+        symbols: {
+          full: "Atto",
+          short: "a",
+          plural: "Atto",
+        },
+      },
+      {
+        id: "zepto",
+        label: "Zepto",
+        toBaseFactor: "0.000000000000000000001",
+        symbols: {
+          full: "Zepto",
+          short: "z",
+          plural: "Zepto",
+        },
+      },
+      {
+        id: "yocto",
+        label: "Yocto",
+        toBaseFactor: "0.000000000000000000000001",
+        symbols: {
+          full: "Yocto",
+          short: "y",
+          plural: "Yocto",
+        },
+      },
+    ],
+  },
+  {
+    label: "Digital Storage",
+    idBaseUnit: "bits",
+    units: [
+      {
+        id: "bits",
+        label: "Bits",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Bit",
+          short: "b",
+          plural: "Bits",
+        },
+      },
+      {
+        id: "bytes",
+        label: "Bytes",
+        toBaseFactor: "8",
+        symbols: {
+          full: "Byte",
+          short: "B",
+          plural: "Bytes",
+        },
+      },
+      {
+        id: "nibbles",
+        label: "Nibbles",
+        toBaseFactor: "4",
+        symbols: {
+          full: "Nibble",
+          short: "",
+          plural: "Nibbles",
+        },
+      },
+      {
+        id: "kilobits",
+        label: "Kilobits",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilobit",
+          short: "kb",
+          plural: "Kilobits",
+        },
+      },
+      {
+        id: "kilobytes",
+        label: "Kilobytes",
+        toBaseFactor: "8000",
+        symbols: {
+          full: "Kilobyte",
+          short: "kB",
+          plural: "Kilobytes",
+        },
+      },
+      {
+        id: "kibibits",
+        label: "Kibibits",
+        toBaseFactor: "1024",
+        symbols: {
+          full: "Kibibit",
+          short: "Kib",
+          plural: "Kibibits",
+        },
+      },
+      {
+        id: "kibibytes",
+        label: "Kibibytes",
+        toBaseFactor: "8192",
+        symbols: {
+          full: "Kibibyte",
+          short: "KiB",
+          plural: "Kibibytes",
+        },
+      },
+      {
+        id: "megabits",
+        label: "Megabits",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megabit",
+          short: "Mb",
+          plural: "Megabits",
+        },
+      },
+      {
+        id: "megabytes",
+        label: "Megabytes",
+        toBaseFactor: "8000000",
+        symbols: {
+          full: "Megabyte",
+          short: "MB",
+          plural: "Megabytes",
+        },
+      },
+      {
+        id: "mebibits",
+        label: "Mebibits",
+        toBaseFactor: "1048600",
+        symbols: {
+          full: "Mebibit",
+          short: "Mib",
+          plural: "Mebibits",
+        },
+      },
+      {
+        id: "mebibytes",
+        label: "Mebibytes",
+        toBaseFactor: "8388600",
+        symbols: {
+          full: "Mebibyte",
+          short: "MiB",
+          plural: "Mebibytes",
+        },
+      },
+      {
+        id: "gigabits",
+        label: "Gigabits",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigabit",
+          short: "Gb",
+          plural: "Gigabits",
+        },
+      },
+      {
+        id: "gigabytes",
+        label: "Gigabytes",
+        toBaseFactor: "8000000000",
+        symbols: {
+          full: "Gigabyte",
+          short: "GB",
+          plural: "Gigabytes",
+        },
+      },
+      {
+        id: "gibibits",
+        label: "Gibibits",
+        toBaseFactor: "1073700000",
+        symbols: {
+          full: "Gibibit",
+          short: "Gib",
+          plural: "Gibibits",
+        },
+      },
+      {
+        id: "gibibytes",
+        label: "Gibibytes",
+        toBaseFactor: "8589900000",
+        symbols: {
+          full: "Gibibyte",
+          short: "GiB",
+          plural: "Gibibytes",
+        },
+      },
+      {
+        id: "terabits",
+        label: "Terabits",
+        toBaseFactor: "1000000000000",
+        symbols: {
+          full: "Terabit",
+          short: "Tb",
+          plural: "Terabits",
+        },
+      },
+      {
+        id: "terabytes",
+        label: "Terabytes",
+        toBaseFactor: "8000000000000",
+        symbols: {
+          full: "Terabyte",
+          short: "TB",
+          plural: "Terabytes",
+        },
+      },
+      {
+        id: "tebibits",
+        label: "Tebibits",
+        toBaseFactor: "1099500000000",
+        symbols: {
+          full: "Tebibit",
+          short: "Tib",
+          plural: "Tebibits",
+        },
+      },
+      {
+        id: "tebibytes",
+        label: "Tebibytes",
+        toBaseFactor: "8796100000000",
+        symbols: {
+          full: "Tebibyte",
+          short: "TiB",
+          plural: "Tebibytes",
+        },
+      },
+      {
+        id: "petabits",
+        label: "Petabits",
+        toBaseFactor: "1000000000000000",
+        symbols: {
+          full: "Petabit",
+          short: "Pb",
+          plural: "Petabits",
+        },
+      },
+      {
+        id: "petabytes",
+        label: "Petabytes",
+        toBaseFactor: "8000000000000000",
+        symbols: {
+          full: "Petabyte",
+          short: "PB",
+          plural: "Petabytes",
+        },
+      },
+      {
+        id: "pebibits",
+        label: "Pebibits",
+        toBaseFactor: "1125900000000000",
+        symbols: {
+          full: "Pebibit",
+          short: "Pib",
+          plural: "Pebibits",
+        },
+      },
+      {
+        id: "pebibytes",
+        label: "Pebibytes",
+        toBaseFactor: "9007200000000000",
+        symbols: {
+          full: "Pebibyte",
+          short: "PiB",
+          plural: "Pebibytes",
+        },
+      },
+      {
+        id: "exabits",
+        label: "Exabits",
+        toBaseFactor: "1000000000000000000",
+        symbols: {
+          full: "Exabit",
+          short: "Eb",
+          plural: "Exabits",
+        },
+      },
+      {
+        id: "exabytes",
+        label: "Exabytes",
+        toBaseFactor: "8000000000000000000",
+        symbols: {
+          full: "Exabyte",
+          short: "EB",
+          plural: "Exabytes",
+        },
+      },
+      {
+        id: "exbibits",
+        label: "Exbibits",
+        toBaseFactor: "1152900000000000000",
+        symbols: {
+          full: "Exbibit",
+          short: "Eib",
+          plural: "Exbibits",
+        },
+      },
+      {
+        id: "exbibytes",
+        label: "Exbibytes",
+        toBaseFactor: "9223400000000000000",
+        symbols: {
+          full: "Exbibyte",
+          short: "EiB",
+          plural: "Exbibytes",
+        },
+      },
+      {
+        id: "zettabits",
+        label: "Zettabits",
+        toBaseFactor: "1000000000000000000000",
+        symbols: {
+          full: "Zettabit",
+          short: "Eb",
+          plural: "Zettabits",
+        },
+      },
+      {
+        id: "zettabytes",
+        label: "Zettabytes",
+        toBaseFactor: "8000000000000000000000",
+        symbols: {
+          full: "Zettabyte",
+          short: "EB",
+          plural: "Zettabytes",
+        },
+      },
+      {
+        id: "zebibits",
+        label: "Zebibits",
+        toBaseFactor: "1180600000000000000000",
+        symbols: {
+          full: "Zebibit",
+          short: "Zib",
+          plural: "Zebibits",
+        },
+      },
+      {
+        id: "zebibytes",
+        label: "Zebibytes",
+        toBaseFactor: "9444700000000000000000",
+        symbols: {
+          full: "Zebibyte",
+          short: "ZiB",
+          plural: "Zebibytes",
+        },
+      },
+      {
+        id: "yottabits",
+        label: "Yottabits",
+        toBaseFactor: "1000000000000000000000000",
+        symbols: {
+          full: "Yottabit",
+          short: "Yb",
+          plural: "Yottabits",
+        },
+      },
+      {
+        id: "yottabytes",
+        label: "Yottabytes",
+        toBaseFactor: "8000000000000000000000000",
+        symbols: {
+          full: "Yottabyte",
+          short: "YB",
+          plural: "Yottabytes",
+        },
+      },
+      {
+        id: "yobibits",
+        label: "Yobibits",
+        toBaseFactor: "1208900000000000000000000",
+        symbols: {
+          full: "Yobibit",
+          short: "Yib",
+          plural: "Yobibits",
+        },
+      },
+      {
+        id: "yobibytes",
+        label: "Yobibytes",
+        toBaseFactor: "9671400000000000000000000",
+        symbols: {
+          full: "Yobibyte",
+          short: "YiB",
+          plural: "Yobibytes",
         },
       },
     ],

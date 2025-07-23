@@ -320,10 +320,43 @@ export const GaugeWindow = GObject.registerClass(
 
       const inputItem = this._input_dropdown.selected_item;
       const outputItem = this._output_dropdown.selected_item;
+      if (inputItem.id === outputItem.id) {
+        this._output_entry.text = input;
+        return;
+      }
 
       const a = new BigNumber(input);
       const b = new BigNumber(inputItem.toBaseFactor);
       const c = new BigNumber(outputItem.toBaseFactor);
+
+      if (inputItem.idBaseUnit === "celsius") {
+        let toBaseUnit = a;
+        if (inputItem.id === "kelvin") {
+          toBaseUnit = a.minus(new BigNumber(273.15));
+        }
+
+        if (inputItem.id === "fahrenheit") {
+          toBaseUnit = a
+            .minus(new BigNumber(32))
+            .times(new BigNumber(5).div(new BigNumber(9)));
+        }
+
+        let toOutput = toBaseUnit;
+
+        if (outputItem.id === "kelvin") {
+          toOutput = toBaseUnit.plus(new BigNumber(273.15));
+        }
+
+        if (outputItem.id === "fahrenheit") {
+          toOutput = toBaseUnit
+            .times(new BigNumber(1.8))
+            .plus(new BigNumber(32));
+        }
+
+        this._output_entry.text = toOutput.toString();
+        return;
+      }
+
       const conversion = a.times(b).div(c).toString();
 
       this._output_entry.text = conversion;

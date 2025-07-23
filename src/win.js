@@ -329,6 +329,8 @@ export const GaugeWindow = GObject.registerClass(
       const b = new BigNumber(inputItem.toBaseFactor);
       const c = new BigNumber(outputItem.toBaseFactor);
 
+      const precision = settings.get_int("precision");
+
       if (inputItem.idBaseUnit === "celsius") {
         let toBaseUnit = a;
         if (inputItem.id === "kelvin") {
@@ -353,12 +355,11 @@ export const GaugeWindow = GObject.registerClass(
             .plus(new BigNumber(32));
         }
 
-        this._output_entry.text = toOutput.toString();
+        this._output_entry.text = toOutput.round(precision).toString();
         return;
       }
 
-      const conversion = a.times(b).div(c).toString();
-
+      const conversion = a.times(b).div(c).round(precision).toString();
       this._output_entry.text = conversion;
     };
 
@@ -438,7 +439,10 @@ export const GaugeWindow = GObject.registerClass(
         this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
       }
 
-      BigNumber.config({ DECIMAL_PLACES: settings.get_int("precision") });
+      BigNumber.config({
+        ROUNDING_MODE: BigNumber.ROUND_HALF_CEIL,
+        DECIMAL_PLACES: settings.get_int("precision") + 3,
+      });
       this.convertUnitDebounced();
     };
 

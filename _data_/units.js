@@ -107,6 +107,26 @@ module.exports = [
         },
       },
       {
+        id: "acre",
+        label: "Acre",
+        toBaseFactor: "4046.8564224",
+        symbols: {
+          full: "acre",
+          short: "ac",
+          plural: "acres",
+        },
+      },
+      {
+        id: "hectare",
+        label: "Hectare",
+        toBaseFactor: "10000",
+        symbols: {
+          full: "hectare",
+          short: "ha",
+          plural: "hectares",
+        },
+      },
+      {
         id: "square_kilometer",
         label: "Square Kilometers",
         toBaseFactor: "1000000",
@@ -556,6 +576,222 @@ module.exports = [
           full: "Second",
           short: '"',
           plural: "Seconds",
+        },
+      },
+    ],
+  },
+  {
+    label: "SI Prefixes",
+    idBaseUnit: "base",
+    units: [
+      {
+        id: "base",
+        label: "Base",
+        toBaseFactor: "1",
+        symbols: {
+          full: "",
+          short: "",
+          plural: "",
+        },
+      },
+      {
+        id: "deca",
+        label: "Deca",
+        toBaseFactor: "10",
+        symbols: {
+          full: "Deca",
+          short: "da",
+          plural: "Deca",
+        },
+      },
+      {
+        id: "hecto",
+        label: "Hecto",
+        toBaseFactor: "100",
+        symbols: {
+          full: "Hecto",
+          short: "h",
+          plural: "Hecto",
+        },
+      },
+      {
+        id: "kilo",
+        label: "Kilo",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilo",
+          short: "k",
+          plural: "Kilo",
+        },
+      },
+      {
+        id: "mega",
+        label: "Mega",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Mega",
+          short: "M",
+          plural: "Mega",
+        },
+      },
+      {
+        id: "giga",
+        label: "Giga",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Giga",
+          short: "G",
+          plural: "Giga",
+        },
+      },
+      {
+        id: "tera",
+        label: "Tera",
+        toBaseFactor: "1000000000000",
+        symbols: {
+          full: "Tera",
+          short: "T",
+          plural: "Tera",
+        },
+      },
+      {
+        id: "peta",
+        label: "Peta",
+        toBaseFactor: "1000000000000000",
+        symbols: {
+          full: "Peta",
+          short: "P",
+          plural: "Peta",
+        },
+      },
+      {
+        id: "exa",
+        label: "Exa",
+        toBaseFactor: "1000000000000000000",
+        symbols: {
+          full: "Exa",
+          short: "E",
+          plural: "Exa",
+        },
+      },
+      {
+        id: "zetta",
+        label: "Zetta",
+        toBaseFactor: "1000000000000000000000",
+        symbols: {
+          full: "Zetta",
+          short: "Z",
+          plural: "Zetta",
+        },
+      },
+      {
+        id: "yotta",
+        label: "Yotta",
+        toBaseFactor: "1000000000000000000000000",
+        symbols: {
+          full: "Yotta",
+          short: "Y",
+          plural: "Yotta",
+        },
+      },
+      {
+        id: "deci",
+        label: "Deci",
+        toBaseFactor: "0.1",
+        symbols: {
+          full: "Deci",
+          short: "d",
+          plural: "Deci",
+        },
+      },
+      {
+        id: "centi",
+        label: "Centi",
+        toBaseFactor: "0.01",
+        symbols: {
+          full: "Centi",
+          short: "c",
+          plural: "Centi",
+        },
+      },
+      {
+        id: "milli",
+        label: "Milli",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Milli",
+          short: "milli",
+          plural: "Milli",
+        },
+      },
+      {
+        id: "micro",
+        label: "Micro",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "Micro",
+          short: "µ",
+          plural: "Micro",
+        },
+      },
+      {
+        id: "nano",
+        label: "Nano",
+        toBaseFactor: "0.000000001",
+        symbols: {
+          full: "Nano",
+          short: "n",
+          plural: "Nano",
+        },
+      },
+      {
+        id: "pico",
+        label: "Pico",
+        toBaseFactor: "0.000000000001",
+        symbols: {
+          full: "Pico",
+          short: "p",
+          plural: "Pico",
+        },
+      },
+      {
+        id: "femto",
+        label: "Femto",
+        toBaseFactor: "0.000000000000001",
+        symbols: {
+          full: "Femto",
+          short: "f",
+          plural: "Femto",
+        },
+      },
+      {
+        id: "atto",
+        label: "Atto",
+        toBaseFactor: "0.000000000000000001",
+        symbols: {
+          full: "Atto",
+          short: "a",
+          plural: "Atto",
+        },
+      },
+      {
+        id: "zepto",
+        label: "Zepto",
+        toBaseFactor: "0.000000000000000000001",
+        symbols: {
+          full: "Zepto",
+          short: "z",
+          plural: "Zepto",
+        },
+      },
+      {
+        id: "yocto",
+        label: "Yocto",
+        toBaseFactor: "0.000000000000000000000001",
+        symbols: {
+          full: "Yocto",
+          short: "y",
+          plural: "Yocto",
         },
       },
     ],

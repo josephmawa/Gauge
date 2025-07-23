@@ -235,6 +235,42 @@ module.exports = [
     ],
   },
   {
+    label: "Temperature",
+    idBaseUnit: "celsius",
+    units: [
+      {
+        id: "celsius",
+        label: "Celsius",
+        toBaseFactor: "1",
+        symbols: {
+          full: "degree Celsius",
+          short: "°C",
+          plural: "degrees Celsius",
+        },
+      },
+      {
+        id: "fahrenheit",
+        label: "Fahrenheit",
+        toBaseFactor: "1",
+        symbols: {
+          full: "degree Fahrenheit",
+          short: "°F",
+          plural: "degrees Fahrenheit",
+        },
+      },
+      {
+        id: "kelvin",
+        label: "Kelvin",
+        toBaseFactor: "1",
+        symbols: {
+          full: "kelvin",
+          short: "K",
+          plural: "kelvins",
+        },
+      },
+    ],
+  },
+  {
     label: "Speed",
     idBaseUnit: "meters_per_second",
     units: [

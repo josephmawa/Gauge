@@ -251,7 +251,7 @@ module.exports = [
     ],
   },
   {
-    label: "Time",
+    label: "Duration",
     idBaseUnit: "seconds",
     units: [
       {
@@ -292,6 +292,36 @@ module.exports = [
           full: "Day",
           short: "d",
           plural: "Days",
+        },
+      },
+      {
+        id: "weeks",
+        label: "Weeks",
+        toBaseFactor: "604800",
+        symbols: {
+          full: "Week",
+          short: "wk",
+          plural: "Weeks",
+        },
+      },
+      {
+        id: "milliseconds",
+        label: "Milliseconds",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Millisecond",
+          short: "ms",
+          plural: "Milliseconds",
+        },
+      },
+      {
+        id: "microseconds",
+        label: "Microseconds",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "Microsecond",
+          short: "µs",
+          plural: "Microseconds",
         },
       },
     ],

@@ -7,6 +7,7 @@ import Pango from "gi://Pango";
 import GObject from "gi://GObject";
 
 import {
+  base,
   regexes,
   settings,
   CursorState,
@@ -325,11 +326,33 @@ export const GaugeWindow = GObject.registerClass(
         return;
       }
 
-      const a = new BigNumber(input);
-      const b = new BigNumber(inputItem.toBaseFactor);
-      const c = new BigNumber(outputItem.toBaseFactor);
-
       const precision = settings.get_int("precision");
+
+      if (inputItem.idBaseUnit === "decimal") {
+        /**
+         * FIXME:
+         * This doesn't round to the required number of decimal places.
+         * Bignumber.js uses the decimal places set using config. Looks
+         * like there is no built-in method to convert from base 10 and
+         * at the same time round to a given number of decimal places in 
+         * bignumber.js.
+         * 
+         * The number of decimal places set at config is 2 points greater
+         * than the precision the user chooses from settings to avoid
+         * rounding errors. 
+         * 
+         * One possible solution is to change the config and set it back
+         * after that.
+         * 
+         * Another possible solution is to write a function that rounds 
+         * the converted number to the required number of decimal places. 
+         */
+        const inputNum = new BigNumber(input, base[inputItem.id]);
+        this._output_entry.text = inputNum.toString(base[outputItem.id]);
+        return;
+      }
+
+      const a = new BigNumber(input);
 
       if (inputItem.idBaseUnit === "celsius") {
         let toBaseUnit = a;
@@ -358,6 +381,9 @@ export const GaugeWindow = GObject.registerClass(
         this._output_entry.text = toOutput.round(precision).toString();
         return;
       }
+
+      const b = new BigNumber(inputItem.toBaseFactor);
+      const c = new BigNumber(outputItem.toBaseFactor);
 
       const conversion = a.times(b).div(c).round(precision).toString();
       this._output_entry.text = conversion;

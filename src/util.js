@@ -6,6 +6,12 @@ export const regexes = {
   validNumber: /^-?\d*\.?\d+(?:[eE][+-]?\d+)?$/,
   validDigit: /[-+eE0-9\.]/,
 };
+export const base = {
+  binary: 2,
+  octal: 8,
+  decimal: 10,
+  hexadecimal: 16,
+};
 
 export class CursorState {
   #position = -1;

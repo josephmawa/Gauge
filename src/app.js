@@ -39,6 +39,7 @@ export const GaugeApplication = GObject.registerClass(
       this.set_accels_for_action("app.preferences", ["<primary>comma"]);
       this.set_accels_for_action("win.toggle-sidebar", ["F9"]);
       this.set_accels_for_action("win.search", ["<primary>f"]);
+      this.set_accels_for_action("win.switch-units", ["<alt>s"]);
     }
 
     vfunc_activate() {

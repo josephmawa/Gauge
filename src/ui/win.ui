@@ -172,9 +172,16 @@
                                 <property name="halign">center</property>
                                 <property name="valign">center</property>
                                 <child>
-                                  <object class="GtkImage">
+                                  <object class="GtkButton">
                                     <property name="icon-name">gauge-vertical-arrows-symbolic</property>
-                                    <property name="accessible-role">none</property>
+                                    <property name="tooltip-text" translatable="yes">Switch units</property>
+                                    <property name="action-name">win.switch-units</property>
+                                    <style>
+                                      <class name="flat" />
+                                    </style>
+                                    <accessibility>
+                                      <property name="label" translatable="yes" context="a11y">Switch units</property>
+                                    </accessibility>
                                   </object>
                                 </child>
                               </object>

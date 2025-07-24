@@ -334,18 +334,18 @@ export const GaugeWindow = GObject.registerClass(
          * This doesn't round to the required number of decimal places.
          * Bignumber.js uses the decimal places set using config. Looks
          * like there is no built-in method to convert from base 10 and
-         * at the same time round to a given number of decimal places in 
+         * at the same time round to a given number of decimal places in
          * bignumber.js.
-         * 
+         *
          * The number of decimal places set at config is 2 points greater
          * than the precision the user chooses from settings to avoid
-         * rounding errors. 
-         * 
+         * rounding errors.
+         *
          * One possible solution is to change the config and set it back
          * after that.
-         * 
-         * Another possible solution is to write a function that rounds 
-         * the converted number to the required number of decimal places. 
+         *
+         * Another possible solution is to write a function that rounds
+         * the converted number to the required number of decimal places.
          */
         const inputNum = new BigNumber(input, base[inputItem.id]);
         this._output_entry.text = inputNum.toString(base[outputItem.id]);
@@ -429,6 +429,31 @@ export const GaugeWindow = GObject.registerClass(
         this._split_view.show_sidebar = !this._split_view.show_sidebar;
       });
       this.add_action(toggleSidebar);
+
+      const switchUnits = Gio.SimpleAction.new("switch-units", null);
+      switchUnits.connect("activate", () => {
+        const inputModel = this._input_dropdown.model;
+        const outputModel = this._output_dropdown.model;
+
+        if (inputModel.n_items !== outputModel.n_items) {
+          throw new Error("Dropdowns must've same items");
+        }
+
+        const itemInput = this._input_dropdown.selected_item;
+        const itemOutput = this._output_dropdown.selected_item;
+
+        if (itemInput.id === itemOutput.id) {
+          return;
+        }
+
+        const i = this._input_dropdown.selected;
+        const j = this._output_dropdown.selected;
+
+        this._input_dropdown.selected = j;
+        this._output_dropdown.selected = i;
+        this.convertUnit();
+      });
+      this.add_action(switchUnits);
     };
 
     bindSettings = () => {

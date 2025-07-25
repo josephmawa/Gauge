@@ -10,10 +10,10 @@
   </a>
 </div>
 <p align="center">
-  <img src="./screenshots/gauge-dark-mode.png" alt="Gauge in dark mode" width="482" height="722"/>
+  <img src="./screenshots/gauge-dark-mode.png" alt="Gauge in dark mode" width="719" height="479"/>
 </p>
 <p align="center">
-  <img src="./screenshots/gauge-light-mode.png" alt="Gauge in light mode" width="482" height="722"/>
+  <img src="./screenshots/gauge-light-mode.png" alt="Gauge in light mode" width="719" height="479"/>
 </p>
 
 <!-- markdownlint-enable -->

@@ -50,6 +50,12 @@
                 <property name="action-name">win.search</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Switch Units</property>
+                <property name="action-name">win.switch-units</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>

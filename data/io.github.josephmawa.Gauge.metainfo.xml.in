@@ -7,7 +7,7 @@
   <name>Gauge</name>
   <summary>Unit converter</summary>
   <description>
-   <p>Gauge is a high precision unit conversion tool. Below are the main features:</p>
+    <p>Gauge is a high precision unit conversion tool. Below are the main features:</p>
     <ul>
       <li>Instant conversion</li>
       <li>Precision control</li>
@@ -21,7 +21,7 @@
     <name>Joseph Mawa</name>
   </developer>
 
- <url type="homepage">https://github.com/josephmawa/Gauge</url>
+  <url type="homepage">https://github.com/josephmawa/Gauge</url>
   <url type="vcs-browser">https://github.com/josephmawa/Gauge</url>
   <url type="bugtracker">https://github.com/josephmawa/Gauge/issues</url>
   <url type="translate">https://github.com/josephmawa/Gauge/blob/main/README.md#contributing</url>
@@ -31,10 +31,9 @@
   <launchable type="desktop-id">io.github.josephmawa.Gauge.desktop</launchable>
   <content_rating type="oars-1.1" />
 
-  <!-- Update this after creating icon -->
   <branding>
-    <color type="primary" scheme_preference="light">#ff00ff</color>
-    <color type="primary" scheme_preference="dark">#993d3d</color>
+    <color type="primary" scheme_preference="light">#e6ecef</color>
+    <color type="primary" scheme_preference="dark">#12181f</color>
   </branding>
 
   <screenshots>

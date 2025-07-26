@@ -5,6 +5,21 @@ export const regexes = {
   validEntry: /^[+-]?(\d+(\.\d*)?(e[+-]?\d*)?|\.\d+(e[+-]?\d*)?)?$/,
   validNumber: /^-?\d*\.?\d+(?:[eE][+-]?\d+)?$/,
   validDigit: /[-+eE0-9\.]/,
+  binary: {
+    validEntry: /^[-+]?[0-1]*(\.[0-1]*)?$/,
+    validNumber: /^[-+]?[0-1]+(\.[0-1]+)?$/,
+    validDigit: /[+-01.]/,
+  },
+  octal: {
+    validEntry: /^[-+]?[0-7]*(\.[0-7]*)?$/,
+    validNumber: /^[-+]?[0-7]+(\.[0-7]+)?$/,
+    validDigit: /[+-0-7.]/,
+  },
+  hex: {
+    validEntry: /^[-+]?[0-9a-fA-F]*(\.[0-9a-fA-F]*)?$/,
+    validNumber: /^[-+]?[0-9a-fA-F]+(\.[0-9a-fA-F]+)?$/,
+    validDigit: /[+-0-9a-fA-F.]/,
+  },
 };
 export const base = {
   binary: 2,

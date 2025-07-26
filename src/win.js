@@ -314,7 +314,18 @@ export const GaugeWindow = GObject.registerClass(
         return;
       }
 
-      if (!regexes.validNumber.test(input)) {
+      const unitId = this._input_dropdown.selected_item.id;
+      let validNumRegex = regexes.validNumber;
+
+      if (unitId === "binary") {
+        validNumRegex = regexes.binary.validNumber;
+      } else if (unitId === "octal") {
+        validNumRegex = regexes.octal.validNumber;
+      } else if (unitId === "hexadecimal") {
+        validNumRegex = regexes.hex.validNumber;
+      }
+
+      if (!validNumRegex.test(input)) {
         /** Set an appropriate css class before returning */
         return;
       }
@@ -538,7 +549,22 @@ export const GaugeWindow = GObject.registerClass(
       );
       GObject.signal_handler_block(editable, handlerId);
 
-      if (regexes.validDigit.test(text)) {
+      const unitId = this._input_dropdown.selected_item.id;
+      let validDigitRegex = regexes.validDigit;
+      let validEntryRegex = regexes.validEntry;
+
+      if (unitId === "binary") {
+        validDigitRegex = regexes.binary.validDigit;
+        validEntryRegex = regexes.binary.validEntry;
+      } else if (unitId === "octal") {
+        validDigitRegex = regexes.octal.validDigit;
+        validEntryRegex = regexes.octal.validEntry;
+      } else if (unitId === "hexadecimal") {
+        validDigitRegex = regexes.hex.validDigit;
+        validEntryRegex = regexes.hex.validEntry;
+      }
+
+      if (validDigitRegex.test(text)) {
         /**
          * We only allow these characters: /[-+eE0-9]/.
          * Therefore, the text entry will contain ASCII
@@ -549,7 +575,7 @@ export const GaugeWindow = GObject.registerClass(
         const cursorPosition = editable.get_position();
         characters.splice(cursorPosition, 0, text);
 
-        if (regexes.validEntry.test(characters.join(""))) {
+        if (validEntryRegex.test(characters.join(""))) {
           editable.insert_text(text, length, cursorPosition);
           entryCursorState.position = cursorPosition + length;
           entryCursorState.update = true;

@@ -310,6 +310,14 @@ export const GaugeWindow = GObject.registerClass(
     convertUnit = () => {
       const input = this._input_entry.text;
       if (!input.trim()) {
+        if (this._input_entry.css_classes.includes("error")) {
+          this._input_entry.remove_css_class("error");
+        }
+
+        if (this._output_entry.css_classes.includes("error")) {
+          this._output_entry.remove_css_class("error");
+        }
+
         this._output_entry.text = "";
         return;
       }
@@ -327,7 +335,21 @@ export const GaugeWindow = GObject.registerClass(
 
       if (!validNumRegex.test(input)) {
         /** Set an appropriate css class before returning */
+        if (!this._input_entry.css_classes.includes("error")) {
+          this._input_entry.add_css_class("error");
+        }
+        if (!this._output_entry.css_classes.includes("error")) {
+          this._output_entry.add_css_class("error");
+        }
         return;
+      }
+
+      if (this._input_entry.css_classes.includes("error")) {
+        this._input_entry.remove_css_class("error");
+      }
+
+      if (this._output_entry.css_classes.includes("error")) {
+        this._output_entry.remove_css_class("error");
       }
 
       const inputItem = this._input_dropdown.selected_item;

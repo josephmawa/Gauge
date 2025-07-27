@@ -334,7 +334,6 @@ export const GaugeWindow = GObject.registerClass(
       }
 
       if (!validNumRegex.test(input)) {
-        /** Set an appropriate css class before returning */
         if (!this._input_entry.css_classes.includes("error")) {
           this._input_entry.add_css_class("error");
         }

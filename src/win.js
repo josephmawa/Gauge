@@ -323,7 +323,7 @@ export const GaugeWindow = GObject.registerClass(
       }
 
       const unitId = this._input_dropdown.selected_item.id;
-      let validNumRegex = regexes.validNumber;
+      let validNumRegex = regexes.number.validNumber;
 
       if (unitId === "binary") {
         validNumRegex = regexes.binary.validNumber;
@@ -571,8 +571,8 @@ export const GaugeWindow = GObject.registerClass(
       GObject.signal_handler_block(editable, handlerId);
 
       const unitId = this._input_dropdown.selected_item.id;
-      let validDigitRegex = regexes.validDigit;
-      let validEntryRegex = regexes.validEntry;
+      let validDigitRegex = regexes.number.validDigit;
+      let validEntryRegex = regexes.number.validEntry;
 
       if (unitId === "binary") {
         validDigitRegex = regexes.binary.validDigit;

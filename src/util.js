@@ -2,9 +2,16 @@ import Gio from "gi://Gio";
 
 export const settings = Gio.Settings.new(pkg.name);
 export const regexes = {
-  validEntry: /^[+-]?(\d+(\.\d*)?(e[+-]?\d*)?|\.\d+(e[+-]?\d*)?)?$/,
-  validNumber: /^-?\d*\.?\d+(?:[eE][+-]?\d+)?$/,
-  validDigit: /[\-+eE0-9\.]/,
+  positive: {
+    validEntry: /^[+]?(\d+(\.\d*)?([eE][+-]?\d*)?|\.\d+([eE][+-]?\d*)?)?$/,
+    validNumber: /^[+]?\d*\.?\d+(?:[eE][+-]?\d+)?$/,
+    validDigit: /[+\-eE0-9\.]/,
+  },
+  number: {
+    validEntry: /^[+-]?(\d+(\.\d*)?([eE][+-]?\d*)?|\.\d+([eE][+-]?\d*)?)?$/,
+    validNumber: /^[+-]?\d*\.?\d+(?:[eE][+-]?\d+)?$/,
+    validDigit: /[+\-eE0-9\.]/,
+  },
   binary: {
     validEntry: /^[-+]?[0-1]*(\.[0-1]*)?$/,
     validNumber: /^[-+]?[0-1]+(\.[0-1]+)?$/,

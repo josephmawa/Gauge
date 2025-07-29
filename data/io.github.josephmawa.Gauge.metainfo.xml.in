@@ -48,6 +48,13 @@
   </screenshots>
 
   <releases>
+    <release version="0.1.1" date="2025-07-29">
+      <description translate="no">
+        <ul>
+          <li>Update brand color</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.0" date="2025-07-27">
       <description translate="no">
         <ul>

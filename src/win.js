@@ -272,11 +272,6 @@ export const GaugeWindow = GObject.registerClass(
       this.unitSelectedHandler();
     };
 
-    /**
-     * FIXME:
-     * This event handler is invoked as many times as there
-     * are items in the dropdown when switching unit groups.
-     */
     unitSelectedHandler = () => {
       if (!this.convertUnitDebounced) {
         this.convertUnitDebounced = this.debounce(this.convertUnit, 300);

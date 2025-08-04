@@ -1,0 +1,749 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Gauge package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gauge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-27 19:14+0300\n"
+"PO-Revision-Date: 2025-08-03 21:22+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: data/io.github.josephmawa.Gauge.desktop.in:3
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:7 src/ui/win.ui:6
+msgid "Gauge"
+msgstr "Gauge"
+
+#. Translators: These are search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/io.github.josephmawa.Gauge.desktop.in:10
+msgid "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;"
+msgstr "Eenheid;Converteren;Converteerder;Precisie;Conversie;Meten;Meting;Hulpmiddel;Gereedschap;Tool;"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:8
+msgid "Unit converter"
+msgstr "Eenheden omzetten"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:10
+msgid "Gauge is a high precision unit conversion tool. Below are the main features:"
+msgstr "Gauge is een hulpmiddel voor het nauwkeurig omzetten van eenheden. Functies:"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:12
+msgid "Instant conversion"
+msgstr "Zet om zonder te wachten"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:13
+msgid "Precision control"
+msgstr "Stel de nauwkeurigheid in"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:14
+msgid "Provides extensive unit categories"
+msgstr "Uitgebreide keuze uit eenheden"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:15
+msgid "It has intuitive and user-friendly interface"
+msgstr "Intuïtief en gebruiksvriendelijk"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:16
+msgid "Switch to light, dark, or system mode"
+msgstr "Kies voor het lichte, donkere of systeemthema"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:21
+msgid "Joseph Mawa"
+msgstr "Joseph Mawa"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:42
+msgid "Gauge in dark mode"
+msgstr "Gauge (donker thema)"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:46
+msgid "Gauge in light mode"
+msgstr "Gauge (licht thema)"
+
+#: src/ui/help.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: src/ui/help.ui:14
+msgctxt "shortcut window"
+msgid "Toggle Menu"
+msgstr "Menu tonen/verbergen"
+
+#: src/ui/help.ui:20
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Sneltoetsen tonen"
+
+#: src/ui/help.ui:26
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Voorkeuren openen"
+
+#: src/ui/help.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: src/ui/help.ui:40
+msgctxt "shortcut window"
+msgid "Units"
+msgstr "Eenheden"
+
+#: src/ui/help.ui:43
+msgctxt "shortcut window"
+msgid "Toggle Sidebar"
+msgstr "Zĳbalk tonen/verbergen"
+
+#: src/ui/help.ui:49
+msgctxt "shortcut window"
+msgid "Search Units"
+msgstr "Eenheden doorzoeken"
+
+#: src/ui/help.ui:55
+msgctxt "shortcut window"
+msgid "Switch Units"
+msgstr "Andere eenheden kiezen"
+
+#: src/ui/prefs.ui:7 src/ui/prefs.ui:13
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: src/ui/prefs.ui:16
+msgid "Color Theme"
+msgstr "Thema"
+
+#: src/ui/prefs.ui:17
+msgid "Set color theme"
+msgstr "Thema instellen"
+
+#: src/ui/prefs.ui:23
+msgid "Color theme"
+msgstr "Thema"
+
+#: src/ui/prefs.ui:39
+msgctxt "System color theme"
+msgid "System"
+msgstr "Systeem"
+
+#: src/ui/prefs.ui:56
+msgctxt "Light color theme"
+msgid "Light"
+msgstr "Licht thema"
+
+#: src/ui/prefs.ui:73
+msgctxt "Dark color theme"
+msgid "Dark"
+msgstr "Donker thema"
+
+#: src/ui/prefs.ui:90
+msgid "Number Precision"
+msgstr "Aantal getallen achter de komma"
+
+#: src/ui/prefs.ui:91
+msgid "Set number precision"
+msgstr "Nauwkeurigheid instellen"
+
+#: src/ui/prefs.ui:94
+msgid "Conversion precision"
+msgstr "Nauwkeurigheid van omzetting"
+
+#: src/ui/win.ui:33
+msgid "Search units"
+msgstr "Eenheden doorzoeken"
+
+#: src/ui/win.ui:39
+msgctxt "accessibility"
+msgid "Search units"
+msgstr "Eenheden doorzoeken"
+
+#: src/ui/win.ui:45
+msgid "Units"
+msgstr "Eenheden"
+
+#: src/ui/win.ui:51
+msgid "Close sidebar"
+msgstr "Zijbalk verbergen"
+
+#: src/ui/win.ui:55
+msgctxt "a11y"
+msgid "Close sidebar"
+msgstr "Zijbalk verbergen"
+
+#: src/ui/win.ui:67
+msgctxt "Search units"
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/ui/win.ui:75
+msgctxt "a11y"
+msgid "Search"
+msgstr "Zoeken"
+
+#: src/ui/win.ui:76
+msgctxt "a11y"
+msgid "Type to search units"
+msgstr "Typ om te zoeken…"
+
+#: src/ui/win.ui:109
+msgid "Toggle Sidebar"
+msgstr "Zĳbalk tonen/verbergen"
+
+#: src/ui/win.ui:113
+msgctxt "a11y"
+msgid "Toggle Sidebar"
+msgstr "Zĳbalk tonen/verbergen"
+
+#: src/ui/win.ui:121
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/ui/win.ui:124
+msgctxt "a11y"
+msgid "Main Menu"
+msgstr "Hoofdmenu"
+
+#: src/ui/win.ui:158
+msgid "Input"
+msgstr "Invoer"
+
+#: src/ui/win.ui:161 src/ui/win.ui:211
+msgctxt "Copy unit"
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: src/ui/win.ui:164
+msgctxt "a11y"
+msgid "Input"
+msgstr "Invoer"
+
+#: src/ui/win.ui:177
+msgid "Switch units"
+msgstr "Andere eenheden kiezen"
+
+#: src/ui/win.ui:183
+msgctxt "a11y"
+msgid "Switch units"
+msgstr "Andere eenheden kiezen"
+
+#: src/ui/win.ui:207
+msgid "Output"
+msgstr "Uitvoer"
+
+#: src/ui/win.ui:214
+msgctxt "a11y"
+msgid "Output"
+msgstr "Uitvoer"
+
+#: src/ui/win.ui:236
+msgid "_Preferences"
+msgstr "_Voorkeuren"
+
+#: src/ui/win.ui:240
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/ui/win.ui:244
+msgid "_About Gauge"
+msgstr "Over G_auge"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/about.js:15
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#: src/win.js:620
+msgid "Copied value"
+msgstr "De waarde is gekopieerd"
+
+#: src/units/index.js:1
+msgid "Length"
+msgstr "Lengte"
+
+#: src/units/index.js:1
+msgid "Meters"
+msgstr "Meter"
+
+#: src/units/index.js:1
+msgid "Kilometers"
+msgstr "Kilometer"
+
+#: src/units/index.js:1
+msgid "Centimeters"
+msgstr "Centimeter"
+
+#: src/units/index.js:1
+msgid "Millimeters"
+msgstr "Millimeter"
+
+#: src/units/index.js:1
+msgid "Miles"
+msgstr "Mijl"
+
+#: src/units/index.js:1
+msgid "Yards"
+msgstr "Yard"
+
+#: src/units/index.js:1
+msgid "Feet"
+msgstr "Voet"
+
+#: src/units/index.js:1
+msgid "Inches"
+msgstr "Inch"
+
+#: src/units/index.js:1
+msgid "Area"
+msgstr "Gebied"
+
+#: src/units/index.js:1
+msgid "Square Meters"
+msgstr "Vierkante meter"
+
+#: src/units/index.js:1
+msgid "Acre"
+msgstr "Acre"
+
+#: src/units/index.js:1
+msgid "Hectare"
+msgstr "Hectare"
+
+#: src/units/index.js:1
+msgid "Square Kilometers"
+msgstr "Vierkante kilometer"
+
+#: src/units/index.js:1
+msgid "Square Centimeters"
+msgstr "Vierkante centimeter"
+
+#: src/units/index.js:1
+msgid "Square Millimeters"
+msgstr "Vierkante millimeter"
+
+#: src/units/index.js:1
+msgid "Square Miles"
+msgstr "Vierkante mijl"
+
+#: src/units/index.js:1
+msgid "Square Yards"
+msgstr "Vierkante yard"
+
+#: src/units/index.js:1
+msgid "Square Feet"
+msgstr "Vierkante voet"
+
+#: src/units/index.js:1
+msgid "Square Inches"
+msgstr "Vierkante inch"
+
+#: src/units/index.js:1
+msgid "Volume"
+msgstr "Inhoud"
+
+#: src/units/index.js:1
+msgid "Liters"
+msgstr "Liter"
+
+#: src/units/index.js:1
+msgid "Milliliters"
+msgstr "Milliliter"
+
+#: src/units/index.js:1
+msgid "Gallons"
+msgstr "Gallon"
+
+#: src/units/index.js:1
+msgid "Temperature"
+msgstr "Temperatuur"
+
+#: src/units/index.js:1
+msgid "Celsius"
+msgstr "Celsius"
+
+#: src/units/index.js:1
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: src/units/index.js:1
+msgid "Kelvin"
+msgstr "Kelvin"
+
+#: src/units/index.js:1
+msgid "Speed"
+msgstr "Snelheid"
+
+#: src/units/index.js:1
+msgid "Meters per Second"
+msgstr "Meter per seconde"
+
+#: src/units/index.js:1
+msgid "Kilometers per Hour"
+msgstr "Kilometer per uur"
+
+#: src/units/index.js:1
+msgid "Miles per Hour"
+msgstr "Mijl per uur"
+
+#: src/units/index.js:1
+msgid "Duration"
+msgstr "Duur"
+
+#: src/units/index.js:1
+msgid "Seconds"
+msgstr "Seconden"
+
+#: src/units/index.js:1
+msgid "Minutes"
+msgstr "Minuten"
+
+#: src/units/index.js:1
+msgid "Hours"
+msgstr "Uur"
+
+#: src/units/index.js:1
+msgid "Days"
+msgstr "Dagen"
+
+#: src/units/index.js:1
+msgid "Weeks"
+msgstr "Weken"
+
+#: src/units/index.js:1
+msgid "Milliseconds"
+msgstr "Milliseconden"
+
+#: src/units/index.js:1
+msgid "Microseconds"
+msgstr "Microseconden"
+
+#: src/units/index.js:1
+msgid "Frequency"
+msgstr "Frequentie"
+
+#: src/units/index.js:1
+msgid "Hertz"
+msgstr "Hertz"
+
+#: src/units/index.js:1
+msgid "Kilohertz"
+msgstr "Kilohertz"
+
+#: src/units/index.js:1
+msgid "Megahertz"
+msgstr "Megahertz"
+
+#: src/units/index.js:1
+msgid "Gigahertz"
+msgstr "Gigahertz"
+
+#: src/units/index.js:1
+msgid "Terahertz"
+msgstr "Terahertz"
+
+#: src/units/index.js:1
+msgid "Mass"
+msgstr "Gewicht"
+
+#: src/units/index.js:1
+msgid "Grams"
+msgstr "Gram"
+
+#: src/units/index.js:1
+msgid "Kilograms"
+msgstr "Kilogram"
+
+#: src/units/index.js:1
+msgid "Pounds"
+msgstr "Pond"
+
+#: src/units/index.js:1
+msgid "Ounces"
+msgstr "Ons"
+
+#: src/units/index.js:1
+msgid "Metric Tonnes"
+msgstr "Metrische ton"
+
+#: src/units/index.js:1
+msgid "Short Tons"
+msgstr "Korte ton"
+
+#: src/units/index.js:1
+msgid "Long Tons"
+msgstr "Lange ton"
+
+#: src/units/index.js:1
+msgid "Numeral Systems"
+msgstr "Numerieke systemen"
+
+#: src/units/index.js:1
+msgid "Decimal"
+msgstr "Decimaal"
+
+#: src/units/index.js:1
+msgid "Binary"
+msgstr "Binair"
+
+#: src/units/index.js:1
+msgid "Octal"
+msgstr "Octaal"
+
+#: src/units/index.js:1
+msgid "Hexadecimal"
+msgstr "Hexadecimaal"
+
+#: src/units/index.js:1
+msgid "Angles"
+msgstr "Hoeken"
+
+#: src/units/index.js:1
+msgid "Degrees"
+msgstr "Graden"
+
+#: src/units/index.js:1
+msgid "Radians"
+msgstr "Radii"
+
+#: src/units/index.js:1
+msgid "Gradians"
+msgstr "Gonnen"
+
+#: src/units/index.js:1
+msgid "SI Prefixes"
+msgstr "SI-voorvoegels"
+
+#: src/units/index.js:1
+msgid "Base"
+msgstr "Base"
+
+#: src/units/index.js:1
+msgid "Deca"
+msgstr "Deca"
+
+#: src/units/index.js:1
+msgid "Hecto"
+msgstr "Hecto"
+
+#: src/units/index.js:1
+msgid "Kilo"
+msgstr "Kilo"
+
+#: src/units/index.js:1
+msgid "Mega"
+msgstr "Mega"
+
+#: src/units/index.js:1
+msgid "Giga"
+msgstr "Giga"
+
+#: src/units/index.js:1
+msgid "Tera"
+msgstr "Tera"
+
+#: src/units/index.js:1
+msgid "Peta"
+msgstr "Peta"
+
+#: src/units/index.js:1
+msgid "Exa"
+msgstr "Exa"
+
+#: src/units/index.js:1
+msgid "Zetta"
+msgstr "Zetta"
+
+#: src/units/index.js:1
+msgid "Yotta"
+msgstr "Yotta"
+
+#: src/units/index.js:1
+msgid "Deci"
+msgstr "Deci"
+
+#: src/units/index.js:1
+msgid "Centi"
+msgstr "Centi"
+
+#: src/units/index.js:1
+msgid "Milli"
+msgstr "Milli"
+
+#: src/units/index.js:1
+msgid "Micro"
+msgstr "Micro"
+
+#: src/units/index.js:1
+msgid "Nano"
+msgstr "Nano"
+
+#: src/units/index.js:1
+msgid "Pico"
+msgstr "Pico"
+
+#: src/units/index.js:1
+msgid "Femto"
+msgstr "Femto"
+
+#: src/units/index.js:1
+msgid "Atto"
+msgstr "Atto"
+
+#: src/units/index.js:1
+msgid "Zepto"
+msgstr "Zepto"
+
+#: src/units/index.js:1
+msgid "Yocto"
+msgstr "Yocto"
+
+#: src/units/index.js:1
+msgid "Digital Storage"
+msgstr "Digitale opslag"
+
+#: src/units/index.js:1
+msgid "Bits"
+msgstr "Bits"
+
+#: src/units/index.js:1
+msgid "Bytes"
+msgstr "Bytes"
+
+#: src/units/index.js:1
+msgid "Nibbles"
+msgstr "Nibbles"
+
+#: src/units/index.js:1
+msgid "Kilobits"
+msgstr "Kilobits"
+
+#: src/units/index.js:1
+msgid "Kilobytes"
+msgstr "Kilobytes"
+
+#: src/units/index.js:1
+msgid "Kibibits"
+msgstr "Kibibits"
+
+#: src/units/index.js:1
+msgid "Kibibytes"
+msgstr "Kibibytes"
+
+#: src/units/index.js:1
+msgid "Megabits"
+msgstr "Megabits"
+
+#: src/units/index.js:1
+msgid "Megabytes"
+msgstr "Megabytes"
+
+#: src/units/index.js:1
+msgid "Mebibits"
+msgstr "Mebibits"
+
+#: src/units/index.js:1
+msgid "Mebibytes"
+msgstr "Mebibytes"
+
+#: src/units/index.js:1
+msgid "Gigabits"
+msgstr "Gigabits"
+
+#: src/units/index.js:1
+msgid "Gigabytes"
+msgstr "Gigabytes"
+
+#: src/units/index.js:1
+msgid "Gibibits"
+msgstr "Gibibits"
+
+#: src/units/index.js:1
+msgid "Gibibytes"
+msgstr "Gibibytes"
+
+#: src/units/index.js:1
+msgid "Terabits"
+msgstr "Terabits"
+
+#: src/units/index.js:1
+msgid "Terabytes"
+msgstr "Terabytes"
+
+#: src/units/index.js:1
+msgid "Tebibits"
+msgstr "Tebibits"
+
+#: src/units/index.js:1
+msgid "Tebibytes"
+msgstr "Tebibytes"
+
+#: src/units/index.js:1
+msgid "Petabits"
+msgstr "Petabits"
+
+#: src/units/index.js:1
+msgid "Petabytes"
+msgstr "Petabytes"
+
+#: src/units/index.js:1
+msgid "Pebibits"
+msgstr "Pebibits"
+
+#: src/units/index.js:1
+msgid "Pebibytes"
+msgstr "Pebibytes"
+
+#: src/units/index.js:1
+msgid "Exabits"
+msgstr "Exabits"
+
+#: src/units/index.js:1
+msgid "Exabytes"
+msgstr "Exabytes"
+
+#: src/units/index.js:1
+msgid "Exbibits"
+msgstr "Exbibits"
+
+#: src/units/index.js:1
+msgid "Exbibytes"
+msgstr "Exbibytes"
+
+#: src/units/index.js:1
+msgid "Zettabits"
+msgstr "Zettabits"
+
+#: src/units/index.js:1
+msgid "Zettabytes"
+msgstr "Zettabytes"
+
+#: src/units/index.js:1
+msgid "Zebibits"
+msgstr "Zebibits"
+
+#: src/units/index.js:1
+msgid "Zebibytes"
+msgstr "Zebibytes"
+
+#: src/units/index.js:1
+msgid "Yottabits"
+msgstr "Yottabits"
+
+#: src/units/index.js:1
+msgid "Yottabytes"
+msgstr "Yottabytes"
+
+#: src/units/index.js:1
+msgid "Yobibits"
+msgstr "Yobibits"
+
+#: src/units/index.js:1
+msgid "Yobibytes"
+msgstr "Yobibytes"

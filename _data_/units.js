@@ -287,7 +287,8 @@ module.exports = [
       {
         id: "kilometers_per_hour",
         label: "Kilometers per Hour",
-        toBaseFactor: "0.277777778",
+        /* prettier-ignore */
+        toBaseFactor:"0.2777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777778",
         symbols: {
           full: "kilometer per hour",
           short: "km/h",
@@ -465,7 +466,7 @@ module.exports = [
       {
         id: "pounds",
         label: "Pounds",
-        toBaseFactor: "453.6",
+        toBaseFactor: "453.59237",
         symbols: {
           full: "Pound",
           short: "lb",
@@ -475,7 +476,7 @@ module.exports = [
       {
         id: "ounces",
         label: "Ounces",
-        toBaseFactor: "28",
+        toBaseFactor: "28.349523125",
         symbols: {
           full: "Ounce",
           short: "oz",
@@ -577,7 +578,8 @@ module.exports = [
       {
         id: "radians",
         label: "Radians",
-        toBaseFactor: "57.29577951",
+        /* prettier-ignore */
+        toBaseFactor:"57.2957795130823208767981548141051703324054724665643215491602438612028471483215526324409689958511109441862",
         symbols: {
           full: "Radian",
           short: "rad",
@@ -597,7 +599,8 @@ module.exports = [
       {
         id: "minutes",
         label: "Minutes",
-        toBaseFactor: "0.01666666667",
+        /* prettier-ignore */
+        toBaseFactor: "0.0166666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667",
         symbols: {
           full: "Minute",
           short: "'",
@@ -607,7 +610,8 @@ module.exports = [
       {
         id: "seconds",
         label: "Seconds",
-        toBaseFactor: "0.0002777777778",
+        /* prettier-ignore */
+        toBaseFactor: "0.0002777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777778",
         symbols: {
           full: "Second",
           short: '"',

@@ -235,6 +235,42 @@ module.exports = [
     ],
   },
   {
+    label: "Density",
+    idBaseUnit: "grams_per_cubic_cm",
+    units: [
+      {
+        id: "grams_per_cubic_cm",
+        label: "Grams per Cubic Centimeter",
+        toBaseFactor: "1",
+        symbols: {
+          full: "grams per cubic centimeter",
+          short: "g/cm&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "grams per cubic centimeter",
+        },
+      },
+      {
+        id: "kg_per_cubic_m",
+        label: "Kilograms per Cubic Meter",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "kilograms per cubic meter",
+          short: "kg/m&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "kilograms per cubic meter",
+        },
+      },
+      {
+        id: "kg_per_cubic_m",
+        label: "Kilograms per Cubic Meter",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "kilograms per cubic meter",
+          short: "kg/m&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "kilograms per cubic meter",
+        },
+      },
+    ],
+  },
+  {
     label: "Temperature",
     idBaseUnit: "celsius",
     units: [

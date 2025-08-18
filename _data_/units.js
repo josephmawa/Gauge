@@ -251,7 +251,7 @@ module.exports = [
       {
         id: "kg_per_cubic_m",
         label: "Kilograms per Cubic Meter",
-        toBaseFactor: "1000",
+        toBaseFactor: "0.001",
         symbols: {
           full: "kilograms per cubic meter",
           short: "kg/m&lt;sup&gt;3&lt;/sup&gt;",

@@ -261,7 +261,8 @@ module.exports = [
       {
         id: "pounds_per_cubic_inches",
         label: "Pounds per Cubic Inches",
-        toBaseFactor: "27.67990471",
+        /* prettier-ignore */
+        toBaseFactor: "27.6799047102031211936439620910737884467894920041808587554182982381712794921652835431655115278734494476863",
         symbols: {
           full: "pounds per cubic inch",
           short: "lb/in&lt;sup&gt;3&lt;/sup&gt;",
@@ -271,7 +272,8 @@ module.exports = [
       {
         id: "pounds_per_cubic_feet",
         label: "Pounds per Cubic Feet",
-        toBaseFactor: "0.01601846337",
+        /* prettier-ignore */
+        toBaseFactor: "0.0160184633739601395796550706545565905363365115764935525204967003693120830394475020504430043564082462082",
         symbols: {
           full: "pounds per cubic feet",
           short: "lb/ft&lt;sup&gt;3&lt;/sup&gt;",

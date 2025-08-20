@@ -62,7 +62,8 @@ will always be free. It is released under the terms of the
 ## Acknowledgment
 
 The app uses [bignumber.js](https://mikemcl.github.io/bignumber.js/) for handling
-large numbers. Thank you, Michael M, and the other maintainers of `bignumber.js`.
+large numbers. Thank you, [Michael M](https://github.com/MikeMcl), and the other
+maintainers of `bignumber.js`.
 
 The design is inspired by [Amberol](https://flathub.org/apps/io.bassi.Amberol) and
 [Binary](https://flathub.org/apps/io.github.fizzyizzy05.binary). A big thank you

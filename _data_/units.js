@@ -353,6 +353,27 @@ module.exports = [
           plural: "miles per hour",
         },
       },
+      {
+        id: "feet_per_second",
+        label: "Feet per Second",
+        toBaseFactor: "0.3048",
+        symbols: {
+          full: "feet per second",
+          short: "ft/s",
+          plural: "feet per second",
+        },
+      },
+      {
+        id: "knots",
+        label: "Knots",
+        /* prettier-ignore */
+        toBaseFactor: "0.5144444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444",
+        symbols: {
+          full: "knot",
+          short: "kts",
+          plural: "knots",
+        },
+      },
     ],
   },
   {

@@ -57,6 +57,16 @@
   </requires>
 
   <releases>
+    <release version="0.1.2" date="2025-08-22">
+      <description translate="no">
+        <ul>
+          <li>Add Italian translation</li>
+          <li>Add Dutch translation</li>
+          <li>Add Turkish translation</li>
+          <li>Add mobile support meta info</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.1" date="2025-07-29">
       <description translate="no">
         <ul>

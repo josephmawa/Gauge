@@ -213,6 +213,26 @@ module.exports = [
         },
       },
       {
+        id: "deciliter",
+        label: "Deciliters",
+        toBaseFactor: "0.1",
+        symbols: {
+          full: "deciliter",
+          short: "dL",
+          plural: "deciliters",
+        },
+      },
+      {
+        id: "centiliter",
+        label: "Centiliters",
+        toBaseFactor: "0.01",
+        symbols: {
+          full: "centiliter",
+          short: "cL",
+          plural: "centiliters",
+        },
+      },
+      {
         id: "milliliter",
         label: "Milliliters",
         toBaseFactor: "0.001",
@@ -223,6 +243,16 @@ module.exports = [
         },
       },
       {
+        id: "microliter",
+        label: "Microliters",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "microliter",
+          short: "µL",
+          plural: "microliters",
+        },
+      },
+      {
         id: "gallon",
         label: "Gallons",
         toBaseFactor: "3.785411784",
@@ -230,6 +260,56 @@ module.exports = [
           full: "gallon",
           short: "gal",
           plural: "gallons",
+        },
+      },
+      {
+        id: "cubic_meters",
+        label: "Cubic Meters",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "cubic meter",
+          short: "m&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "cubic meters",
+        },
+      },
+      {
+        id: "cubic_millimeters",
+        label: "Cubic Millimeters",
+        toBaseFactor: "0.000001",
+        symbols: {
+          full: "cubic millimeter",
+          short: "mm&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "cubic millimeters",
+        },
+      },
+      {
+        id: "cubic_centimeters",
+        label: "Cubic Centimeters",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "cubic centimeter",
+          short: "cm&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "cubic centimeters",
+        },
+      },
+      {
+        id: "cubic_inches",
+        label: "Cubic Inches",
+        toBaseFactor: "0.016387064",
+        symbols: {
+          full: "cubic inch",
+          short: "in&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "cubic inches",
+        },
+      },
+      {
+        id: "cubic_feet",
+        label: "Cubic Feet",
+        toBaseFactor: "28.316846592",
+        symbols: {
+          full: "cubic foot",
+          short: "ft&lt;sup&gt;3&lt;/sup&gt;",
+          plural: "cubic feet",
         },
       },
     ],

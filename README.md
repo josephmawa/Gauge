@@ -53,12 +53,6 @@ combination to run the project after opening it in GNOME builder. You can also
  use the <kbd>▶</kbd> button at the top.
  <!-- markdownlint-enable no-inline-html -->
 
-## License
-
-Gauge is a [free software](https://www.gnu.org/philosophy/free-sw.html) and
-will always be free. It is released under the terms of the
-[GNU General Public License v3.0](./LICENSE).
-
 ## Acknowledgment
 
 The app uses [bignumber.js](https://mikemcl.github.io/bignumber.js/) for handling

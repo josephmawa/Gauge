@@ -123,7 +123,7 @@ msgstr "Color del tema"
 
 #: src/ui/prefs.ui:17
 msgid "Set color theme"
-msgstr "Establecer tema de color"
+msgstr "Establecer color del tema"
 
 #: src/ui/prefs.ui:23
 msgid "Color theme"

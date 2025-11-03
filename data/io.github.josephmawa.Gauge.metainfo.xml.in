@@ -57,6 +57,14 @@
   </requires>
 
   <releases>
+    <release version="0.1.3" date="2025-11-03">
+      <description translate="no">
+        <ul>
+          <li>Add Spanish translation</li>
+          <li>Add more volume units</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.2" date="2025-08-22">
       <description translate="no">
         <ul>

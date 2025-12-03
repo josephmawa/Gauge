@@ -1,0 +1,749 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Gauge package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gauge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-27 19:14+0300\n"
+"PO-Revision-Date: 2025-12-03 15:49+0700\n"
+"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: data/io.github.josephmawa.Gauge.desktop.in:3
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:7 src/ui/win.ui:6
+msgid "Gauge"
+msgstr "Gauge"
+
+#. Translators: These are search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
+#: data/io.github.josephmawa.Gauge.desktop.in:10
+msgid "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;"
+msgstr "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;Đơn vị;Bộ chuyển đổi;Chuyển đổi;Độ chính xác;Đo lường;Công cụ;"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:8
+msgid "Unit converter"
+msgstr "Bộ chuyển đổi đơn vị"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:10
+msgid "Gauge is a high precision unit conversion tool. Below are the main features:"
+msgstr "Gauge là công cụ chuyển đổi đơn vị có độ chính xác cao. Dưới đây là các tính năng chính:"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:12
+msgid "Instant conversion"
+msgstr "Chuyển đổi tức thì"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:13
+msgid "Precision control"
+msgstr "Kiểm soát độ chính xác"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:14
+msgid "Provides extensive unit categories"
+msgstr "Cung cấp danh mục đơn vị mở rộng"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:15
+msgid "It has intuitive and user-friendly interface"
+msgstr "Có giao diện trực quan và thân thiện với người dùng"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:16
+msgid "Switch to light, dark, or system mode"
+msgstr "Chuyển sang chế độ sáng, tối, hoặc hệ thống"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:21
+msgid "Joseph Mawa"
+msgstr "Joseph Mawa"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:42
+msgid "Gauge in dark mode"
+msgstr "Gauge ở chế độ tối"
+
+#: data/io.github.josephmawa.Gauge.metainfo.xml.in:46
+msgid "Gauge in light mode"
+msgstr "Gauge ở chế độ sáng"
+
+#: src/ui/help.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Chung"
+
+#: src/ui/help.ui:14
+msgctxt "shortcut window"
+msgid "Toggle Menu"
+msgstr "Bật/Tắt Trình Đơn"
+
+#: src/ui/help.ui:20
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Hiển Thị Phím Tắt"
+
+#: src/ui/help.ui:26
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Hiển Thị Tùy Chọn"
+
+#: src/ui/help.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Thoát"
+
+#: src/ui/help.ui:40
+msgctxt "shortcut window"
+msgid "Units"
+msgstr "Đơn Vị"
+
+#: src/ui/help.ui:43
+msgctxt "shortcut window"
+msgid "Toggle Sidebar"
+msgstr "Bật/Tắt Thanh Bên"
+
+#: src/ui/help.ui:49
+msgctxt "shortcut window"
+msgid "Search Units"
+msgstr "Tìm Kiếm Đơn Vị"
+
+#: src/ui/help.ui:55
+msgctxt "shortcut window"
+msgid "Switch Units"
+msgstr "Chuyển Đổi Đơn Vị"
+
+#: src/ui/prefs.ui:7 src/ui/prefs.ui:13
+msgid "Preferences"
+msgstr "Tùy Chọn"
+
+#: src/ui/prefs.ui:16
+msgid "Color Theme"
+msgstr "Chủ Đề Màu"
+
+#: src/ui/prefs.ui:17
+msgid "Set color theme"
+msgstr "Thiết lập chủ đề màu"
+
+#: src/ui/prefs.ui:23
+msgid "Color theme"
+msgstr "Chủ đề màu"
+
+#: src/ui/prefs.ui:39
+msgctxt "System color theme"
+msgid "System"
+msgstr "Hệ Thống"
+
+#: src/ui/prefs.ui:56
+msgctxt "Light color theme"
+msgid "Light"
+msgstr "Sáng"
+
+#: src/ui/prefs.ui:73
+msgctxt "Dark color theme"
+msgid "Dark"
+msgstr "Tối"
+
+#: src/ui/prefs.ui:90
+msgid "Number Precision"
+msgstr "Độ Chính Xác Số"
+
+#: src/ui/prefs.ui:91
+msgid "Set number precision"
+msgstr "Thiết lập độ chính xác số"
+
+#: src/ui/prefs.ui:94
+msgid "Conversion precision"
+msgstr "Độ chính xác chuyển đổi"
+
+#: src/ui/win.ui:33
+msgid "Search units"
+msgstr "Tìm kiếm đơn vị"
+
+#: src/ui/win.ui:39
+msgctxt "accessibility"
+msgid "Search units"
+msgstr "Tìm kiếm đơn vị"
+
+#: src/ui/win.ui:45
+msgid "Units"
+msgstr "Đơn Vị"
+
+#: src/ui/win.ui:51
+msgid "Close sidebar"
+msgstr "Đóng thanh bên"
+
+#: src/ui/win.ui:55
+msgctxt "a11y"
+msgid "Close sidebar"
+msgstr "Đóng thanh bên"
+
+#: src/ui/win.ui:67
+msgctxt "Search units"
+msgid "Search"
+msgstr "Tìm Kiếm"
+
+#: src/ui/win.ui:75
+msgctxt "a11y"
+msgid "Search"
+msgstr "Tìm Kiếm"
+
+#: src/ui/win.ui:76
+msgctxt "a11y"
+msgid "Type to search units"
+msgstr "Nhập để tìm kiếm đơn vị"
+
+#: src/ui/win.ui:109
+msgid "Toggle Sidebar"
+msgstr "Bật/Tắt Thanh Bên"
+
+#: src/ui/win.ui:113
+msgctxt "a11y"
+msgid "Toggle Sidebar"
+msgstr "Bật/Tắt Thanh Bên"
+
+#: src/ui/win.ui:121
+msgid "Main Menu"
+msgstr "Trình Đơn Chính"
+
+#: src/ui/win.ui:124
+msgctxt "a11y"
+msgid "Main Menu"
+msgstr "Trình Đơn Chính"
+
+#: src/ui/win.ui:158
+msgid "Input"
+msgstr "Đầu Vào"
+
+#: src/ui/win.ui:161 src/ui/win.ui:211
+msgctxt "Copy unit"
+msgid "Copy"
+msgstr "Sao Chép"
+
+#: src/ui/win.ui:164
+msgctxt "a11y"
+msgid "Input"
+msgstr "Đầu Vào"
+
+#: src/ui/win.ui:177
+msgid "Switch units"
+msgstr "Chuyển đổi đơn vị"
+
+#: src/ui/win.ui:183
+msgctxt "a11y"
+msgid "Switch units"
+msgstr "Chuyển đổi đơn vị"
+
+#: src/ui/win.ui:207
+msgid "Output"
+msgstr "Đầu Ra"
+
+#: src/ui/win.ui:214
+msgctxt "a11y"
+msgid "Output"
+msgstr "Đầu Ra"
+
+#: src/ui/win.ui:236
+msgid "_Preferences"
+msgstr "_Tùy Chọn"
+
+#: src/ui/win.ui:240
+msgid "_Keyboard Shortcuts"
+msgstr "_Phím Tắt Bàn Phím"
+
+#: src/ui/win.ui:244
+msgid "_About Gauge"
+msgstr "_Giới Thiệu Gauge"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/about.js:15
+msgid "translator-credits"
+msgstr "Loc Huynh <huynhloc.contact@gmail.com>"
+
+#: src/win.js:620
+msgid "Copied value"
+msgstr "Giá trị đã sao chép"
+
+#: src/units/index.js:1
+msgid "Length"
+msgstr "Chiều Dài"
+
+#: src/units/index.js:1
+msgid "Meters"
+msgstr "Mét"
+
+#: src/units/index.js:1
+msgid "Kilometers"
+msgstr "Kilômét"
+
+#: src/units/index.js:1
+msgid "Centimeters"
+msgstr "Centimét"
+
+#: src/units/index.js:1
+msgid "Millimeters"
+msgstr "Milimét"
+
+#: src/units/index.js:1
+msgid "Miles"
+msgstr "Dặm"
+
+#: src/units/index.js:1
+msgid "Yards"
+msgstr "Yard"
+
+#: src/units/index.js:1
+msgid "Feet"
+msgstr "Feet"
+
+#: src/units/index.js:1
+msgid "Inches"
+msgstr "Inch"
+
+#: src/units/index.js:1
+msgid "Area"
+msgstr "Diện Tích"
+
+#: src/units/index.js:1
+msgid "Square Meters"
+msgstr "Mét Vuông"
+
+#: src/units/index.js:1
+msgid "Acre"
+msgstr "Mẫu Anh"
+
+#: src/units/index.js:1
+msgid "Hectare"
+msgstr "Hecta"
+
+#: src/units/index.js:1
+msgid "Square Kilometers"
+msgstr "Kilômét Vuông"
+
+#: src/units/index.js:1
+msgid "Square Centimeters"
+msgstr "Centimét Vuông"
+
+#: src/units/index.js:1
+msgid "Square Millimeters"
+msgstr "Milimét Vuông"
+
+#: src/units/index.js:1
+msgid "Square Miles"
+msgstr "Dặm Vuông"
+
+#: src/units/index.js:1
+msgid "Square Yards"
+msgstr "Yard Vuông"
+
+#: src/units/index.js:1
+msgid "Square Feet"
+msgstr "Feet Vuông"
+
+#: src/units/index.js:1
+msgid "Square Inches"
+msgstr "Inch Vuông"
+
+#: src/units/index.js:1
+msgid "Volume"
+msgstr "Thể Tích"
+
+#: src/units/index.js:1
+msgid "Liters"
+msgstr "Lít"
+
+#: src/units/index.js:1
+msgid "Milliliters"
+msgstr "Mililít"
+
+#: src/units/index.js:1
+msgid "Gallons"
+msgstr "Gallon"
+
+#: src/units/index.js:1
+msgid "Temperature"
+msgstr "Nhiệt Độ"
+
+#: src/units/index.js:1
+msgid "Celsius"
+msgstr "Độ C"
+
+#: src/units/index.js:1
+msgid "Fahrenheit"
+msgstr "Độ F"
+
+#: src/units/index.js:1
+msgid "Kelvin"
+msgstr "Kelvin"
+
+#: src/units/index.js:1
+msgid "Speed"
+msgstr "Tốc Độ"
+
+#: src/units/index.js:1
+msgid "Meters per Second"
+msgstr "Mét trên Giây"
+
+#: src/units/index.js:1
+msgid "Kilometers per Hour"
+msgstr "Kilômét trên Giờ"
+
+#: src/units/index.js:1
+msgid "Miles per Hour"
+msgstr "Dặm trên Giờ"
+
+#: src/units/index.js:1
+msgid "Duration"
+msgstr "Thời Lượng"
+
+#: src/units/index.js:1
+msgid "Seconds"
+msgstr "Giây"
+
+#: src/units/index.js:1
+msgid "Minutes"
+msgstr "Phút"
+
+#: src/units/index.js:1
+msgid "Hours"
+msgstr "Giờ"
+
+#: src/units/index.js:1
+msgid "Days"
+msgstr "Ngày"
+
+#: src/units/index.js:1
+msgid "Weeks"
+msgstr "Tuần"
+
+#: src/units/index.js:1
+msgid "Milliseconds"
+msgstr "Mili giây"
+
+#: src/units/index.js:1
+msgid "Microseconds"
+msgstr "Micro giây"
+
+#: src/units/index.js:1
+msgid "Frequency"
+msgstr "Tần Số"
+
+#: src/units/index.js:1
+msgid "Hertz"
+msgstr "Hertz"
+
+#: src/units/index.js:1
+msgid "Kilohertz"
+msgstr "Kilohertz"
+
+#: src/units/index.js:1
+msgid "Megahertz"
+msgstr "Megahertz"
+
+#: src/units/index.js:1
+msgid "Gigahertz"
+msgstr "Gigahertz"
+
+#: src/units/index.js:1
+msgid "Terahertz"
+msgstr "Terahertz"
+
+#: src/units/index.js:1
+msgid "Mass"
+msgstr "Khối Lượng"
+
+#: src/units/index.js:1
+msgid "Grams"
+msgstr "Gam"
+
+#: src/units/index.js:1
+msgid "Kilograms"
+msgstr "Kilôgam"
+
+#: src/units/index.js:1
+msgid "Pounds"
+msgstr "Pound"
+
+#: src/units/index.js:1
+msgid "Ounces"
+msgstr "Ounce"
+
+#: src/units/index.js:1
+msgid "Metric Tonnes"
+msgstr "Tấn Metric"
+
+#: src/units/index.js:1
+msgid "Short Tons"
+msgstr "Tấn Mỹ (Ngắn)"
+
+#: src/units/index.js:1
+msgid "Long Tons"
+msgstr "Tấn Anh (Dài)"
+
+#: src/units/index.js:1
+msgid "Numeral Systems"
+msgstr "Hệ Thống Số"
+
+#: src/units/index.js:1
+msgid "Decimal"
+msgstr "Thập Phân"
+
+#: src/units/index.js:1
+msgid "Binary"
+msgstr "Nhị Phân"
+
+#: src/units/index.js:1
+msgid "Octal"
+msgstr "Bát Phân"
+
+#: src/units/index.js:1
+msgid "Hexadecimal"
+msgstr "Thập Lục Phân"
+
+#: src/units/index.js:1
+msgid "Angles"
+msgstr "Góc"
+
+#: src/units/index.js:1
+msgid "Degrees"
+msgstr "Độ"
+
+#: src/units/index.js:1
+msgid "Radians"
+msgstr "Radian"
+
+#: src/units/index.js:1
+msgid "Gradians"
+msgstr "Gradian"
+
+#: src/units/index.js:1
+msgid "SI Prefixes"
+msgstr "Tiếp Đầu Ngữ SI"
+
+#: src/units/index.js:1
+msgid "Base"
+msgstr "Cơ Sở"
+
+#: src/units/index.js:1
+msgid "Deca"
+msgstr "Deca"
+
+#: src/units/index.js:1
+msgid "Hecto"
+msgstr "Hecto"
+
+#: src/units/index.js:1
+msgid "Kilo"
+msgstr "Kilo"
+
+#: src/units/index.js:1
+msgid "Mega"
+msgstr "Mega"
+
+#: src/units/index.js:1
+msgid "Giga"
+msgstr "Giga"
+
+#: src/units/index.js:1
+msgid "Tera"
+msgstr "Tera"
+
+#: src/units/index.js:1
+msgid "Peta"
+msgstr "Peta"
+
+#: src/units/index.js:1
+msgid "Exa"
+msgstr "Exa"
+
+#: src/units/index.js:1
+msgid "Zetta"
+msgstr "Zetta"
+
+#: src/units/index.js:1
+msgid "Yotta"
+msgstr "Yotta"
+
+#: src/units/index.js:1
+msgid "Deci"
+msgstr "Deci"
+
+#: src/units/index.js:1
+msgid "Centi"
+msgstr "Centi"
+
+#: src/units/index.js:1
+msgid "Milli"
+msgstr "Milli"
+
+#: src/units/index.js:1
+msgid "Micro"
+msgstr "Micro"
+
+#: src/units/index.js:1
+msgid "Nano"
+msgstr "Nano"
+
+#: src/units/index.js:1
+msgid "Pico"
+msgstr "Pico"
+
+#: src/units/index.js:1
+msgid "Femto"
+msgstr "Femto"
+
+#: src/units/index.js:1
+msgid "Atto"
+msgstr "Atto"
+
+#: src/units/index.js:1
+msgid "Zepto"
+msgstr "Zepto"
+
+#: src/units/index.js:1
+msgid "Yocto"
+msgstr "Yocto"
+
+#: src/units/index.js:1
+msgid "Digital Storage"
+msgstr "Lưu Trữ Kỹ Thuật Số"
+
+#: src/units/index.js:1
+msgid "Bits"
+msgstr "Bit"
+
+#: src/units/index.js:1
+msgid "Bytes"
+msgstr "Byte"
+
+#: src/units/index.js:1
+msgid "Nibbles"
+msgstr "Nibble"
+
+#: src/units/index.js:1
+msgid "Kilobits"
+msgstr "Kilobit"
+
+#: src/units/index.js:1
+msgid "Kilobytes"
+msgstr "Kilobyte"
+
+#: src/units/index.js:1
+msgid "Kibibits"
+msgstr "Kibibit"
+
+#: src/units/index.js:1
+msgid "Kibibytes"
+msgstr "Kibibyte"
+
+#: src/units/index.js:1
+msgid "Megabits"
+msgstr "Megabit"
+
+#: src/units/index.js:1
+msgid "Megabytes"
+msgstr "Megabyte"
+
+#: src/units/index.js:1
+msgid "Mebibits"
+msgstr "Mebibit"
+
+#: src/units/index.js:1
+msgid "Mebibytes"
+msgstr "Mebibyte"
+
+#: src/units/index.js:1
+msgid "Gigabits"
+msgstr "Gigabit"
+
+#: src/units/index.js:1
+msgid "Gigabytes"
+msgstr "Gigabyte"
+
+#: src/units/index.js:1
+msgid "Gibibits"
+msgstr "Gibibit"
+
+#: src/units/index.js:1
+msgid "Gibibytes"
+msgstr "Gibibyte"
+
+#: src/units/index.js:1
+msgid "Terabits"
+msgstr "Terabit"
+
+#: src/units/index.js:1
+msgid "Terabytes"
+msgstr "Terabyte"
+
+#: src/units/index.js:1
+msgid "Tebibits"
+msgstr "Tebibit"
+
+#: src/units/index.js:1
+msgid "Tebibytes"
+msgstr "Tebibyte"
+
+#: src/units/index.js:1
+msgid "Petabits"
+msgstr "Petabit"
+
+#: src/units/index.js:1
+msgid "Petabytes"
+msgstr "Petabyte"
+
+#: src/units/index.js:1
+msgid "Pebibits"
+msgstr "Pebibit"
+
+#: src/units/index.js:1
+msgid "Pebibytes"
+msgstr "Pebibyte"
+
+#: src/units/index.js:1
+msgid "Exabits"
+msgstr "Exabit"
+
+#: src/units/index.js:1
+msgid "Exabytes"
+msgstr "Exabyte"
+
+#: src/units/index.js:1
+msgid "Exbibits"
+msgstr "Exbibit"
+
+#: src/units/index.js:1
+msgid "Exbibytes"
+msgstr "Exbibyte"
+
+#: src/units/index.js:1
+msgid "Zettabits"
+msgstr "Zettabit"
+
+#: src/units/index.js:1
+msgid "Zettabytes"
+msgstr "Zettabyte"
+
+#: src/units/index.js:1
+msgid "Zebibits"
+msgstr "Zebibit"
+
+#: src/units/index.js:1
+msgid "Zebibytes"
+msgstr "Zebibyte"
+
+#: src/units/index.js:1
+msgid "Yottabits"
+msgstr "Yottabit"
+
+#: src/units/index.js:1
+msgid "Yottabytes"
+msgstr "Yottabyte"
+
+#: src/units/index.js:1
+msgid "Yobibits"
+msgstr "Yobibit"
+
+#: src/units/index.js:1
+msgid "Yobibytes"
+msgstr "Yobibyte"

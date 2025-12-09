@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Gauge package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Loc Huynh <https://github.com/hthienloc>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Gauge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-27 19:14+0300\n"
-"PO-Revision-Date: 2025-12-03 15:49+0700\n"
-"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2025-12-09 21:57+0700\n"
+"Last-Translator: Loc Huynh <https://github.com/hthienloc>\n"
+"Language-Team: Vietnamese <https://github.com/linux-l10n-vi>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Gtranslator 49.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/io.github.josephmawa.Gauge.desktop.in:3
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:7 src/ui/win.ui:6
@@ -26,15 +27,20 @@ msgstr "Gauge"
 #. Translators: These are search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
 #: data/io.github.josephmawa.Gauge.desktop.in:10
 msgid "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;"
-msgstr "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;Đơn vị;Bộ chuyển đổi;Chuyển đổi;Độ chính xác;Đo lường;Công cụ;"
+msgstr ""
+"Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;Đơn vị;Bộ "
+"chuyển đổi;Chuyển đổi;Độ chính xác;Đo lường;Công cụ;"
 
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:8
 msgid "Unit converter"
 msgstr "Bộ chuyển đổi đơn vị"
 
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:10
-msgid "Gauge is a high precision unit conversion tool. Below are the main features:"
-msgstr "Gauge là công cụ chuyển đổi đơn vị có độ chính xác cao. Dưới đây là các tính năng chính:"
+msgid ""
+"Gauge is a high precision unit conversion tool. Below are the main features:"
+msgstr ""
+"Gauge là công cụ chuyển đổi đơn vị có độ chính xác cao. Dưới đây là các tính "
+"năng chính:"
 
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:12
 msgid "Instant conversion"
@@ -76,17 +82,17 @@ msgstr "Chung"
 #: src/ui/help.ui:14
 msgctxt "shortcut window"
 msgid "Toggle Menu"
-msgstr "Bật/Tắt Trình Đơn"
+msgstr "Bật/Tắt Menu"
 
 #: src/ui/help.ui:20
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Hiển Thị Phím Tắt"
+msgstr "Hiển thị Phím tắt"
 
 #: src/ui/help.ui:26
 msgctxt "shortcut window"
 msgid "Show Preferences"
-msgstr "Hiển Thị Tùy Chọn"
+msgstr "Hiển thị Tùy chọn"
 
 #: src/ui/help.ui:32
 msgctxt "shortcut window"
@@ -101,25 +107,25 @@ msgstr "Đơn Vị"
 #: src/ui/help.ui:43
 msgctxt "shortcut window"
 msgid "Toggle Sidebar"
-msgstr "Bật/Tắt Thanh Bên"
+msgstr "Bật/Tắt Thanh bên"
 
 #: src/ui/help.ui:49
 msgctxt "shortcut window"
 msgid "Search Units"
-msgstr "Tìm Kiếm Đơn Vị"
+msgstr "Tìm kiếm đơn vị"
 
 #: src/ui/help.ui:55
 msgctxt "shortcut window"
 msgid "Switch Units"
-msgstr "Chuyển Đổi Đơn Vị"
+msgstr "Chuyển đổI đơn vị"
 
 #: src/ui/prefs.ui:7 src/ui/prefs.ui:13
 msgid "Preferences"
-msgstr "Tùy Chọn"
+msgstr "Tùy chọn"
 
 #: src/ui/prefs.ui:16
 msgid "Color Theme"
-msgstr "Chủ Đề Màu"
+msgstr "Chủ đề màu"
 
 #: src/ui/prefs.ui:17
 msgid "Set color theme"
@@ -132,7 +138,7 @@ msgstr "Chủ đề màu"
 #: src/ui/prefs.ui:39
 msgctxt "System color theme"
 msgid "System"
-msgstr "Hệ Thống"
+msgstr "Hệ thống"
 
 #: src/ui/prefs.ui:56
 msgctxt "Light color theme"
@@ -146,7 +152,7 @@ msgstr "Tối"
 
 #: src/ui/prefs.ui:90
 msgid "Number Precision"
-msgstr "Độ Chính Xác Số"
+msgstr "Độ chính xác số"
 
 #: src/ui/prefs.ui:91
 msgid "Set number precision"
@@ -167,7 +173,7 @@ msgstr "Tìm kiếm đơn vị"
 
 #: src/ui/win.ui:45
 msgid "Units"
-msgstr "Đơn Vị"
+msgstr "Đơn vị"
 
 #: src/ui/win.ui:51
 msgid "Close sidebar"
@@ -195,35 +201,35 @@ msgstr "Nhập để tìm kiếm đơn vị"
 
 #: src/ui/win.ui:109
 msgid "Toggle Sidebar"
-msgstr "Bật/Tắt Thanh Bên"
+msgstr "Bật/Tắt Thanh bên"
 
 #: src/ui/win.ui:113
 msgctxt "a11y"
 msgid "Toggle Sidebar"
-msgstr "Bật/Tắt Thanh Bên"
+msgstr "Bật/Tắt Thanh bên"
 
 #: src/ui/win.ui:121
 msgid "Main Menu"
-msgstr "Trình Đơn Chính"
+msgstr "Menu chính"
 
 #: src/ui/win.ui:124
 msgctxt "a11y"
 msgid "Main Menu"
-msgstr "Trình Đơn Chính"
+msgstr "Menu chính"
 
 #: src/ui/win.ui:158
 msgid "Input"
-msgstr "Đầu Vào"
+msgstr "Đầu vào"
 
 #: src/ui/win.ui:161 src/ui/win.ui:211
 msgctxt "Copy unit"
 msgid "Copy"
-msgstr "Sao Chép"
+msgstr "Sao chép"
 
 #: src/ui/win.ui:164
 msgctxt "a11y"
 msgid "Input"
-msgstr "Đầu Vào"
+msgstr "Đầu vào"
 
 #: src/ui/win.ui:177
 msgid "Switch units"
@@ -236,16 +242,16 @@ msgstr "Chuyển đổi đơn vị"
 
 #: src/ui/win.ui:207
 msgid "Output"
-msgstr "Đầu Ra"
+msgstr "Đầu ra"
 
 #: src/ui/win.ui:214
 msgctxt "a11y"
 msgid "Output"
-msgstr "Đầu Ra"
+msgstr "Đầu ra"
 
 #: src/ui/win.ui:236
 msgid "_Preferences"
-msgstr "_Tùy Chọn"
+msgstr "_Tùy chọn"
 
 #: src/ui/win.ui:240
 msgid "_Keyboard Shortcuts"
@@ -253,12 +259,12 @@ msgstr "_Phím Tắt Bàn Phím"
 
 #: src/ui/win.ui:244
 msgid "_About Gauge"
-msgstr "_Giới Thiệu Gauge"
+msgstr "_Giới thiệu Gauge"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
 #: src/about.js:15
 msgid "translator-credits"
-msgstr "Loc Huynh <huynhloc.contact@gmail.com>"
+msgstr "Loc Huynh <https://github.com/hthienloc>"
 
 #: src/win.js:620
 msgid "Copied value"
@@ -266,7 +272,7 @@ msgstr "Giá trị đã sao chép"
 
 #: src/units/index.js:1
 msgid "Length"
-msgstr "Chiều Dài"
+msgstr "Chiều dài"
 
 #: src/units/index.js:1
 msgid "Meters"
@@ -302,11 +308,11 @@ msgstr "Inch"
 
 #: src/units/index.js:1
 msgid "Area"
-msgstr "Diện Tích"
+msgstr "Diện tích"
 
 #: src/units/index.js:1
 msgid "Square Meters"
-msgstr "Mét Vuông"
+msgstr "Mét vuông"
 
 #: src/units/index.js:1
 msgid "Acre"
@@ -330,23 +336,23 @@ msgstr "Milimét Vuông"
 
 #: src/units/index.js:1
 msgid "Square Miles"
-msgstr "Dặm Vuông"
+msgstr "Dặm vuông"
 
 #: src/units/index.js:1
 msgid "Square Yards"
-msgstr "Yard Vuông"
+msgstr "Yard vuông"
 
 #: src/units/index.js:1
 msgid "Square Feet"
-msgstr "Feet Vuông"
+msgstr "Feet vuông"
 
 #: src/units/index.js:1
 msgid "Square Inches"
-msgstr "Inch Vuông"
+msgstr "Inch vuông"
 
 #: src/units/index.js:1
 msgid "Volume"
-msgstr "Thể Tích"
+msgstr "Thể tích"
 
 #: src/units/index.js:1
 msgid "Liters"
@@ -362,7 +368,7 @@ msgstr "Gallon"
 
 #: src/units/index.js:1
 msgid "Temperature"
-msgstr "Nhiệt Độ"
+msgstr "Nhiệt độ"
 
 #: src/units/index.js:1
 msgid "Celsius"
@@ -374,27 +380,27 @@ msgstr "Độ F"
 
 #: src/units/index.js:1
 msgid "Kelvin"
-msgstr "Kelvin"
+msgstr "Độ K"
 
 #: src/units/index.js:1
 msgid "Speed"
-msgstr "Tốc Độ"
+msgstr "Tốc độ"
 
 #: src/units/index.js:1
 msgid "Meters per Second"
-msgstr "Mét trên Giây"
+msgstr "Mét trên giây"
 
 #: src/units/index.js:1
 msgid "Kilometers per Hour"
-msgstr "Kilômét trên Giờ"
+msgstr "Kilômét trên giờ"
 
 #: src/units/index.js:1
 msgid "Miles per Hour"
-msgstr "Dặm trên Giờ"
+msgstr "Dặm trên giờ"
 
 #: src/units/index.js:1
 msgid "Duration"
-msgstr "Thời Lượng"
+msgstr "Thời lượng"
 
 #: src/units/index.js:1
 msgid "Seconds"
@@ -426,7 +432,7 @@ msgstr "Micro giây"
 
 #: src/units/index.js:1
 msgid "Frequency"
-msgstr "Tần Số"
+msgstr "Tần số"
 
 #: src/units/index.js:1
 msgid "Hertz"
@@ -450,7 +456,7 @@ msgstr "Terahertz"
 
 #: src/units/index.js:1
 msgid "Mass"
-msgstr "Khối Lượng"
+msgstr "Khối lượng"
 
 #: src/units/index.js:1
 msgid "Grams"
@@ -482,23 +488,23 @@ msgstr "Tấn Anh (Dài)"
 
 #: src/units/index.js:1
 msgid "Numeral Systems"
-msgstr "Hệ Thống Số"
+msgstr "Hệ thống số"
 
 #: src/units/index.js:1
 msgid "Decimal"
-msgstr "Thập Phân"
+msgstr "Thập phân"
 
 #: src/units/index.js:1
 msgid "Binary"
-msgstr "Nhị Phân"
+msgstr "Nhị phân"
 
 #: src/units/index.js:1
 msgid "Octal"
-msgstr "Bát Phân"
+msgstr "Bát phân"
 
 #: src/units/index.js:1
 msgid "Hexadecimal"
-msgstr "Thập Lục Phân"
+msgstr "Thập lục phân"
 
 #: src/units/index.js:1
 msgid "Angles"
@@ -518,11 +524,11 @@ msgstr "Gradian"
 
 #: src/units/index.js:1
 msgid "SI Prefixes"
-msgstr "Tiếp Đầu Ngữ SI"
+msgstr "Các tiền tố SI"
 
 #: src/units/index.js:1
 msgid "Base"
-msgstr "Cơ Sở"
+msgstr "Cơ ở"
 
 #: src/units/index.js:1
 msgid "Deca"
@@ -606,7 +612,7 @@ msgstr "Yocto"
 
 #: src/units/index.js:1
 msgid "Digital Storage"
-msgstr "Lưu Trữ Kỹ Thuật Số"
+msgstr "Lưu trữ kỹ thuật số"
 
 #: src/units/index.js:1
 msgid "Bits"

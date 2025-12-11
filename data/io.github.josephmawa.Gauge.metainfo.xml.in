@@ -57,6 +57,14 @@
   </requires>
 
   <releases>
+    <release version="0.1.4" date="2025-12-11">
+      <description translate="no">
+        <ul>
+          <li>Add Vietnamese translation</li>
+          <li>Upgrade to Gnome runtime version 49</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.3" date="2025-11-03">
       <description translate="no">
         <ul>

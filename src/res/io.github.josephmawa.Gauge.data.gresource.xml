@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/josephmawa/Gauge">
-    <file preprocess="xml-stripblanks" compressed="true" alias="gtk/help-overlay.ui">ui/help.ui</file>
+    <file preprocess="xml-stripblanks" compressed="true" alias="shortcuts-dialog.ui">ui/shortcuts-dialog.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="prefs.ui">ui/prefs.ui</file>
     <file preprocess="xml-stripblanks" compressed="true" alias="win.ui">ui/win.ui</file>
   </gresource>

@@ -52,6 +52,7 @@ fs.writeFile(destFile, dataString, "utf-8")
   .then(() => {
     console.log("Units processed successfully.");
   })
-  .catch((error) => {
+  .catch((err) => {
     console.log("Unit processing failed.");
+    console.error(err);
   });

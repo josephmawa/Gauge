@@ -286,8 +286,7 @@ export const GaugeWindow = GObject.registerClass(
         this.convertUnitDebounced = this.debounce(this.convertUnit, 300);
       }
       /**
-       * NOTE:
-       * You can't connect insert-text event to Gtk.Entry directly.
+       * NOTE: You can't connect insert-text event to Gtk.Entry directly.
        * Read more about it in the following reference docs:
        * • https://gitlab.gnome.org/GNOME/gtk/-/issues/4315
        * • https://docs.gtk.org/gtk4/iface.Editable.html#implementing-gtkeditable

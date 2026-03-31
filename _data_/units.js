@@ -665,6 +665,62 @@ module.exports = [
     ],
   },
   {
+    label: "Power",
+    idBaseUnit: "watt",
+    units: [
+      {
+        id: "watt",
+        label: "Watt",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Watt",
+          short: "W",
+          plural: "Watts",
+        },
+      },
+      {
+        id: "kilowatt",
+        label: "Kilowatt",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilowatt",
+          short: "KW",
+          plural: "Kilowatts",
+        },
+      },
+      {
+        id: "megawatt",
+        label: "Megawatt",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megawatt",
+          short: "MW",
+          plural: "Megawatts",
+        },
+      },
+      {
+        id: "gigawatt",
+        label: "Gigawatt",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigawatt",
+          short: "GW",
+          plural: "Gigawatts",
+        },
+      },
+      {
+        id: "milliwatt",
+        label: "Milliwatt",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Milliwatt",
+          short: "mW",
+          plural: "Milliwatts",
+        },
+      },
+    ],
+  },
+  {
     label: "Numeral Systems",
     idBaseUnit: "decimal",
     units: [

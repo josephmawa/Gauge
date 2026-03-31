@@ -719,9 +719,9 @@ module.exports = [
         },
       },
       {
-        id: "imperial_horsepower",
-        label: "Imperial horsepower",
-        toBaseFactor: "745.69987158227022",
+        id: "metric_horsepower",
+        label: "Metric horsepower",
+        toBaseFactor: "735.49875",
         symbols: {
           full: "Horsepower",
           short: "hp",
@@ -729,9 +729,9 @@ module.exports = [
         },
       },
       {
-        id: "metric_horsepower",
-        label: "Metric horsepower",
-        toBaseFactor: "735.49875",
+        id: "imperial_horsepower",
+        label: "Imperial horsepower",
+        toBaseFactor: "745.69987158227022",
         symbols: {
           full: "Horsepower",
           short: "hp",

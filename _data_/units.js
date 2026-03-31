@@ -665,6 +665,109 @@ module.exports = [
     ],
   },
   {
+    label: "Power",
+    idBaseUnit: "watt",
+    units: [
+      {
+        id: "watt",
+        label: "Watt",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Watt",
+          short: "W",
+          plural: "Watts",
+        },
+      },
+      {
+        id: "kilowatt",
+        label: "Kilowatt",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilowatt",
+          short: "KW",
+          plural: "Kilowatts",
+        },
+      },
+      {
+        id: "megawatt",
+        label: "Megawatt",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megawatt",
+          short: "MW",
+          plural: "Megawatts",
+        },
+      },
+      {
+        id: "gigawatt",
+        label: "Gigawatt",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigawatt",
+          short: "GW",
+          plural: "Gigawatts",
+        },
+      },
+      {
+        id: "milliwatt",
+        label: "Milliwatt",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Milliwatt",
+          short: "mW",
+          plural: "Milliwatts",
+        },
+      },
+      {
+        id: "metric_horsepower",
+        label: "Metric horsepower",
+        toBaseFactor: "735.49875",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
+      {
+        id: "imperial_horsepower",
+        label: "Imperial horsepower",
+        toBaseFactor: "745.69987158227022",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
+    ],
+  },
+  {
+    label: "Fuel Consumption",
+    idBaseUnit: "kilometers_per_liter",
+    units: [
+      {
+        id: "kilometers_per_liter",
+        label: "Kilometers per liter",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Kilometers per litre",
+          short: "km/l",
+          plural: "Kilometers per litre",
+        },
+      },
+      {
+        id: "miles_per_gallon",
+        label: "Miles per Gallon",
+        /* prettier-ignore */
+        toBaseFactor: "0.4251437074302720034011496594421760272091972755374082176735782042992657413886256343941259311090050751531",
+        symbols: {
+          full: "Miles per Gallon",
+          short: "mpg",
+          plural: "Miles per Gallon",
+        },
+      },
+    ],
+  },
+  {
     label: "Numeral Systems",
     idBaseUnit: "decimal",
     units: [

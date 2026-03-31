@@ -718,6 +718,26 @@ module.exports = [
           plural: "Milliwatts",
         },
       },
+      {
+        id: "imperial_horsepower",
+        label: "Imperial horsepower",
+        toBaseFactor: "745.69987158227022",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
+      {
+        id: "metric_horsepower",
+        label: "Metric horsepower",
+        toBaseFactor: "735.49875",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
     ],
   },
   {

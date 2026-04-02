@@ -7,8 +7,8 @@ data/io.github.josephmawa.Gauge.gschema.xml
 data/io.github.josephmawa.Gauge.metainfo.xml.in
 
 # src/ui/*.ui
-src/ui/help.ui
 src/ui/prefs.ui
+src/ui/shortcuts-dialog.ui
 src/ui/win.ui
 
 # src/*.js 

@@ -765,6 +765,16 @@ module.exports = [
           plural: "Miles per Gallon",
         },
       },
+       {
+        id: "liters_per_100_km",
+        label: "Liters per 100 km",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Liters per 100 km",
+          short: "l/100km",
+          plural: "Liters per 100 km",
+        },
+      },
     ],
   },
   {

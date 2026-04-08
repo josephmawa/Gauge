@@ -665,6 +665,83 @@ module.exports = [
     ],
   },
   {
+    label: "Pressure",
+    idBaseUnit: "pascal",
+    units: [
+      {
+        id: "pascal",
+        label: "Pascal",
+        toBaseFactor: "1",
+        symbols: {
+          full: "pascal",
+          short: "Pa",
+          plural: "pascals",
+        },
+      },
+      {
+        id: "atmosphere",
+        label: "Atmosphere",
+        toBaseFactor: "101325",
+        symbols: {
+          full: "atmosphere",
+          short: "atm",
+          plural: "atmospheres",
+        },
+      },
+      {
+        id: "bar",
+        label: "Bar",
+        toBaseFactor: "100000",
+        symbols: {
+          full: "bar",
+          short: "bar",
+          plural: "bars",
+        },
+      },
+      {
+        id: "newton_per_square_meter",
+        label: "Newton per square meter",
+        toBaseFactor: "1",
+        symbols: {
+          full: "newton per square meter",
+          short: "N/m&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "newtons per square meter",
+        },
+      },
+      {
+        id: "pounds_per_square_inch",
+        label: "Pounds per square inch",
+        /* prettier-ignore */
+        toBaseFactor: "6894.7572931683613367226734453468906937813875627751255502511005022010044020088040176080352160704321408642818",
+        symbols: {
+          full: "pound per square inch",
+          short: "psi",
+          plural: "pounds per square inch",
+        },
+      },
+      {
+        id: "millimeters_of_mercury",
+        label: "Millimeters of mercury(Torr)",
+        toBaseFactor: "133.322387415",
+        symbols: {
+          full: "millimeter of mercury",
+          short: "mmHg",
+          plural: "millimeters of mercury",
+        },
+      },
+      {
+        id: "inches_of_mercury",
+        label: "Inches of mercury",
+        toBaseFactor: "3386.3886403409997",
+        symbols: {
+          full: "inches of mercury",
+          short: "inHg",
+          plural: "inches of mercury",
+        },
+      },
+    ],
+  },
+  {
     label: "Power",
     idBaseUnit: "watt",
     units: [
@@ -765,7 +842,7 @@ module.exports = [
           plural: "Miles per Gallon",
         },
       },
-       {
+      {
         id: "liters_per_100_km",
         label: "Liters per 100 km",
         toBaseFactor: "1",

@@ -33,7 +33,7 @@ export const GaugeWindow = GObject.registerClass(
         "unitId",
         "Selected Unit ID",
         GObject.ParamFlags.READWRITE,
-        "meter"
+        "meter",
       ),
     },
     InternalChildren: [
@@ -158,7 +158,7 @@ export const GaugeWindow = GObject.registerClass(
         const nestedStore = Gio.ListStore.new(Unit);
         const nestedModel = Gtk.FilterListModel.new(
           nestedStore,
-          this.customFilter
+          this.customFilter,
         );
 
         for (const unit of item.units) {
@@ -225,7 +225,7 @@ export const GaugeWindow = GObject.registerClass(
             (_, unitId) => {
               return [true, item.id === unitId];
             },
-            null
+            null,
           );
         }
 
@@ -263,11 +263,11 @@ export const GaugeWindow = GObject.registerClass(
 
       this._input_dropdown.connect(
         "notify::selected",
-        this.unitSelectedHandler
+        this.unitSelectedHandler,
       );
       this._output_dropdown.connect(
         "notify::selected",
-        this.unitSelectedHandler
+        this.unitSelectedHandler,
       );
       this.unitSelectedHandler();
     };
@@ -408,6 +408,24 @@ export const GaugeWindow = GObject.registerClass(
         return;
       }
 
+      if (outputItem.id === "liters_per_100_km") {
+        const b = new BigNumber(inputItem.toBaseFactor);
+        const c = new BigNumber(100);
+
+        const conversion = c.div(a.times(b)).round(precision).toString();
+        this._output_entry.text = conversion;
+        return;
+      }
+
+      if (inputItem.id === "liters_per_100_km") {
+        const b = new BigNumber(100);
+        const c = new BigNumber(outputItem.toBaseFactor);
+
+        const conversion = b.div(a).div(c).round(precision).toString();
+        this._output_entry.text = conversion;
+        return;
+      }
+
       const b = new BigNumber(inputItem.toBaseFactor);
       const c = new BigNumber(outputItem.toBaseFactor);
 
@@ -487,25 +505,25 @@ export const GaugeWindow = GObject.registerClass(
         "window-width",
         this,
         "default-width",
-        Gio.SettingsBindFlags.DEFAULT
+        Gio.SettingsBindFlags.DEFAULT,
       );
       settings.bind(
         "window-height",
         this,
         "default-height",
-        Gio.SettingsBindFlags.DEFAULT
+        Gio.SettingsBindFlags.DEFAULT,
       );
       settings.bind(
         "window-maximized",
         this,
         "maximized",
-        Gio.SettingsBindFlags.DEFAULT
+        Gio.SettingsBindFlags.DEFAULT,
       );
       settings.bind(
         "show-sidebar",
         this._split_view,
         "show-sidebar",
-        Gio.SettingsBindFlags.DEFAULT
+        Gio.SettingsBindFlags.DEFAULT,
       );
 
       settings.connect("changed::precision", this.updatePrecision);
@@ -540,7 +558,7 @@ export const GaugeWindow = GObject.registerClass(
       Gtk.StyleContext.add_provider_for_display(
         this.display,
         cssProvider,
-        Gtk.STYLE_PROVIDER_PRIORITY_USER
+        Gtk.STYLE_PROVIDER_PRIORITY_USER,
       );
     };
 
@@ -560,7 +578,7 @@ export const GaugeWindow = GObject.registerClass(
         GLib.quark_to_string(0),
         null,
         null,
-        null
+        null,
       );
       GObject.signal_handler_block(editable, handlerId);
 
@@ -642,5 +660,5 @@ export const GaugeWindow = GObject.registerClass(
         });
       };
     };
-  }
+  },
 );

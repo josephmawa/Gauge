@@ -665,6 +665,283 @@ module.exports = [
     ],
   },
   {
+    label: "Pressure",
+    idBaseUnit: "pascal",
+    units: [
+      {
+        id: "pascal",
+        label: "Pascal",
+        toBaseFactor: "1",
+        symbols: {
+          full: "pascal",
+          short: "Pa",
+          plural: "pascals",
+        },
+      },
+      {
+        id: "atmosphere",
+        label: "Atmosphere",
+        toBaseFactor: "101325",
+        symbols: {
+          full: "atmosphere",
+          short: "atm",
+          plural: "atmospheres",
+        },
+      },
+      {
+        id: "bar",
+        label: "Bar",
+        toBaseFactor: "100000",
+        symbols: {
+          full: "bar",
+          short: "bar",
+          plural: "bars",
+        },
+      },
+      {
+        id: "newton_per_square_meter",
+        label: "Newton per square meter",
+        toBaseFactor: "1",
+        symbols: {
+          full: "newton per square meter",
+          short: "N/m&lt;sup&gt;2&lt;/sup&gt;",
+          plural: "newtons per square meter",
+        },
+      },
+      {
+        id: "pounds_per_square_inch",
+        label: "Pounds per square inch",
+        /* prettier-ignore */
+        toBaseFactor: "6894.7572931683613367226734453468906937813875627751255502511005022010044020088040176080352160704321408642818",
+        symbols: {
+          full: "pound per square inch",
+          short: "psi",
+          plural: "pounds per square inch",
+        },
+      },
+      {
+        id: "millimeters_of_mercury",
+        label: "Millimeters of mercury(Torr)",
+        toBaseFactor: "133.322387415",
+        symbols: {
+          full: "millimeter of mercury",
+          short: "mmHg",
+          plural: "millimeters of mercury",
+        },
+      },
+      {
+        id: "inches_of_mercury",
+        label: "Inches of mercury",
+        toBaseFactor: "3386.3886403409997",
+        symbols: {
+          full: "inches of mercury",
+          short: "inHg",
+          plural: "inches of mercury",
+        },
+      },
+    ],
+  },
+  {
+    label: "Energy",
+    idBaseUnit: "joule",
+    units: [
+      {
+        id: "joule",
+        label: "Joules",
+        toBaseFactor: "1",
+        symbols: {
+          full: "joule",
+          short: "J",
+          plural: "joules",
+        },
+      },
+      {
+        id: "kilo_joule",
+        label: "Kilojoules",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "kilo-joule",
+          short: "kJ",
+          plural: "kilo-joules",
+        },
+      },
+      {
+        id: "watt_hour",
+        label: "Watt hour",
+        toBaseFactor: "3600",
+        symbols: {
+          full: "watt-hour",
+          short: "Wh",
+          plural: "watt-hours",
+        },
+      },
+      {
+        id: "kilowatt_hour",
+        label: "Kilowatt hour",
+        toBaseFactor: "3600000",
+        symbols: {
+          full: "kilowatt-hour",
+          short: "kWh",
+          plural: "kilowatt-hours",
+        },
+      },
+      {
+        id: "calories_thermochemical",
+        label: "Calories(Thermochemical)",
+        toBaseFactor: "4.184",
+        symbols: {
+          full: "calorie",
+          short: "cal",
+          plural: "calories",
+        },
+      },
+      {
+        id: "kilo_calories_thermochemical",
+        label: "Kilocalories(Thermochemical)",
+        toBaseFactor: "4184",
+        symbols: {
+          full: "kilo-calorie",
+          short: "kcal",
+          plural: "kilo-calories",
+        },
+      },
+      {
+        id: "calories_steam_table",
+        label: "Calories(Steam Table)",
+        toBaseFactor: "4.1868",
+        symbols: {
+          full: "calorie",
+          short: "cal",
+          plural: "calories",
+        },
+      },
+      {
+        id: "kilo_calories_steam_table",
+        label: "Kilocalories(Steam Table)",
+        toBaseFactor: "4186.8",
+        symbols: {
+          full: "kilo-calorie",
+          short: "kcal",
+          plural: "kilo-calories",
+        },
+      },
+
+    ],
+  },
+  {
+    label: "Power",
+    idBaseUnit: "watt",
+    units: [
+      {
+        id: "watt",
+        label: "Watt",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Watt",
+          short: "W",
+          plural: "Watts",
+        },
+      },
+      {
+        id: "kilowatt",
+        label: "Kilowatt",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "Kilowatt",
+          short: "KW",
+          plural: "Kilowatts",
+        },
+      },
+      {
+        id: "megawatt",
+        label: "Megawatt",
+        toBaseFactor: "1000000",
+        symbols: {
+          full: "Megawatt",
+          short: "MW",
+          plural: "Megawatts",
+        },
+      },
+      {
+        id: "gigawatt",
+        label: "Gigawatt",
+        toBaseFactor: "1000000000",
+        symbols: {
+          full: "Gigawatt",
+          short: "GW",
+          plural: "Gigawatts",
+        },
+      },
+      {
+        id: "milliwatt",
+        label: "Milliwatt",
+        toBaseFactor: "0.001",
+        symbols: {
+          full: "Milliwatt",
+          short: "mW",
+          plural: "Milliwatts",
+        },
+      },
+      {
+        id: "metric_horsepower",
+        label: "Metric horsepower",
+        toBaseFactor: "735.49875",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
+      {
+        id: "imperial_horsepower",
+        label: "Imperial horsepower",
+        toBaseFactor: "745.69987158227022",
+        symbols: {
+          full: "Horsepower",
+          short: "hp",
+          plural: "Horsepowers",
+        },
+      },
+    ],
+  },
+  {
+    label: "Fuel Consumption",
+    idBaseUnit: "kilometers_per_liter",
+    units: [
+      {
+        id: "kilometers_per_liter",
+        label: "Kilometers per liter",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Kilometers per litre",
+          short: "km/l",
+          plural: "Kilometers per litre",
+        },
+      },
+      {
+        id: "miles_per_gallon",
+        label: "Miles per Gallon",
+        /* prettier-ignore */
+        toBaseFactor: "0.4251437074302720034011496594421760272091972755374082176735782042992657413886256343941259311090050751531",
+        symbols: {
+          full: "Miles per Gallon",
+          short: "mpg",
+          plural: "Miles per Gallon",
+        },
+      },
+      {
+        id: "liters_per_100_km",
+        label: "Liters per 100 km",
+        toBaseFactor: "1",
+        symbols: {
+          full: "Liters per 100 km",
+          short: "l/100km",
+          plural: "Liters per 100 km",
+        },
+      },
+    ],
+  },
+  {
     label: "Numeral Systems",
     idBaseUnit: "decimal",
     units: [

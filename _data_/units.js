@@ -742,6 +742,93 @@ module.exports = [
     ],
   },
   {
+    label: "Energy",
+    idBaseUnit: "joule",
+    units: [
+      {
+        id: "joule",
+        label: "Joules",
+        toBaseFactor: "1",
+        symbols: {
+          full: "joule",
+          short: "J",
+          plural: "joules",
+        },
+      },
+      {
+        id: "kilo_joule",
+        label: "Kilojoules",
+        toBaseFactor: "1000",
+        symbols: {
+          full: "kilo-joule",
+          short: "kJ",
+          plural: "kilo-joules",
+        },
+      },
+      {
+        id: "watt_hour",
+        label: "Watt hour",
+        toBaseFactor: "3600",
+        symbols: {
+          full: "watt-hour",
+          short: "Wh",
+          plural: "watt-hours",
+        },
+      },
+      {
+        id: "kilowatt_hour",
+        label: "Kilowatt hour",
+        toBaseFactor: "3600000",
+        symbols: {
+          full: "kilowatt-hour",
+          short: "kWh",
+          plural: "kilowatt-hours",
+        },
+      },
+      {
+        id: "calories_thermochemical",
+        label: "Calories(Thermochemical)",
+        toBaseFactor: "4.184",
+        symbols: {
+          full: "calorie",
+          short: "cal",
+          plural: "calories",
+        },
+      },
+      {
+        id: "kilo_calories_thermochemical",
+        label: "Kilocalories(Thermochemical)",
+        toBaseFactor: "4184",
+        symbols: {
+          full: "kilo-calorie",
+          short: "kcal",
+          plural: "kilo-calories",
+        },
+      },
+      {
+        id: "calories_steam_table",
+        label: "Calories(Steam Table)",
+        toBaseFactor: "4.1868",
+        symbols: {
+          full: "calorie",
+          short: "cal",
+          plural: "calories",
+        },
+      },
+      {
+        id: "kilo_calories_steam_table",
+        label: "Kilocalories(Steam Table)",
+        toBaseFactor: "4186.8",
+        symbols: {
+          full: "kilo-calorie",
+          short: "kcal",
+          plural: "kilo-calories",
+        },
+      },
+
+    ],
+  },
+  {
     label: "Power",
     idBaseUnit: "watt",
     units: [

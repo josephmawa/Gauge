@@ -1,6 +1,7 @@
 {
   "name": "gauge",
   "version": "0.1.5",
+  "private": true,
   "description": "Unit converter",
   "main": "index.js",
   "scripts": {
@@ -19,7 +20,7 @@
     "Unit",
     "Converter"
   ],
-  "author": "Jospeh Mawa",
+  "author": "Joseph Mawa",
   "license": "GPL-3.0-or-later",
   "type": "commonjs"
 }

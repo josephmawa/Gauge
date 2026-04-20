@@ -8,23 +8,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gauge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 19:14+0300\n"
-"PO-Revision-Date: 2025-11-02 12:56-0300\n"
+"POT-Creation-Date: 2026-04-10 10:17+0300\n"
+"PO-Revision-Date: 2026-04-18 10:55-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
-#: data/io.github.josephmawa.Gauge.desktop.in:3
+#: data/io.github.josephmawa.Gauge.desktop.in:2
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:7 src/ui/win.ui:6
 msgid "Gauge"
 msgstr "Gauge"
 
 #. Translators: These are search terms to find this application. Do NOT translate or localize the semicolons. The list MUST also end with a semicolon.
-#: data/io.github.josephmawa.Gauge.desktop.in:10
+#: data/io.github.josephmawa.Gauge.desktop.in:9
 msgid "Unit;Converter;Convert;Precision;Conversion;Measurement;Tool;"
 msgstr "Unidad;Convertidor;Convertir;Precisión;Conversión;Medición;Herramienta;"
 
@@ -33,8 +33,11 @@ msgid "Unit converter"
 msgstr "Conversor de unidades"
 
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:10
-msgid "Gauge is a high precision unit conversion tool. Below are the main features:"
-msgstr "Gauge es una herramienta de conversión de unidades de alta precisión. A continuación se enumeran sus principales características:"
+msgid ""
+"Gauge is a high precision unit conversion tool. Below are the main features:"
+msgstr ""
+"Gauge es una herramienta de conversión de unidades de alta precisión. A "
+"continuación se enumeran sus principales características:"
 
 #: data/io.github.josephmawa.Gauge.metainfo.xml.in:12
 msgid "Instant conversion"
@@ -68,93 +71,89 @@ msgstr "Gauge en modo oscuro"
 msgid "Gauge in light mode"
 msgstr "Gauge en modo claro"
 
-#: src/ui/help.ui:11
-msgctxt "shortcut window"
-msgid "General"
-msgstr "General"
-
-#: src/ui/help.ui:14
-msgctxt "shortcut window"
-msgid "Toggle Menu"
-msgstr "Activar/Desactivar menú"
-
-#: src/ui/help.ui:20
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Mostrar atajos de teclado"
-
-#: src/ui/help.ui:26
-msgctxt "shortcut window"
-msgid "Show Preferences"
-msgstr "Mostrar Preferencias"
-
-#: src/ui/help.ui:32
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Salir"
-
-#: src/ui/help.ui:40
-msgctxt "shortcut window"
-msgid "Units"
-msgstr "Unidades"
-
-#: src/ui/help.ui:43
-msgctxt "shortcut window"
-msgid "Toggle Sidebar"
-msgstr "Activar/Desactivar Barra lateral"
-
-#: src/ui/help.ui:49
-msgctxt "shortcut window"
-msgid "Search Units"
-msgstr "Buscar unidades"
-
-#: src/ui/help.ui:55
-msgctxt "shortcut window"
-msgid "Switch Units"
-msgstr "Cambiar unidades"
-
-#: src/ui/prefs.ui:7 src/ui/prefs.ui:13
+#: src/ui/prefs.ui:6 src/ui/prefs.ui:12
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: src/ui/prefs.ui:16
+#: src/ui/prefs.ui:15
 msgid "Color Theme"
 msgstr "Color del tema"
 
-#: src/ui/prefs.ui:17
+#: src/ui/prefs.ui:16
 msgid "Set color theme"
 msgstr "Establecer color del tema"
 
-#: src/ui/prefs.ui:23
-msgid "Color theme"
-msgstr "Color del tema"
-
-#: src/ui/prefs.ui:39
+#: src/ui/prefs.ui:20
 msgctxt "System color theme"
 msgid "System"
 msgstr "Sistema"
 
-#: src/ui/prefs.ui:56
+#: src/ui/prefs.ui:35
 msgctxt "Light color theme"
 msgid "Light"
 msgstr "Claro"
 
-#: src/ui/prefs.ui:73
+#: src/ui/prefs.ui:50
 msgctxt "Dark color theme"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: src/ui/prefs.ui:90
+#: src/ui/prefs.ui:66
 msgid "Number Precision"
 msgstr "Precisión numérica"
 
-#: src/ui/prefs.ui:91
+#: src/ui/prefs.ui:67
 msgid "Set number precision"
 msgstr "Establecer precisión numérica"
 
-#: src/ui/prefs.ui:94
+#: src/ui/prefs.ui:70
 msgid "Conversion precision"
 msgstr "Precisión de conversión"
+
+#: src/ui/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: src/ui/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Toggle Menu"
+msgstr "Activar/Desactivar menú"
+
+#: src/ui/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Mostrar atajos de teclado"
+
+#: src/ui/shortcuts-dialog.ui:21
+msgctxt "shortcut window"
+msgid "Show Preferences"
+msgstr "Mostrar Preferencias"
+
+#: src/ui/shortcuts-dialog.ui:27
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Salir"
+
+#: src/ui/shortcuts-dialog.ui:35
+msgctxt "shortcut window"
+msgid "Units"
+msgstr "Unidades"
+
+#: src/ui/shortcuts-dialog.ui:38
+msgctxt "shortcut window"
+msgid "Toggle Sidebar"
+msgstr "Activar/Desactivar Barra lateral"
+
+#: src/ui/shortcuts-dialog.ui:44
+msgctxt "shortcut window"
+msgid "Search Units"
+msgstr "Buscar unidades"
+
+#: src/ui/shortcuts-dialog.ui:50
+msgctxt "shortcut window"
+msgid "Switch Units"
+msgstr "Cambiar unidades"
 
 #: src/ui/win.ui:33
 msgid "Search units"
@@ -260,490 +259,670 @@ msgstr "_Acerca de Gauge"
 msgid "translator-credits"
 msgstr "haggen88"
 
-#: src/win.js:620
+#: src/win.js:632
 msgid "Copied value"
 msgstr "Valor copiado"
 
-#: src/units/index.js:1
+#. * This file is autogenerated. Don't modify!
+#: src/units/index.js:2
 msgid "Length"
 msgstr "Longitud"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Meters"
 msgstr "Metros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilometers"
 msgstr "Kilómetros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Centimeters"
 msgstr "Centímetros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Millimeters"
 msgstr "Milímetros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Miles"
 msgstr "Millas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yards"
 msgstr "Yardas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Feet"
 msgstr "Pies"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Inches"
 msgstr "Pulgadas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Area"
 msgstr "Área"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Meters"
 msgstr "Metros cuadrados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Acre"
 msgstr "Acre"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Hectare"
 msgstr "Hectárea"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Kilometers"
 msgstr "Kilómetros cuadrados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Centimeters"
 msgstr "Centímetros cuadrados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Millimeters"
 msgstr "Milímetros cuadrados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Miles"
 msgstr "Millas cuadradas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Yards"
 msgstr "Yardas cuadradas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Feet"
 msgstr "Pies cuadrados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Square Inches"
 msgstr "Pulgadas cuadradas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Volume"
 msgstr "Volumen"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Liters"
 msgstr "Litros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
+msgid "Deciliters"
+msgstr "Decilitros"
+
+#: src/units/index.js:2
+msgid "Centiliters"
+msgstr "Centilitros"
+
+#: src/units/index.js:2
 msgid "Milliliters"
 msgstr "Mililitros"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
+msgid "Microliters"
+msgstr "Microlitros"
+
+#: src/units/index.js:2
 msgid "Gallons"
 msgstr "Galones"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
+msgid "Cubic Meters"
+msgstr "Metros cúbicos"
+
+#: src/units/index.js:2
+msgid "Cubic Millimeters"
+msgstr "Milímetros cúbicos"
+
+#: src/units/index.js:2
+msgid "Cubic Centimeters"
+msgstr "Centímetros cúbicos"
+
+#: src/units/index.js:2
+msgid "Cubic Inches"
+msgstr "Pulgadas cúbicas"
+
+#: src/units/index.js:2
+msgid "Cubic Feet"
+msgstr "Pies cúbicos"
+
+#: src/units/index.js:2
+msgid "Density"
+msgstr "Densidad"
+
+#: src/units/index.js:2
+msgid "Grams per Cubic Centimeter"
+msgstr "Gramos por centímetro cúbico"
+
+#: src/units/index.js:2
+msgid "Kilograms per Cubic Meter"
+msgstr "Kilogramos por metro cúbico"
+
+#: src/units/index.js:2
+msgid "Pounds per Cubic Inches"
+msgstr "Libras por pulgada cúbica"
+
+#: src/units/index.js:2
+msgid "Pounds per Cubic Feet"
+msgstr "Libras por pie cúbico"
+
+#: src/units/index.js:2
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Celsius"
 msgstr "Celsius"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Speed"
 msgstr "Velocidad"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Meters per Second"
 msgstr "Metros por segundo"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilometers per Hour"
 msgstr "Kilómetros por hora"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Miles per Hour"
 msgstr "Millas por hora"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
+msgid "Feet per Second"
+msgstr "Pies por segundo"
+
+#: src/units/index.js:2
+msgid "Knots"
+msgstr "Nudos"
+
+#: src/units/index.js:2
 msgid "Duration"
 msgstr "Duración"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Seconds"
 msgstr "Segundos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Minutes"
 msgstr "Minutos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Hours"
 msgstr "Horas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Days"
 msgstr "Días"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Weeks"
 msgstr "Semanas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Milliseconds"
 msgstr "Milisegundos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Microseconds"
 msgstr "Microsegundos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Frequency"
 msgstr "Frecuencia"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Hertz"
 msgstr "Hertz"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilohertz"
 msgstr "Kilohertz"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Megahertz"
 msgstr "Megahertz"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gigahertz"
 msgstr "Gigahertz"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Terahertz"
 msgstr "Terahertz"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Mass"
 msgstr "Masa"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Grams"
 msgstr "Gramos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilograms"
 msgstr "Kilogramos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Pounds"
 msgstr "Libras"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Ounces"
 msgstr "Onzas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Metric Tonnes"
 msgstr "Toneladas métricas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Short Tons"
 msgstr "Toneladas cortas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Long Tons"
 msgstr "Toneladas largas"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
+msgid "Pressure"
+msgstr "Presión"
+
+#: src/units/index.js:2
+msgid "Pascal"
+msgstr "Pascal"
+
+#: src/units/index.js:2
+msgid "Atmosphere"
+msgstr "Atmósfera"
+
+#: src/units/index.js:2
+msgid "Bar"
+msgstr "Bar"
+
+#: src/units/index.js:2
+msgid "Newton per square meter"
+msgstr "Newton por metro cuadrado"
+
+#: src/units/index.js:2
+msgid "Pounds per square inch"
+msgstr "Libras por pulgada cuadrada"
+
+#: src/units/index.js:2
+msgid "Millimeters of mercury(Torr)"
+msgstr "Milímetros de mercurio (Torr)"
+
+#: src/units/index.js:2
+msgid "Inches of mercury"
+msgstr "Pulgadas de mercurio"
+
+#: src/units/index.js:2
+msgid "Energy"
+msgstr "Energía"
+
+#: src/units/index.js:2
+msgid "Joules"
+msgstr "Joules"
+
+#: src/units/index.js:2
+msgid "Kilojoules"
+msgstr "Kilojoules"
+
+#: src/units/index.js:2
+msgid "Watt hour"
+msgstr "Vatio hora"
+
+#: src/units/index.js:2
+msgid "Kilowatt hour"
+msgstr "kilovatio hora"
+
+#: src/units/index.js:2
+msgid "Calories(Thermochemical)"
+msgstr "Calorías (termoquímicas)"
+
+#: src/units/index.js:2
+msgid "Kilocalories(Thermochemical)"
+msgstr "Kilocalorías (Termoquímicas)"
+
+#: src/units/index.js:2
+msgid "Calories(Steam Table)"
+msgstr "Calorías (Tabla de vapor)"
+
+#: src/units/index.js:2
+msgid "Kilocalories(Steam Table)"
+msgstr "Kilocalorías (Tabla de vapor)"
+
+#: src/units/index.js:2
+msgid "Power"
+msgstr "Fuerza"
+
+#: src/units/index.js:2
+msgid "Watt"
+msgstr "Watt"
+
+#: src/units/index.js:2
+msgid "Kilowatt"
+msgstr "Kilovatio"
+
+#: src/units/index.js:2
+msgid "Megawatt"
+msgstr "Megavatio"
+
+#: src/units/index.js:2
+msgid "Gigawatt"
+msgstr "Gigavatio"
+
+#: src/units/index.js:2
+msgid "Milliwatt"
+msgstr "Milivatio"
+
+#: src/units/index.js:2
+msgid "Metric horsepower"
+msgstr "caballos de fuerza métricos"
+
+#: src/units/index.js:2
+msgid "Imperial horsepower"
+msgstr "caballos de fuerza imperiales"
+
+#: src/units/index.js:2
+msgid "Fuel Consumption"
+msgstr "Consumo de combustible"
+
+#: src/units/index.js:2
+msgid "Kilometers per liter"
+msgstr "kilómetros por litro"
+
+#: src/units/index.js:2
+msgid "Miles per Gallon"
+msgstr "Millas por galón"
+
+#: src/units/index.js:2
+msgid "Liters per 100 km"
+msgstr "Litros por 100 km"
+
+#: src/units/index.js:2
 msgid "Numeral Systems"
 msgstr "Sistemas numéricos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Decimal"
 msgstr "Decimal"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Binary"
 msgstr "Binario"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Octal"
 msgstr "Octal"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Hexadecimal"
 msgstr "Hexadecimal"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Angles"
 msgstr "Ángulos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Degrees"
 msgstr "Grados"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Radians"
 msgstr "Radianes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gradians"
 msgstr "Gradianos"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "SI Prefixes"
 msgstr "Prefijos SI"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Base"
 msgstr "Base"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Deca"
 msgstr "Deca"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Hecto"
 msgstr "Hecto"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilo"
 msgstr "Kilo"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Mega"
 msgstr "Mega"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Giga"
 msgstr "Giga"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Tera"
 msgstr "Tera"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Peta"
 msgstr "Peta"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Exa"
 msgstr "Exa"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zetta"
 msgstr "Zetta"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yotta"
 msgstr "Yotta"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Deci"
 msgstr "Deci"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Centi"
 msgstr "Centi"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Milli"
 msgstr "Milli"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Micro"
 msgstr "Micro"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Nano"
 msgstr "Nano"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Pico"
 msgstr "Pico"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Femto"
 msgstr "Femto"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Atto"
 msgstr "Atto"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zepto"
 msgstr "Zepto"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yocto"
 msgstr "Yocto"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Digital Storage"
 msgstr "Almacenamiento digital"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Bits"
 msgstr "Bits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Bytes"
 msgstr "Bytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Nibbles"
 msgstr "Nibbles"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilobits"
 msgstr "Kilobits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kilobytes"
 msgstr "Kilobytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kibibits"
 msgstr "Kibibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Kibibytes"
 msgstr "Kibibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Megabits"
 msgstr "Megabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Megabytes"
 msgstr "Megabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Mebibits"
 msgstr "Mebibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Mebibytes"
 msgstr "Mebibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gigabits"
 msgstr "Gigabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gigabytes"
 msgstr "Gigabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gibibits"
 msgstr "Gibibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Gibibytes"
 msgstr "Gibibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Terabits"
 msgstr "Terabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Terabytes"
 msgstr "Terabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Tebibits"
 msgstr "Tebibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Tebibytes"
 msgstr "Tebibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Petabits"
 msgstr "Petabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Petabytes"
 msgstr "Petabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Pebibits"
 msgstr "Pebibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Pebibytes"
 msgstr "Pebibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Exabits"
 msgstr "Exabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Exabytes"
 msgstr "Exabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Exbibits"
 msgstr "Exbibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Exbibytes"
 msgstr "Exbibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zettabits"
 msgstr "Zettabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zettabytes"
 msgstr "Zettabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zebibits"
 msgstr "Zebibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Zebibytes"
 msgstr "Zebibytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yottabits"
 msgstr "Yottabits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yottabytes"
 msgstr "Yottabytes"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yobibits"
 msgstr "Yobibits"
 
-#: src/units/index.js:1
+#: src/units/index.js:2
 msgid "Yobibytes"
 msgstr "Yobibytes"
+
+#~ msgid "Color theme"
+#~ msgstr "Color del tema"

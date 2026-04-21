@@ -924,5 +924,3 @@ msgstr "Yobibits"
 msgid "Yobibytes"
 msgstr "Yobibytes"
 
-#~ msgid "Color theme"
-#~ msgstr "Color del tema"

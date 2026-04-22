@@ -53,7 +53,7 @@
                     <property name="group">system</property>
                     <property name="valign">center</property>
                     <property name="action-name">app.color-scheme</property>
-                    <!-- Adw.ColorScheme.FORCE_LIGHT -->
+                    <!-- Adw.ColorScheme.FORCE_DARK -->
                     <property name="action-target">4</property>
                   </object>
                 </child>

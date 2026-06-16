@@ -438,33 +438,6 @@ export const GaugeWindow = GObject.registerClass(
       search.connect("activate", () => {
         this._search_bar.search_mode_enabled =
           !this._search_bar.search_mode_enabled;
-
-        const searchModeEnabled = this._search_bar.search_mode_enabled;
-        const tree = this._list_view.model.model;
-        const rootModel = tree.model;
-
-        /**
-         * This will expand all the root-level widgets when search
-         * mode is enabled and closes them when search mode is disabled.
-         *
-         * There are two methdos for retrieving rows; tree.get_child_row
-         * and tree.get_row. I'm not sure I understand the difference
-         * between the two. However, in this case tree.get_child_row retrieves
-         * the expandable rows.
-         *
-         * To loop over the topmost row widgets, retrieve the number of
-         * items from the root model, the model passed to the Gtk.TreeListModel
-         */
-        for (let i = 0; i < rootModel.n_items; i++) {
-          const listRow = tree.get_child_row(i);
-          if (!listRow?.expandable) continue;
-
-          if (searchModeEnabled) {
-            listRow.expanded = true;
-          } else {
-            listRow.expanded = false;
-          }
-        }
       });
       this.add_action(search);
 
@@ -500,6 +473,35 @@ export const GaugeWindow = GObject.registerClass(
       this.add_action(switchUnits);
     };
 
+    closeOrExpandRows = () => {
+      const searchModeEnabled = this._search_bar.search_mode_enabled;
+      const tree = this._list_view.model.model;
+      const rootModel = tree.model;
+
+      /**
+       * This will expand all the root-level widgets when search
+       * mode is turned on and closes them when search mode is off.
+       *
+       * There are two methods for retrieving rows; tree.get_child_row
+       * and tree.get_row. I'm not sure I understand the difference
+       * between the two. However, in this case, tree.get_child_row retrieves
+       * the expandable rows.
+       *
+       * To loop over the topmost row widgets, retrieve the number of
+       * items from the root model, the model passed to the Gtk.TreeListModel.
+       */
+      for (let i = 0; i < rootModel.n_items; i++) {
+        const listRow = tree.get_child_row(i);
+        if (!listRow?.expandable) continue;
+
+        if (searchModeEnabled) {
+          listRow.expanded = true;
+        } else {
+          listRow.expanded = false;
+        }
+      }
+    };
+
     bindSettings = () => {
       settings.bind(
         "window-width",
@@ -527,6 +529,10 @@ export const GaugeWindow = GObject.registerClass(
       );
 
       settings.connect("changed::precision", this.updatePrecision);
+      this._search_bar.connect(
+        "notify::search-mode-enabled",
+        this.closeOrExpandRows,
+      );
     };
 
     updatePrecision = () => {

@@ -57,6 +57,13 @@
   </requires>
 
   <releases>
+    <release version="0.1.8" date="2026-06-29">
+      <description translate="no">
+        <ul>
+          <li>Fix UI bug</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.7" date="2026-04-27">
       <description translate="no">
         <ul>

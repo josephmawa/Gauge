@@ -57,6 +57,13 @@
   </requires>
 
   <releases>
+    <release version="0.1.9" date="2026-10-21">
+      <description translate="no">
+        <ul>
+          <li>Upgrade to Gnome runtime version 51</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.8" date="2026-06-29">
       <description translate="no">
         <ul>
